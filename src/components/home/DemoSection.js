@@ -1,4 +1,3 @@
-import React from "react";
 import DemoSlider from "../ui/general/SwiperSlider";
 
 export default function DemoSection() {

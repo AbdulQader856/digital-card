@@ -15,14 +15,15 @@ const Navbar = () => {
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center flex-wrap space-x-6">
+            <nav className="hidden md:flex items-center flex-wrap space-x-5">
                 <Link href="/" className="text-orange-600 hover:text-orange-700">Home</Link>
                 <Link href="/#features" className="text-orange-600 hover:text-orange-700">Features</Link>
                 <Link href="/#process" className="text-orange-600 hover:text-orange-700">Process</Link>
                 <Link href="/#pricing" className="text-orange-600 hover:text-orange-700">Pricing</Link>
                 <Link href="/#demo" className="text-orange-600 hover:text-orange-700">Demo Cards</Link>
                 <Link href="/#faq" className="text-orange-600 hover:text-orange-700">FAQ</Link>
-                <Link href="/login" className="text-orange-600 hover:text-orange-700"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                <Link href="/#contact" className="text-orange-600 hover:text-orange-700">Contact US</Link>
+                <Link href="/login" className="flex text-orange-600 hover:text-white hover:bg-orange-600 hover:rounded px-2 py-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 mx-1 my-0.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                     </svg><span>Login</span>
                 </Link>

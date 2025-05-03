@@ -61,7 +61,7 @@ const features = [
       title: 'Why do digital business cards matter?',
       description:
         'Digital business cards offer a convenient and efficient way to share contact information. They are popular among modern businesses for their versatility, ease of use, and eco-friendly benefits. One of their greatest advantages is accessibility—you can store and share them directly from your smartphone or other devices. Updating information is seamless, with real-time updates ensuring your contacts always have the latest details. Moreover, you can enhance your digital card by adding links to social media, websites, and other resources, making it interactive and more engaging.',
-      icon: '/images/icons/whybusiness.png', // Replace with your actual image path
+      icon: '/images/icons/whybusiness.png',
     },
     {
       title: 'Stay Updated with a Personalized Digital Business Card!',

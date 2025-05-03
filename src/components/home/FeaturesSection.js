@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import {FeatureSlider} from "../ui/general/SwiperSlider";
 import LottiePlayer from "../ui/general/LottiePlayer";
 
@@ -31,7 +28,7 @@ export default function FeaturesSection() {
               The process is simple and quick, and as soon as you start sharing your digital business card, you begin building your brand identity.
             </p>
             <div className="flex mb-12">
-              <a href="#" className="bg-orange-600 text-white px-6 py-3 rounded hover:bg-orange-700">
+              <a href="#" className="bg-gradient-to-r from-[#f5821f] to-[#f15a24] text-white px-6 py-3 rounded hover:bg-orange-700">
                 Live Demo
               </a>
             </div>
