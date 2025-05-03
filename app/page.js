@@ -7,6 +7,7 @@ import EnviornmentalSection from "../src/components/home/EnvironmentalSection";
 import FAQSection from "../src/components/home/FAQSection";
 import TestimonialSection from "../src/components/home/TestimonialSection";
 import ContactUsSection from "../src/components/home/ContactUsSection";
+import TipsSection from "../src/components/home/TipsSection";
 
 export default function Page() {
 
@@ -21,6 +22,7 @@ export default function Page() {
       <FAQSection />
       <TestimonialSection/>
       <ContactUsSection/>
+      <TipsSection/>
     </div>
   );
 }
