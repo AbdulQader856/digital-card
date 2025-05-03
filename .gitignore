@@ -1,1 +1,47 @@
-node_modules
+# Node modules
+node_modules/
+
+# Build output
+/.next
+/.next/
+.next/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.lockb
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Tailwind CSS cache (optional)
+.tailwindcache/
+
+# Typescript cache
+*.tsbuildinfo
+
+# Coverage and test reports
+coverage/
+*.lcov
+
+# Next.js static export cache
+.exported/
