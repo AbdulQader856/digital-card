@@ -6,7 +6,7 @@ import DemoSection from "../src/components/home/DemoSection";
 import EnviornmentalSection from "../src/components/home/EnvironmentalSection";
 import FAQSection from "../src/components/home/FAQSection";
 import TestimonialSection from "../src/components/home/TestimonialSection";
-import FormSection from "../src/components/ui/forms/FormSection";
+import ContactUsSection from "../src/components/home/ContactUsSection";
 
 export default function Page() {
 
@@ -20,7 +20,7 @@ export default function Page() {
       <EnviornmentalSection />
       <FAQSection />
       <TestimonialSection/>
-      <FormSection/>
+      <ContactUsSection/>
     </div>
   );
 }
