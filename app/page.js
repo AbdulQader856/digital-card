@@ -1,4 +1,3 @@
-import NavBar from "../src/components/ui/navigation/NavBar";
 import HeroSection from "../src/components/home/HeroSection";
 import FeaturesSection from "../src/components/home/FeaturesSection";
 import PricingSection from "../src/components/home/PricingSection";
@@ -13,7 +12,6 @@ export default function Page() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <NavBar />
       <HeroSection />
       <FeaturesSection />
       <PricingSection />
