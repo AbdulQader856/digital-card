@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import NavLink from "../buttons/NavBarButtons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,14 +14,14 @@ const Navbar = () => {
       </a>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center flex-wrap space-x-8">
-          <Link href="/" className="text-orange-600 hover:text-orange-700">Home</Link>
-          <Link href="/#features" className="text-orange-600 hover:text-orange-700">Features</Link>
-          <Link href="/#process" className="text-orange-600 hover:text-orange-700">Process</Link>
-          <Link href="/#pricing" className="text-orange-600 hover:text-orange-700">Pricing</Link>
-          <Link href="/#demo" className="text-orange-600 hover:text-orange-700">Demo Cards</Link>
-          <Link href="/#faq" className="text-orange-600 hover:text-orange-700">FAQ</Link>
-          <Link href="/#contact" className="text-orange-600 hover:text-orange-700">Contact US</Link>
+      <nav>
+        <NavLink label="Home" target="#home" />
+        <NavLink label="Features" target="#features" />
+        <NavLink label="Process" target="#process" />
+        <NavLink label="Pricing" target="#pricing" />
+        <NavLink label="Demo Cards" target="#demo" />
+        <NavLink label="FAQ" target="#faq" />
+        <NavLink label="Contact US" target="#contact" />
       </nav>
 
       {/* Mobile menu toggle */}

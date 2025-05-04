@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="bg-white-100 py-16">
+    <section id="home" className="bg-white-100 py-16">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-3xl md:text-3xl font-bold mb-4">
@@ -26,12 +26,12 @@ export default function HeroSection() {
             <img
               src="/images/digibcard-phone-1.png"
               alt="Card Preview Left"
-              className="w-[200px] pt-10 md:w-[250px] left-0 top-0 md:left-10 z-10 "
+              className="w-[200px] pt-10 md:w-[280px] left-0 top-0 md:left-10 z-10 "
             />
             <img
               src="/images/digibcard-phone-2.png"
               alt="Card Preview Center"
-              className="w-[200px] pt-10 md:w-[250px] md:top-10 z-10 "
+              className="w-[200px] pt-10 md:w-[280px] md:top-10 z-10 "
             />
           </div>
         </div>

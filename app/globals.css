@@ -31,9 +31,10 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-html,
-body {
-  scroll-behavior: smooth;
+@layer base {
+  html,body {
+    scroll-behavior: smooth;
+  }
 }
 
 a {

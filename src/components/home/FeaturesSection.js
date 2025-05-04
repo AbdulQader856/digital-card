@@ -43,7 +43,7 @@ export default function FeaturesSection() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-cover bg-center pt-10 pb-10" style={{ backgroundImage: "url('/images/sectionbg1.png')" }}>
+        <div className="w-full bg-cover bg-center pt-10 pb-10 bg-[url(/images/sectionbg1.png)]">
           <h2 className="text-3xl mb-5 text-center">Key Highlights of Your Digital Visiting Card</h2>
           <p className="text-gray-600 mb-12 text-center">
           Transform your networking game with our best digital business card! Share easily, connect seamlessly,<br/>
