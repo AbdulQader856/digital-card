@@ -1,7 +1,5 @@
-'use client';
-import { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import {FAQSlider} from "../ui/general/SwiperSlider"
+import FAQList from '../ui/general/FAQList';
 
 const faqs = [
   { question: "How Does an Online visiting Card Work?",
@@ -78,11 +76,9 @@ const features = [
 ];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null);
-
   return (
     <section className="bg-[#F2FAFB] py-16 px-4">
-      <div className="pt-10 px-20">
+      <div className="pt-10">
         <h2 className="text-3xl mb-2 pt-10 text-center">Why Choose DigiBcard Over Traditional Business Cards?</h2>
         <div className="mt-2 mb-10 flex justify-center">
             <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
@@ -91,32 +87,15 @@ export default function FAQSection() {
         </div>
         <FAQSlider/>
       </div>
-      <div id="faq" className="max-w-7xl pt-20 mb-20 mx-auto text-center">
+      <div id="faq" className="max-w-7xl pt-20 mb-10 mx-auto text-center">
         <h2 className="text-3xl md:text-3xl text-gray-900">Frequently Asked Questions</h2>
         <div className="mt-2 flex justify-center">
           <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
           <span className="w-2 h-1 bg-orange-400 rounded"></span>
           <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-sm px-6 py-4 cursor-pointer transition-all"
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            >
-              <div className="flex justify-between items-center">
-                <p className="text-left text-gray-800 font-medium">{faq.question}</p>
-                <ChevronDownIcon className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${openIndex === index ? 'rotate-180' : ''}`} />
-              </div>
-              {openIndex === index && (
-                <div className="mt-2 text-left text-sm text-gray-600">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+
+        <FAQList faqs={faqs}/>
       </div>
       
       <div className="py-16 px-5">

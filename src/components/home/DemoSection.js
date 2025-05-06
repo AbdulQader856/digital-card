@@ -14,13 +14,6 @@ export default function DemoSection() {
           </h2>
 
           <div className="relative px-8">
-            {/* Navigation Arrows */}
-            <div className="left-20 z-10 absolute top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer">
-              <img src="images/icons/arrow-left.svg" alt="Prev" />
-            </div>
-            <div className="right-20 z-10 absolute top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer">
-              <img src="images/icons/arrow-right.svg" alt="Next" />
-            </div>
             <div className="w-full max-w-6xl mx-auto px-4">
                 <DemoSlider/>
             </div>

@@ -14,8 +14,9 @@ const Footer = () => {
             {/* Logo + Description */}
             <div className="space-y-4">
                 <div className="flex items-center">
-                    <span className="bg-white text-orange-500 font-bold text-sm px-2 py-1 rounded-full">DIGI</span>
-                    <span className="ml-2 text-white font-semibold text-lg">BUSINESS CARD</span>
+                    <a href="/">
+                        <img src="/images/logo.png" alt="logo" className=" bg-white h-10 w-auto rounded-full px-3 py-2" />
+                    </a>
                 </div>
                 <p className="text-gray-300">
                     Goodbye to paper business cards! Make your digital card in 2 minutes – it’s simple, stylish, and free. 
@@ -29,14 +30,13 @@ const Footer = () => {
             <div>
                 <h3 className="text-orange-500 font-semibold mb-3">Quick Links</h3>
                 <ul className="space-y-2 text-gray-300">
-                    <li><a href="#home" className="hover:underline">Home</a></li>
-                    <li><a href="#process" className="hover:underline">Process</a></li>
-                    <li><a href="#features" className="hover:underline">Features</a></li>
-                    <li><a href="#demo" className="hover:underline">Demo Cards</a></li>
-                    <li><a href="#pricing" className="hover:underline">Pricing</a></li>
-                    <li><a href="#services" className="hover:underline">Services</a></li>
-                    <li><a href="#blogs" className="hover:underline">Blogs</a></li>
-                    <li><a href="#contact" className="hover:underline">Contact</a></li>
+                    <li><FooterLink label="Home" target="#home" /></li>
+                    <li><FooterLink label="Features" target="#features" /></li>
+                    <li><FooterLink label="Process" target="#process" /></li>
+                    <li><FooterLink label="Pricing" target="#pricing" /></li>
+                    <li><FooterLink label="Demo Cards" target="#demo" /></li>
+                    <li><FooterLink label="FAQ" target="#faq" /></li>
+                    <li><FooterLink label="Contact US" target="#contact" /></li>
                 </ul>
             </div>
 
@@ -44,9 +44,9 @@ const Footer = () => {
             <div>
                 <h3 className="text-orange-500 font-semibold mb-3">Legal Pages</h3>
                 <ul className="space-y-2 text-gray-300">
-                    <li><a href="/privacy-policy" className="hover:underline">Privacy Policy</a></li>
-                    <li><a href="/terms" className="hover:underline">Terms And Conditions</a></li>
-                    <li><a href="/refund-policy" className="hover:underline">Refund Policy</a></li>
+                    <li><a href="/privacy-policy"><FooterLink label="Privacy Policy"/></a></li>
+                    <li><a href="/terms"><FooterLink label="Terms And Conditions"/></a></li>
+                    <li><a href="/refund-policy"><FooterLink label="Refund Policy"/></a></li>
                 </ul>
             </div>
 

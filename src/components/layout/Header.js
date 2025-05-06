@@ -1,18 +1,16 @@
-'use client';
-import { Menu } from '@headlessui/react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useAppContext } from '../../context/AppContext';
+// 'use client';
+// import { Menu } from '@headlessui/react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { useAppContext } from '../../context/AppContext';
 import NavBar from '../ui/navigation/NavBar'
-import Link from 'next/link';
 
 export default function Header() {
-  const { isLoggedIn, logout, darkMode, toggleDarkMode } = useAppContext();
+  // const { isLoggedIn, logout, darkMode, toggleDarkMode } = useAppContext();
 
   return (
-    <header className="fixed w-full flex justify-between items-center px-10 py-4 z-50 shadow-md bg-white dark:bg-gray-900">
-      <NavBar />
-
-      <div className="flex items-center gap-4">
+    <header className="fixed w-full flex justify-between items-center px-6 py-4 z-50 shadow-md bg-white dark:bg-gray-900">
+        <NavBar />
+      {/* <div className="flex items-center gap-4">
         {!isLoggedIn ? (
           <>
             <button className="px-4 py-2 bg-orange-600 text-white rounded-md">Login</button>
@@ -76,8 +74,7 @@ export default function Header() {
               </MenuItems>
             </AnimatePresence>
           </Menu>
-        )}
-      </div>
+        )} */}
     </header>
   );
 }

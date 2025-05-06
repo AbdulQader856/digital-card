@@ -2,7 +2,7 @@
 
 import React from "react";
 // import LottiePlayer from "../components/ui/general/LottiePlayer";
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -10,6 +10,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function DemoSlider() {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
     const demos = [
         { img: "/images/demo/vcard12-1.png" },
         { img: "/images/demo/vcard13-1.png" },
@@ -20,37 +23,59 @@ export default function DemoSlider() {
         { img: "/images/demo/vcard22-1.png" },
       ];
     return (
-        <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            centeredSlides={true}
-            spaceBetween={10}
-            slidesPerView={5} 
-            breakpoints={{
-                640: { slidesPerView: 2.5 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4.2 },
-            }}
-            className="features-swiper"
-        >
-        {demos.map((demo, index) => (
-            <SwiperSlide key={index}>
-            <div className="transform scale-90 md:scale-90 lg:scale-75 transition-transform duration-500 rounded-xl overflow-hidden shadow-md bg-white cursor-pointer select-none">
-            <img
-                src={demo.img}
-                alt={`Slide ${index}`}
-                className="w-full h-auto object-contain rounded-lg"
-            />
+        <>
+            <div className="relative">
+                {/* Arrows */}
+                <div
+                    ref={prevRef}
+                    className="custom-swiper-prev left-0 z-10 absolute top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer"
+                >
+                    <img src="/images/icons/Left-Arrow.svg" alt="Prev" className="w-5 h-5 purple-100"/>
+                </div>
+                <div
+                    ref={nextRef}
+                    className="custom-swiper-next right-0 z-10 absolute top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer"
+                >
+                    <img src="/images/icons/Right-Arrow.svg" alt="Next" className="w-5 h-5"/>
+                </div>
+
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    navigation={{
+                        prevEl: prevRef.current,
+                        nextEl: nextRef.current,
+                    }}
+                    onBeforeInit={(swiper) => {
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        swiper.params.navigation.nextEl = nextRef.current;
+                      }}
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    loop={true}
+                    centeredSlides={true}
+                    spaceBetween={10}
+                    slidesPerView={5} 
+                    breakpoints={{
+                        640: { slidesPerView: 2.5 },
+                        768: { slidesPerView: 3 },
+                        1024: { slidesPerView: 5 },
+                    }}
+                    className="features-swiper"
+                >
+                {demos.map((demo, index) => (
+                    <SwiperSlide key={index}>
+                    <div className="transform scale-90 md:scale-90 lg:scale-75 transition-transform duration-500 rounded-xl overflow-hidden shadow-md bg-white cursor-pointer select-none">
+                    <img
+                        src={demo.img}
+                        alt={`Slide ${index}`}
+                        className="w-full h-auto object-contain rounded-lg"
+                    />
+                    </div>
+                    </SwiperSlide>
+                ))}
+                </Swiper>
             </div>
-            </SwiperSlide>
-        ))}
-        </Swiper>
+        </>
     );
 }
 
@@ -98,11 +123,10 @@ export function FeatureSlider() {
             }}
             pagination={{ clickable: true }}
             spaceBetween={50}
-            slidesPerView={1}
             breakpoints={{
-                640: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 },
+                640: { slidesPerView: 1, slidesPerGroup: 1},
+                768: { slidesPerView: 2, slidesPerGroup: 2},
+                1024: { slidesPerView: 4, slidesPerGroup: 4},
             }}
             className="w-full px-4 features-swiper"
             >
@@ -146,11 +170,10 @@ export function FAQSlider() {
             centeredSlides={true}
             pagination={{ clickable: true }}
             spaceBetween={40}
-            slidesPerView={3}
             breakpoints={{
-                640: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 3 },
+                640: { slidesPerView: 1 , slidesPerGroup: 1},
+                768: { slidesPerView: 2 , slidesPerGroup: 2},
+                1024: { slidesPerView: 3 , slidesPerGroup: 3},
             }}
             className="w-full px-4 features-swiper"
             >
@@ -180,7 +203,6 @@ export function TestimonialSlider() {
         {testimony : "I’ve tried other platforms to make my business card online, but nothing compares to Digibcard. The themes are stunning, the analytics are insightful, and it’s completely eco-friendly. It’s the future of business cards online!", name: "Arjun R.", designation: "Photographer"},
         {testimony : "With Digibcard, I created a digital visiting card that doubles as a mini website for my business. It’s so professional and makes sharing my details hassle-free. This is the best platform for creating digital cards for business!", name: "Komal S.", designation: "Event Planner"},
         {testimony : "If you’re looking to make a professional digital business card, Digibcard is the way to go. It’s not just convenient but also cost-effective. I’ve already received so many compliments on my online visiting card!", name: "Vikas L.", designation: "Fitness Coach"},
-        {testimony : "Digibcard is perfect for entrepreneurs like me. It’s easy to customize, share, and even get inquiries directly from the card. My business has grown since I switched to digital cards for business. Highly recommended!", name: "Ankita T.", designation: "Startup Founder"},
     ];
 
     return(
@@ -195,11 +217,10 @@ export function TestimonialSlider() {
             centeredSlides={true}
             pagination={{ clickable: true }}
             spaceBetween={40}
-            slidesPerView={3}
             breakpoints={{
-                640: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 3 },
+                640: { slidesPerView: 1, slidesPerGroup: 1 },
+                768: { slidesPerView: 2, slidesPerGroup: 2 },
+                1024: { slidesPerView: 3, slidesPerGroup: 3 },
             }}
             className="w-full px-4 features-swiper"
             >

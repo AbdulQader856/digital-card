@@ -31,7 +31,7 @@ export default function EnviornmentalSection() {
 
                 <div className="grid grid-cols-1 px-40 pt-10 pb-10 sm:grid-cols-2 gap-20">
                     {/* Tree */}
-                    <div className="flex items-center">
+                    <div className="flex items-center md:px-0 mx-0">
                         <Image
                             src="/images/icons/tree.png"
                             width={48}

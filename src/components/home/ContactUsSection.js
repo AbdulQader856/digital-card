@@ -42,7 +42,7 @@ export default function FormSection(){
                 </div>
 
                 {/* Right Column - Form */}
-                <div className="p-20">
+                <div className="md:p-20 p-10 px-5 pt-4">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6">Submit Your Query</h2>
                     <ContactUsForm/>
                 </div>

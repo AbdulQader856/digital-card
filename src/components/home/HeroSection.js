@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section id="home" className="bg-white-100 py-16">
+    <section id="home" className="bg-white-100 pt-20 py-16">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-3xl md:text-3xl font-bold mb-4">

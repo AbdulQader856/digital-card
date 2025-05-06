@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.19",
     "flatpickr": "^4.6.13",
     "framer-motion": "^12.9.4",
     "jotai": "^2.12.2",

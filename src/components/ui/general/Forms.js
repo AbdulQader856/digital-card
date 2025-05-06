@@ -2,7 +2,7 @@ import React from "react";
 
 export const ContactUsForm = () => {
     return(
-        <form className="space-y-4">
+        <form className="space-y-1 md:space-y-4">
             <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <input type="text" placeholder="Name" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm" />
