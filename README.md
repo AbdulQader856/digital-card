@@ -57,7 +57,7 @@ Visit `http://localhost:3000` to explore the app locally.
 
 ## 🧑‍💻 About This Project
 
-This project is being developed as part of my **internship assignment** at [Company Name or Confidential]. It serves as a real-world, production-level project to demonstrate and expand my capabilities as a full-stack developer. The repository is currently private and all rights are reserved.
+This project is being developed as part of my **internship assignment** at **Brand Chanakya**. It serves as a real-world, production-level project to demonstrate and expand my capabilities as a full-stack developer. The repository is currently private and all rights are reserved.
 
 ---
 
