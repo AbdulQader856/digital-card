@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-// import LottiePlayer from "../components/ui/general/LottiePlayer";
 import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -50,16 +49,25 @@ export default function DemoSlider() {
                         swiper.params.navigation.nextEl = nextRef.current;
                       }}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    autoplay={{ delay: 2500, disableOnInteraction: false }}
                     loop={true}
                     centeredSlides={true}
-                    spaceBetween={10}
+                    spaceBetween={20}
                     slidesPerView={5} 
                     breakpoints={{
-                        640: { slidesPerView: 2.5 },
-                        768: { slidesPerView: 3 },
-                        1024: { slidesPerView: 5 },
-                    }}
+                        0: {
+                          slidesPerView: 1,
+                        },
+                        640: {
+                          slidesPerView: 1,
+                        },
+                        768: {
+                          slidesPerView: 3,
+                        },
+                        1024: {
+                          slidesPerView: 5,
+                        },
+                      }}
                     className="features-swiper"
                 >
                 {demos.map((demo, index) => (

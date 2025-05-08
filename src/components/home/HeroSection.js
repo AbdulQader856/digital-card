@@ -21,7 +21,7 @@ const HeroSection = () => {
             Create a Digital Business Card/Mini Website for Your Business
           </p>
           <p className="text-gray-600 text-base sm:text-lg">
-          Elevate your professional image with a modern digital visiting card that doubles as a mini-website. Impress clients and prospects effortlessly while showcasing your brand in style.
+            Elevate your professional image with a modern digital visiting card that doubles as a mini-website. Impress clients and prospects effortlessly while showcasing your brand in style.
           </p>
           <div className='space-y-4 lg:space-x-4 md:space-x-4'>
             <button className="bg-primary hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">

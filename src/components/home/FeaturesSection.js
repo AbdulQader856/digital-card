@@ -10,64 +10,87 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="bg-[#F3FBFC] pt-20 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-5 text-center">Best Digital Business Card Maker</h2>
+    <section id="features" className="bg-[#F3FBFC] pt-20 pb-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
+        {/* Section Intro */}
+        <h2 className="text-3xl font-bold mb-5 text-center">
+          Best Digital Business Card Maker
+        </h2>
         <p className="text-gray-600 mb-12 text-center">
-          Easily create digital business cards for yourself or your team using Designhill's digital business card maker tool...
+          Easily create digital business cards for yourself or your team using Designhill’s digital business card maker tool. <br />
+          Impress your contacts and capture more leads with a sleek and professional card.
         </p>
 
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center mb-12">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-semibold mb-5">What is Digital Business Card?</h2>
-            <p className="text-gray-600 mb-5">
-              A virtual business card is more than just a contact-sharing tool...
-              <br/><br/>
-              So, how do digital business cards help with branding? ...
-              <br/><br/>        
-              The process is simple and quick, and as soon as you start sharing your digital business card, you begin building your brand identity.
+        {/* Flex Section */}
+        <div className="flex flex-col md:flex-row items-center mb-12 gap-8">
+          {/* Left Content */}
+          <div className="md:w-1/2">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-5">
+              What is Digital Business Card?
+            </h2>
+            <p className="text-gray-600 mb-6 text-sm sm:text-base leading-relaxed">
+              A virtual business card is more than just a contact-sharing tool; it’s a powerful personal branding asset.
+              Each time you share it with a client, prospect, or customer, it helps communicate who you are and what business you represent.
+              <br /><br />
+              They provide all the necessary contact details, making it easy for others to reach you. Unlike traditional paper cards, digital cards are affordable, convenient, and eco-friendly. You can customize the background, layout, and instantly share your card.
+              <br /><br />
+              The process is simple and quick. Start sharing and build your brand identity instantly.
             </p>
-            <div className="flex mb-12">
-              <a href="#" className="bg-gradient-to-r from-[#f5821f] to-[#f15a24] text-white px-6 py-3 rounded hover:bg-orange-700">
-                Live Demo
-              </a>
-            </div>
+            <a
+              href="#"
+              className="bg-gradient-to-r from-[#f5821f] to-[#f15a24] text-white px-6 py-3 rounded hover:bg-orange-700 inline-block"
+            >
+              Live Demo
+            </a>
           </div>
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <div className="relative flex justify-center items-center">
-              <img
-                src="/images/feature.png"
-                alt="Card Preview Left"
-                className="w-[200px] md:w-[700px] md:top-10 z-10"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="w-full bg-cover bg-center pt-10 pb-10 bg-[url(/images/sectionbg1.png)]">
-          <h2 className="text-3xl mb-5 text-center">Key Highlights of Your Digital Visiting Card</h2>
-          <p className="text-gray-600 mb-12 text-center">
-          Transform your networking game with our best digital business card! Share easily, connect seamlessly,<br/>
-          and stand out with interactive designs of our digital visiting cards.<br/>
-          Your digital identity, now more vibrant and connected than ever with Digibcard!
-          </p>
-          <div className="px-20">
-            <FeatureSlider/>
-          </div>
-        </div>
-        <div id= "process">
-          <h2 className="text-3xl mt-20 mb-5 text-center">Make Your Business Card Online: in 4 Easy Steps</h2>
-          <div className="mt-2 mb-10 flex justify-center">
-              <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
-              <span className="w-2 h-1 bg-orange-400 rounded"></span>
-              <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
+
+          {/* Right Image */}
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src="/images/feature.png"
+              alt="Card Preview"
+              className="w-[250px] sm:w-[300px] md:w-[450px] lg:w-[500px]"
+            />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 px-20 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+        {/* Highlights Section */}
+        <div className="relative pt-10 pb-10 z-10">
+          <h2 className="relative text-3xl mb-5 text-center z-10">
+            Key Highlights of Your Digital Visiting Card
+          </h2>
+          <p className="relative text-gray-600 mb-12 text-center max-w-3xl mx-auto z-10">
+            Transform your networking game with our best digital business card! Share easily, connect seamlessly,<br />
+            and stand out with interactive designs of our digital visiting cards.<br />
+            Your digital identity, now more vibrant and connected than ever with Digibcard!
+          </p>
+          <div className="px-4 sm:px-6 lg:px-20">
+            <FeatureSlider />
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+        {/* Process Section */}
+        <div id="process" className="relative z-10 pt-16">
+          <h2 className="text-3xl mb-5 text-center">
+            Make Your Business Card Online: in 4 Easy Steps
+          </h2>
+          <div className="mt-2 mb-10 flex justify-center">
+            <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
+            <span className="w-2 h-1 bg-orange-400 rounded"></span>
+            <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10 z-10">
           {processes.map((process, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-md flex flex-col items-center justify-center text-center p-10 h-100">
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-md flex flex-col items-center justify-center text-center p-6 sm:p-8"
+            >
               <LottiePlayer src={process.lottieUrl} width={100} height={100} />
-              <h3 className="text-xl font-semibold mb-2">0{index + 1}</h3>
+              <h3 className="text-xl font-semibold mt-3 mb-1">0{index + 1}</h3>
               <p className="text-lg font-medium text-gray-800">{process.title}</p>
               <p className="text-sm text-gray-600 mt-2">{process.description}</p>
             </div>

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between px-4 space-x-8 relative">
+    <div className="w-full flex items-center justify-between space-x-6 relative max-w-7xl mx-auto">
       {/* Logo */}
       <a href="/" className="flex items-center space-x-2">
         <img src="/images/logo.png" alt="logo" className="h-10 w-auto" />

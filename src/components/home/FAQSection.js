@@ -1,5 +1,5 @@
 import {FAQSlider} from "../ui/general/SwiperSlider"
-import FAQList from '../ui/general/FAQList';
+import FAQAccordion from "../ui/general/Accordions";
 
 const faqs = [
   { question: "How Does an Online visiting Card Work?",
@@ -78,7 +78,7 @@ const features = [
 export default function FAQSection() {
   return (
     <section className="bg-[#F2FAFB] py-16 px-4">
-      <div className="pt-10">
+      <div className="pt-10 max-w-7xl mx-auto">
         <h2 className="text-3xl mb-2 pt-10 text-center">Why Choose DigiBcard Over Traditional Business Cards?</h2>
         <div className="mt-2 mb-10 flex justify-center">
             <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
@@ -95,7 +95,7 @@ export default function FAQSection() {
           <span className="w-8 h-1 mx-2 bg-orange-400 rounded"></span>
         </div>
 
-        <FAQList faqs={faqs}/>
+        <FAQAccordion faqs={faqs}/>
       </div>
       
       <div className="py-16 px-5">
