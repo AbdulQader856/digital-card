@@ -160,8 +160,8 @@ export default function PricingSection() {
 
       {/* Button */}
       <div className="pt-8">
-        <a href="#" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">
-          View Pricing
+        <a href="/checkout" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold inline-block">
+          Choose Plan
         </a>
       </div>
     </div>

@@ -6,7 +6,7 @@ import Footer from '../src/components/layout/Footer';
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
-  const noLayoutRoutes = ['/login', '/signup'];
+  const noLayoutRoutes = ['/login', '/signup', '/checkout'];
 
   const showLayout = !noLayoutRoutes.includes(pathname);
 
