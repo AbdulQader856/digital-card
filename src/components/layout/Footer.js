@@ -44,9 +44,9 @@ const Footer = () => {
             <div>
                 <h3 className="text-orange-500 font-semibold mb-3">Legal Pages</h3>
                 <ul className="space-y-2 text-gray-300">
-                    <li><a href="/privacy-policy"><FooterLink label="Privacy Policy"/></a></li>
-                    <li><a href="/terms"><FooterLink label="Terms And Conditions"/></a></li>
-                    <li><a href="/refund-policy"><FooterLink label="Refund Policy"/></a></li>
+                    <li><a href="/legal-pages/privacy-policy"><FooterLink label="Privacy Policy"/></a></li>
+                    <li><a href="/legal-pages/terms"><FooterLink label="Terms And Conditions"/></a></li>
+                    <li><a href="/legal-pages/refund-policy"><FooterLink label="Refund Policy"/></a></li>
                 </ul>
             </div>
 

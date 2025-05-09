@@ -1,6 +1,7 @@
 {
   "/page": "app/page.js",
-  "/signup/page": "app/signup/page.js",
   "/checkout/page": "app/checkout/page.js",
-  "/login/page": "app/login/page.js"
+  "/legal-pages/refund-policy/page": "app/legal-pages/refund-policy/page.js",
+  "/legal-pages/terms/page": "app/legal-pages/terms/page.js",
+  "/legal-pages/privacy-policy/page": "app/legal-pages/privacy-policy/page.js"
 }
