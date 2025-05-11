@@ -6,31 +6,27 @@ import { FaGoogle } from 'react-icons/fa';
 
 export const ContactUsForm = () => {
     return(
-        <form className="space-y-4">
-            <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-            <input type="text" placeholder="Name" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm" />
-            </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-            <input type="email" placeholder="Email" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm" />
-            </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-            <input type="tel" placeholder="Phone Number" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm" />
-            </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-            <input type="text" placeholder="Subject" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm" />
-            </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-            <textarea placeholder="Message" rows="3" className="w-full border border-gray-300 px-4 py-2 rounded-sm text-sm resize-none"></textarea>
-            </div>
-            <button type="submit" className="bg-gradient-to-r from-[#f5821f] to-[#f15a24] text-white px-6 py-2 rounded-sm text-sm mt-4">
-            Send Message
-            </button>
-        </form>
+      <form className="mb-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
+          <input
+            type="email"
+            placeholder="Enter a valid email address"
+            className="px-4 py-2 rounded-full border border-gray-300 w-full sm:w-1/2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <input
+            type="text"
+            placeholder="Enter your Name"
+            className="px-4 py-2 rounded-full border border-gray-300 w-full sm:w-1/2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div className="pt-8">
+          <input
+            type="text"
+            placeholder="Your Message"
+            className="px-4 py-2 rounded-full border border-gray-300 w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+    </form>
     );
 };
 

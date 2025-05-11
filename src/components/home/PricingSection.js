@@ -140,9 +140,9 @@ export default function PricingSection() {
         <p className="text-lg text-gray-500 mt-1">{card.subtitle}</p>
 
         {/* Price Display */}
-        <div className="mt-5 mb-6 rounded-md bg-blue-100 py-2">
+        <div className="mt-5 mb-6 rounded-md bg-blue-50 py-2">
           <span className="text-gray-400 text-xl line-through mr-2">{card.original}</span>
-          <span className="text-4xl font-bold text-indigo-700">{card.discounted}</span>
+          <span className="text-4xl font-bold text-primary">{card.discounted}</span>
         </div>
       </div>
 

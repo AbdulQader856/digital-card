@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 
 export default function FAQAccordion({ faqs }) {
   const [openLeft, setOpenLeft] = useState(null);
@@ -49,6 +50,9 @@ export default function FAQAccordion({ faqs }) {
 }
 
 export function TipsAccordion() {
+  const [expanded, setExpanded] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
   const tips = [
     {
       title: 'Add a Professional Photo',
@@ -68,7 +72,7 @@ export function TipsAccordion() {
     },
     {
       title: 'Customize Your Design',
-      desc: <p>Design your business cards online by selecting a template that aligns with your brand identity. Choose colors, fonts, and themes that reflect your professional style and make your digi business card unique. <br/> Pro Tip: Check out our guide on <a href='#'>How to Design Digital Business Cards In 4 Easy Steps</a></p>
+      desc: "Design your business cards online by selecting a template that aligns with your brand identity. Choose colors, fonts, and themes that reflect your professional style and make your digi business card unique."
     },
     {
       title: 'Leverage Analytics',
@@ -84,68 +88,88 @@ export function TipsAccordion() {
     },
     {
       title: 'Highlight Your Services and Products',
-      desc: 'With the mini e-commerce feature on your digi business card, you can list services, products, and prices. Integrate payment options for seamless transactions and maximize the functionality of your digital business card.',
+      desc: 'Turn your digital business card into a powerful Mini Website for Business with a built-in e-commerce feature. List your services, showcase products, display prices, and even integrate secure payment options for smooth, on-the-go transactions. Maximize the functionality of your digital business card and make it a complete business solution in your pocket.',
     },
     {
       title: 'Keep Your Card Updated',
       desc: 'Regularly update your online digital visiting card with the latest contact details, achievements, or projects. Fresh content ensures your digital cards for business remain relevant and impressive.',
     },
   ];
-  
-  const [showAll, setShowAll] = useState(false);
 
-  const visibleTips = showAll ? tips : tips.slice(0, 4);
-  const half = Math.ceil(visibleTips.length / 2);
-  const leftColumn = visibleTips.slice(0, half);
-  const rightColumn = visibleTips.slice(half);
-
-  return(
-    <section className="bg-[#F3FBFC] px-4 md:px-12 py-10">
-      <div className="max-w-4xl mx-auto text-start">
-        <h2 className="text-2xl md:text-3xl font-semibold text-black mb-4">
-          Expert Tips to Maximize the Impact of Your Online Digital Visiting Card
-        </h2>
-        <p className="text-gray-800 mb-10">
-          Elevate your digital business card and stand out in a competitive market by following these expert strategies. Whether you're designing the best digital business card or exploring ways to make your card more engaging, these tips will ensure your card leaves a lasting impression.
-        </p>
-      </div>
-
-      {/* 2 Column Grid */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left Column */}
-        <div className="space-y-4">
-          {leftColumn.map((tip, index) => (
-            <details key={index} className="bg-white rounded-lg shadow p-2">
-              <summary className="font-semibold cursor-pointer text-lg text-black">
-                {index + 1}. {tip.title}
-              </summary>
-              <p className="text-sm mt-2 text-gray-700">{tip.desc}</p>
-            </details>
-          ))}
-        </div>
-
-        {/* Right Column */}
-        <div className="space-y-4">
-          {rightColumn.map((tip, index) => (
-            <details key={index + half} className="bg-white rounded-lg shadow p-2">
-              <summary className="font-semibold cursor-pointer text-lg text-black">
-                {index + 1 + half}. {tip.title}
-              </summary>
-              <p className="text-sm mt-2 text-gray-700">{tip.desc}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-
-      {/* Toggle Button */}
-      <div className="text-center mt-6">
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="text-sm text-white bg-orange-600 hover:bg-orange-700 px-5 py-2 rounded-full transition duration-300"
+  return (
+    <section className="bg-[#F3FBFC] px-4 md:px-12 py-12">
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          {showAll ? 'Show Less' : 'Show More Tips'}
-        </button>
+          <h2 className="text-3xl font-semibold text-black mb-4">
+            Expert Tips to Maximize the Impact of Your Online Digital Visiting Card
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+          Elevate your digital business card and stand out in a competitive market by following these expert strategies. Whether you're designing the best digital business card or exploring ways to make your card more engaging, these tips will ensure your card leaves a lasting impression.
+          </p>
+        </motion.div>
+
+        <div className="mt-8 text-left bg-white rounded-lg shadow-lg overflow-hidden">
+          {/* Main Accordion */}
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold text-gray-900 hover:bg-gray-100 transition"
+          >
+            {expanded ? 'Hide Tips' : 'Read Expert Tips'}
+            {expanded ? (
+              <ChevronUpIcon className="h-5 w-5 text-gray-500" />
+            ) : (
+              <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+            )}
+          </button>
+
+          {/* Animated Tips */}
+          <AnimatePresence>
+            {expanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4 }}
+                className="divide-y divide-gray-200"
+              >
+                {tips.map((tip, index) => (
+                  <div key={index} className="px-6 py-4">
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="w-full flex justify-between items-center font-medium text-gray-800 text-left"
+                    >
+                      {index + 1}. {tip.title}
+                      <ChevronDownIcon
+                        className={`w-5 h-5 ml-2 transform transition-transform ${
+                          openIndex === index ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {openIndex === index && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-2 text-sm text-gray-600"
+                        >
+                          {typeof tip.desc === 'string' ? <p>{tip.desc}</p> : tip.desc}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
 }
+

@@ -1,49 +1,66 @@
 import { ContactUsForm } from "/src/components/ui/general/Forms";
 
-export default function FormSection() {
+export default function ContactUsSection() {
   return (
-    <section id="contact" className="bg-[#f1fafa] py-12 px-4">
-      <div className="max-w-7xl mx-auto bg-white rounded-md shadow-md grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
-        {/* Left Column - Contact Info */}
-        <div className="bg-gradient-to-b from-[#f5821f] to-[#f15a24] text-white p-8 sm:p-10 md:p-12 flex flex-col justify-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">
-            Contact Details
-          </h2>
-          <p className="mb-4 flex items-center text-sm sm:text-base">
-            <svg className="w-5 h-5 mr-2" fill="white" viewBox="0 0 24 24">
-              <path d="M21 8V7l-3 2-2-2-4 3-4-4-6 6v6h20v-9z" />
-            </svg>
-            <a href="mailto:info@digibcard.com" className="underline">
-              info@digibcard.com
-            </a>
-          </p>
+    <section id="contact" className="bg-white pt-16 px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl text-black mb-2">Contact Us</h2>
+        <p className="text-sm text-gray-700 mb-6">
+          Any questions or remarks? Just write us a message!
+        </p>
 
-          <h3 className="text-xl sm:text-2xl font-semibold pt-5 mb-2">
-            A Product By KCS Edutech Pvt. Ltd.
-          </h3>
-          <ul className="space-y-2 text-sm">
-            {[
-              "CIN: U80302RJ2013PTC044524",
-              "GST: 08AAFCK3959C2ZG",
-              "PAN: AAFCK3959C",
-            ].map((text, i) => (
-              <li className="flex items-start" key={i}>
-                <svg className="w-4 h-4 mr-2 mt-1" fill="white" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" />
-                  <path fill="black" d="M11 7h2v2h-2V7zm0 4h2v6h-2v-6z" />
-                </svg>
-                {text}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* FORM */}
+        <ContactUsForm/>
 
-        {/* Right Column - Form */}
-        <div className="p-6 sm:p-10 md:p-14">
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6">
-            Submit Your Query
-          </h2>
-          <ContactUsForm />
+        <button
+          type="submit"
+          className="bg-primary hover:bg-orange-700 text-white font-semibold px-10 py-2 rounded-full transition mb-12"
+        >
+          SUBMIT
+        </button>
+      </div>
+
+      {/* Bottom Icons Row */}
+      <div className="bg-primary py-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-around text-white text-center px-4 gap-10">
+          {/* About */}
+          <div>
+            <div className="flex justify-center mb-4">
+              <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
+                <img src="/images/i.png" alt="Run" className="w-6 h-6" />
+              </div>
+            </div>
+            <h3 className="font-bold text-lg mb-1">A PRODUCT BY KCS EDUTECH PVT.LTD</h3>
+            <p className="text-sm pt-2">CIN: U80302RJ2013PTC044524</p>
+            <p className="text-sm pt-2">GST: 08AAFCK3959C2ZG</p>
+            <p className="text-sm pt-2">PAN: AAFCK3959C</p>
+          </div>
+
+          {/* Phone */}
+          <div>
+            <div className="flex justify-center mb-4">
+              <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
+                <img src="/images/phone.png" alt="Phone" className="w-6 h-6" />
+              </div>
+            </div>
+            <h3 className="font-bold text-lg mb-1">CONTACT</h3>
+            <p className="text-sm pt-2">Phone No.: +91-97832-07700</p>
+            <p className="text-sm pt-2">Email: info@digibcard.com</p>
+          </div>
+
+          {/* Location */}
+          <div>
+            <div className="flex justify-center mb-4">
+              <div className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
+                <img src="/images/location.png" alt="Location" className="w-6 h-6" />
+              </div>
+            </div>
+            <h3 className="font-bold text-lg mb-3">OUR OFFICE LOCATION</h3>
+            <p className="text-sm">G-1 242, The Paradise Complex,</p>
+            <p className="text-sm">Opposite Agarwal Dharmshala,</p>
+            <p className="text-sm">Sector 11, Hiran Magri,</p>
+            <p className="text-sm">Udaipur, Rajasthan 313001</p>
+          </div>
         </div>
       </div>
     </section>

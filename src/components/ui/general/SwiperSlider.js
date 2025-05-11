@@ -1,9 +1,10 @@
 "use client"
 
 import React from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion, AnimatePresence } from 'framer-motion';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -52,7 +53,7 @@ export default function DemoSlider() {
                     autoplay={{ delay: 2500, disableOnInteraction: false }}
                     loop={true}
                     centeredSlides={true}
-                    spaceBetween={20}
+                    spaceBetween={0}
                     slidesPerView={5} 
                     breakpoints={{
                         0: {
@@ -151,50 +152,73 @@ export function FeatureSlider() {
 }
 
 export function FAQSlider() {
-    const faqs = [
-        {title : "Cost-Effective", description: "Traditional business cards involve recurring costs for printing and reprinting. With an online digital visiting card, you get an affordable, one-time solution, with plans starting as low as ₹599. It's a great way to design your business card online without overspending."},
-        {title : "Enviornmentally Friendly", description: "Paper business cards contribute to deforestation and waste. A digital biz card helps you go green by reducing paper usage and protecting the environment."},
-        {title : "Easy Customization", description: "Traditional cards come with fixed layouts and require reprinting for any updates. With a virtual business card, you can customize and update your card instantly, making it more dynamic and aligned with your brand."},
-        {title : "Effortless Sharing", description: "Physical business cards are limited to face-to-face exchanges. A digital visiting card can be shared via WhatsApp, email, QR codes, and social media, expanding your reach far beyond physical boundaries."},
-        {title : "Diverse Design Option", description: "Traditional cards often lack variety and creativity. Digital cards for business provide over 25 interactive and premium themes to make your card unique and eye-catching."},
-        {title : "Access to Analytics", description: "Unlike paper cards, a digital business card offers built-in analytics to track views, clicks, and inquiries. Use these insights to measure performance and optimize your card for better engagement."},
-        {title : "Multimedia Integration", description: "Traditional cards can only display text and graphics. A virtual business card supports multimedia, allowing you to embed videos, clickable links, and images to create a rich, interactive experience."},
-        {title : "Lead Generation Features", description: "Paper cards lack any mechanism for capturing leads. A digital visiting card comes with built-in inquiry forms, enabling direct communication and lead generation."},
-        {title : "Mini E-commerce Capabilities", description: "Take your online visiting card to the next level by showcasing products and services. With integrated payment options, your card can double as a mini e-commerce platform, perfect for seamless transactions."},
-        {title : "Instant Updates", description: "Updating traditional cards means going through the hassle of reprinting. With a digital biz card, you can update contact information, services, or achievements instantly, ensuring your card is always current."},
-        {title : "Durable and Accessible", description: "Physical cards are prone to getting lost or damaged. Online digital business cards are securely stored online, ensuring they are always accessible whenever needed."},
-        {title : "Professional and Modern Appeal", description: "Make a lasting impression with a digital visiting card that offers a sleek, professional presentation. Its advanced features and interactivity set you apart from competitors still relying on traditional methods."},
-    ];
+  const faqs = [
+      {title : "Cost-Effective", description: "Traditional business cards involve recurring costs for printing and reprinting. With an online digital visiting card, you get an affordable, one-time solution, with plans starting as low as ₹599. It's a great way to design your business card online without overspending."},
+      {title : "Enviornmentally Friendly", description: "Paper business cards contribute to deforestation and waste. A digital biz card helps you go green by reducing paper usage and protecting the environment."},
+      {title : "Easy Customization", description: "Traditional cards come with fixed layouts and require reprinting for any updates. With a virtual business card, you can customize and update your card instantly, making it more dynamic and aligned with your brand."},
+      {title : "Effortless Sharing", description: "Physical business cards are limited to face-to-face exchanges. A digital visiting card can be shared via WhatsApp, email, QR codes, and social media, expanding your reach far beyond physical boundaries."},
+      {title : "Diverse Design Option", description: "Traditional cards often lack variety and creativity. Digital cards for business provide over 25 interactive and premium themes to make your card unique and eye-catching."},
+      {title : "Access to Analytics", description: "Unlike paper cards, a digital business card offers built-in analytics to track views, clicks, and inquiries. Use these insights to measure performance and optimize your card for better engagement."},
+      {title : "Multimedia Integration", description: "Traditional cards can only display text and graphics. A virtual business card supports multimedia, allowing you to embed videos, clickable links, and images to create a rich, interactive experience."},
+      {title : "Lead Generation Features", description: "Paper cards lack any mechanism for capturing leads. A digital visiting card comes with built-in inquiry forms, enabling direct communication and lead generation."},
+      {title : "Mini E-commerce Capabilities", description: "Take your online visiting card to the next level by showcasing products and services. With integrated payment options, your card can double as a mini e-commerce platform, perfect for seamless transactions."},
+      {title : "Instant Updates", description: "Updating traditional cards means going through the hassle of reprinting. With a digital biz card, you can update contact information, services, or achievements instantly, ensuring your card is always current."},
+      {title : "Durable and Accessible", description: "Physical cards are prone to getting lost or damaged. Online digital business cards are securely stored online, ensuring they are always accessible whenever needed."},
+      {title : "Professional and Modern Appeal", description: "Make a lasting impression with a digital visiting card that offers a sleek, professional presentation. Its advanced features and interactivity set you apart from competitors still relying on traditional methods."},
+  ];
 
-    return(
-        <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            centeredSlides={true}
-            pagination={{ clickable: true }}
-            spaceBetween={40}
-            breakpoints={{
-                640: { slidesPerView: 1 , slidesPerGroup: 1},
-                768: { slidesPerView: 2 , slidesPerGroup: 2},
-                1024: { slidesPerView: 3 , slidesPerGroup: 3},
-            }}
-            className="w-full px-4 features-swiper"
-            >
-            {faqs.map((faq, index) => (
-                <SwiperSlide key={index}>
-                    <div className="bg-white rounded-2xl shadow-md flex flex-col items-center p-10 h-60 cursor-pointer select-none">
-                        <h2 className="text-lg font-medium text-primary">{faq.title}</h2>
-                        <p className="text-sm text-gray-600 mt-2">{faq.description}</p>
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const rows = [];
+  for (let i = 0; i < faqs.length; i += 3) {
+    rows.push(faqs.slice(i, i + 3));
+  }
+
+  return (
+    <section className="max-w-7xl mx-auto px-4 py-16">
+      <h2 className="text-3xl font-semibold text-center mb-10">Why Choose DigiBcard?</h2>
+      
+      <div className="space-y-4">
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex flex-col sm:flex-row gap-4">
+            {row.map((faq, index) => {
+              const globalIndex = rowIndex * 3 + index;
+              const isExpanded = expandedIndex === globalIndex;
+
+              return (
+                <div
+                  key={globalIndex}
+                  onMouseEnter={() => setExpandedIndex(globalIndex)}
+                  onMouseLeave={() => setExpandedIndex(null)}
+                  className={`flex-1 bg-white rounded-xl p-4 shadow transition-all duration-500 ease-in-out border border-transparent cursor-pointer overflow-hidden ${
+                    isExpanded ? 'shadow-lg border-primary' : ''
+                  }`}
+                  style={{
+                    maxHeight: isExpanded ? 250 : 70,
+                    minHeight: 70,
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                      {globalIndex + 1}
                     </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
-    );
+                    <h3 className="text-lg font-semibold text-gray-800">{faq.title}</h3>
+                  </div>
+
+                  <div
+                    className={`text-sm text-gray-600 transition-opacity duration-500 ${
+                      isExpanded ? 'opacity-100 mt-2' : 'opacity-0 h-0 overflow-hidden'
+                    }`}
+                  >
+                    {faq.description}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export function TestimonialSlider() {
