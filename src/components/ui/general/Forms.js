@@ -26,6 +26,13 @@ export const ContactUsForm = () => {
             className="px-4 py-2 rounded-full border border-gray-300 w-full text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
+
+        <button
+          type="submit"
+          className="bg-primary hover:bg-orange-700 text-white px-10 py-2 rounded-full font-medium mt-10 mb-15"
+        >
+          SUBMIT
+        </button>
     </form>
     );
 };
