@@ -7,6 +7,7 @@ import FAQSection from "../src/components/home/FAQSection";
 import TestimonialSection from "../src/components/home/TestimonialSection";
 import ContactUsSection from "../src/components/home/ContactUsSection";
 import TipsSection from "../src/components/home/TipsSection";
+import Blog from "../src/components/home/Blog";
 
 export default function Page() {
 
@@ -21,6 +22,7 @@ export default function Page() {
       <TestimonialSection/>
       <ContactUsSection/>
       <TipsSection/>
+      <Blog />
     </div>
   );
 }
