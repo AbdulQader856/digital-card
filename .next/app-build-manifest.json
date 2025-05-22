@@ -1,16 +1,16 @@
 {
   "pages": {
-    "/vcard-template/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/vcard-template/page.css",
-      "static/chunks/app/vcard-template/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/vcard-template/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/vcard-template/page.css",
+      "static/chunks/app/vcard-template/page.js"
     ]
   }
 }
