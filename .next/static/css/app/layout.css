@@ -915,9 +915,6 @@ video {
 .w-24 {
   width: 6rem;
 }
-.w-36 {
-  width: 9rem;
-}
 .w-4 {
   width: 1rem;
 }
@@ -1947,10 +1944,6 @@ a {
 }
 
 @media (min-width: 780px) {
-
-  .md\:top-0 {
-    top: 0px;
-  }
 
   .md\:mt-0 {
     margin-top: 0px;

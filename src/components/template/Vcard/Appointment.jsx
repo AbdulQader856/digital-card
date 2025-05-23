@@ -4,6 +4,7 @@ import React from 'react';
 
 const AppointmentSection = ({styles}) => {
   return (
+    <section className={styles.appointmentSection}>
       <div className={styles.wrapper}>
         <div className={styles.break}></div>
         <h1 className={`${styles.section_heading}`}>
@@ -56,6 +57,7 @@ const AppointmentSection = ({styles}) => {
           </button>
         </div>
       </div>
+    </section>
   );
 };
 

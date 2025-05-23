@@ -27,16 +27,18 @@ const EventDetails = ({styles}) => {
   ];
 
   return (
-    <div className={`${styles.eventdetails}`}>
-      {items.map((item, index) => (
-        <div key={index} className={`${styles.event_list}`}>
-          <div className={`${styles.event_items}`}>
-            {/* <img src={item.icon} alt={item.alt} loading="lazy" className={`${styles.event_icons}`} /> */}
+    <section className={styles.eventDetailsSection}>
+      <div className={`${styles.eventdetails}`}>
+        {items.map((item, index) => (
+          <div key={index} className={`${styles.event_list}`}>
+            <div className={`${styles.event_items}`}>
+              {/* <img src={item.icon} alt={item.alt} loading="lazy" className={`${styles.event_icons}`} /> */}
+            </div>
+            <span className={`${styles.event_label}`}>{item.text}</span>
           </div>
-          <span className={`${styles.event_label}`}>{item.text}</span>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

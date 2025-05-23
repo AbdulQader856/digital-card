@@ -1,0 +1,608 @@
+.vcard_two{
+    --vard-primary: #fe80ab; 
+    --vcard-secondary: linear-gradient(to bottom, #8c9eff, #3d5afe);
+    --vcard-text: #FFFFFF;
+    --vcard-bg: #eff3f7;
+
+    font-family: 'Poppins', 'Helvetica', 'sans-serif';
+    color: var(--vcard-text);
+    background: linear-gradient(to left, #8c9eff 100%, #3d5afe 0);
+
+    @apply max-w-7xl mx-auto overflow-hidden
+}
+
+/* FAB Container */
+.fabContainer {
+  position: fixed;
+  bottom: 20rem;
+  right: 3rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+  background-color: var(--vcard-text);
+  color: var(--vard-primary);
+  border-color: var(--vard-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-width: 2px;
+  transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+  transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+  background-image: url('/images/template/img/vcard/vcard6-sticky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fabMain {
+    width: 72px;
+    height: 72px;
+  }
+
+  .fabAction {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fabContainer {
+    bottom: 18rem;
+    right: 1rem;
+  }
+
+  .fabActions {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.shareModal {
+  background: white;
+  color: var(--vcard-text);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 300px;
+}
+
+.shareModalList{
+  @apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+  @apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+}
+
+.language_dropdown{
+    @apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+    @apply text-black px-4 py-2 text-sm rounded-md flex items-center gap-2;
+    background-color: var(--vcard-bg);
+}
+
+.language_list{
+    @apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30
+}
+
+.language_items{
+    @apply px-3 py-2 hover:bg-gray-100 flex items-center gap-2 text-black;
+}
+
+.profile{
+    @apply relative;
+}
+
+.profileContainer{
+    @apply relative z-20 mt-[-4rem] md:mt-6 w-36 h-36 rounded-2xl border-4 border-white mx-auto;
+
+}
+
+.profileDetailsSection{
+    background-image: url('/images/template/img/vcard/vcard6-Triangle.png'), url('/images/template/img/vcard/vcard6-halfbox.png') ;
+    background-position: 0px 0px, 1100px 270px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 400px 300px, 180px 100px;
+}
+
+.profile_details{
+    @apply px-6 text-center md:text-left mt-[-80px] md:mt-[-168px] md:ml-20 md:mr-20 pt-6 pb-6 rounded-b-3xl;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.profile_name{
+    @apply relative text-3xl font-semibold mt-20 md:mt-0 z-40;
+    color : var(--vcard-heading);
+}
+
+.profile_occupation{
+    @apply text-xl font-semibold block mt-2;
+    color: var(--vcard-secondary)
+}
+
+.profile_jobTitle{
+    @apply text-xl font-semibold block;
+    color: var(--vcard-secondary)
+}
+
+.profile_company{
+    @apply text-lg block;
+    color: var(--vcard-secondary);
+}
+
+.profile_p{
+    @apply text-sm font-medium text-pretty;
+}
+
+.profile_icons{
+    @apply grid grid-cols-5 md:flex justify-between items-center mt-16 text-2xl md:text-2xl pt-4 pl-4 rounded-2xl;
+}
+
+.profile_iconimg{
+  @apply cursor-pointer w-11 h-11 border-2 border-white rounded-full p-2 mb-4;
+}
+
+/* Custom colors using nth-child */
+.profile_icons > .profile_iconimg:nth-child(1) {
+  color: #FFFFFF; /* Website Blue */
+}
+.profile_icons > .profile_iconimg:nth-child(2) {
+  color: #FFFFFF; /* Twitter Blue */
+}
+.profile_icons > .profile_iconimg:nth-child(3) {
+  color: #FFFFFF; /* Facebook Blue */ 
+}
+.profile_icons > .profile_iconimg:nth-child(4) {
+  color: #FFFFFF; /* Instagram Pink */ 
+}
+.profile_icons > .profile_iconimg:nth-child(5) {
+  color: #FFFFFF; /* Youtube Red */ 
+}
+.profile_icons > .profile_iconimg:nth-child(6) {
+  color: #FFFFFF; /* Tumblr Gray */ 
+}
+.profile_icons > .profile_iconimg:nth-child(7) {
+  color: #FFFFFF; /* LinkedIn Blue */ 
+}
+.profile_icons > .profile_iconimg:nth-child(8) {
+  color: #FFFFFF; /* WhatsApp Green */
+}
+.profile_icons > .profile_iconimg:nth-child(9) {
+  color: #FFFFFF; /* Pinterest Red */
+} 
+.profile_icons > .profile_iconimg:nth-child(10) {
+  color: #FFFFFF; /* Tik Tok Pink */
+} 
+
+.eventDetailsSection{
+    background-image: url('/images/template/img/vcard/vcard6-Oval.png'), url('/images/template/img/vcard/vcard6-halfblue.png') ;
+    background-position: top left, 1160px 210px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 50px 50px, 60px 30px;
+}
+
+.eventdetails{
+    @apply flex flex-col md:grid md:grid-cols-2 items-center py-4 px-6 mt-12 gap-4;
+}
+
+.event_list{
+    @apply flex flex-col md:flex-wrap gap-2 items-center text-center mb-4 p-2 rounded-2xl w-full;
+    background-color: var(--vard-primary);
+}
+
+.event_items {
+  @apply w-10 h-10 md:w-8 md:h-8 relative;
+}
+
+.event_items::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Now design-specific icons applied by nth-child */
+.event_list:nth-of-type(1) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard6-email.png');
+}
+
+.event_list:nth-of-type(2) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard6-birthday.png');
+}
+
+.event_list:nth-of-type(3) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard6-phone.png');
+}
+
+.event_list:nth-of-type(4) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard6-location.png');
+}
+
+.event_label{
+    @apply text-base;
+    color : var(--vcard-heading);
+}
+
+.wrapper {
+  @apply py-6 px-4 relative md:mt-12;
+}
+
+.appointmentSection{
+    background-image: url('/images/template/img/vcard/vcard6-bluetesti.png'), url('/images/template/img/vcard/vcard6-square.png'), url('/images/template/img/vcard/vcard6-testioval.png'), url('/images/template/img/vcard/vcard6-testiright.png') ;
+    background-position: 170px 250px, 210px 150px, 40px 400px, 1130px 290px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 280px 120px, 50px 50px, 50px 50px, 150px 150px;
+}
+
+.section_heading{
+    @apply text-center text-3xl font-semibold mb-8;
+    color : var(--vcard-heading);
+}
+
+.date_slot{
+    @apply flex flex-wrap flex-row items-center justify-center;
+}
+
+.date_label{
+    @apply w-full sm:w-2/12 mb-2 sm:mb-0 text-lg font-bold;
+}
+
+.date_input{
+    @apply w-full border-2 border-white rounded p-2 text-lg focus:outline-none;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.time_slots{
+    @apply flex flex-col items-center justify-center gap-4;
+}
+
+.available_slots{
+    @apply w-full sm:w-5/12 border-2 border-white rounded p-3 text-center text-sm font-medium;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.submit_btn{
+    @apply px-6 py-3 text-white text-lg rounded hover:bg-violet-500 transition;
+    background-color: var(--vard-primary);
+}
+
+.serviceSection{
+    background-image: url('/images/template/img/vcard/vcard6-Triangle.png'), url('/images/template/img/vcard/vcard6-square.png'), url('/images/template/img/vcard/vcard6-leftblue.png'), url('/images/template/img/vcard/vcard6-pinkoval.png') ;
+    background-position: 0px 330px, 480px 350px, 1180px 120px, 680px -30px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 200px 150px, 50px 50px, 100px 190px, 250px 250px;
+}
+
+.serviceCarousel{
+    @apply hidden px-6 md:p-0 lg:hidden;
+}
+
+.serviceGrid{
+    @apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10;
+}
+
+.serviceCard {
+  @apply rounded-xl flex flex-col items-center p-4 mb-4;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.serviceIcon {
+  @apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+  @apply w-full h-full object-cover;
+}
+
+.serviceContent {
+  @apply text-center;
+}
+
+.serviceTitle {
+  @apply text-lg font-semibold mb-1;
+  color : var(--vcard-heading);
+}
+
+.serviceDesc {
+  @apply text-sm;
+}
+
+.mediaGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+}
+
+.mediaCard {
+  @apply p-3 rounded-xl cursor-pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mediaImage {
+  @apply w-full rounded;
+}
+
+.modalBackdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-6;
+}
+
+.modalContent {
+  @apply bg-white rounded-xl overflow-hidden shadow-lg max-w-xl w-full;
+}
+
+.videoWrapper {
+  @apply aspect-video;
+}
+
+.youtubeVideo {
+  @apply w-full h-full;
+}
+
+.productsGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+}
+
+.productsCard {
+  @apply rounded-xl p-3;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.productsImage {
+  @apply w-full h-48 md:h-96 rounded overflow-hidden;
+}
+
+.productsDetails {
+  @apply mt-3;
+}
+
+.productsTitle {
+    @apply text-lg font-semibold;
+    color : var(--vcard-heading);
+}
+
+.productsDesc {
+  @apply text-sm mb-2;
+}
+
+.productsPrice {
+    @apply font-medium;
+    color : var(--vcard-heading);
+}
+
+.testimonialSection{
+    background-image: url('/images/template/img/vcard/vcard6-testiright.png'), url('/images/template/img/vcard/vcard6-triangledown.png'), url('/images/template/img/vcard/vcard6-orangecircle.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: top right, 50px 200px, 90px 250px;
+    background-size: 150px 150px, 50px 50px,50px 50px;
+}
+
+.testimonialWrapper {
+  @apply max-w-3xl mx-auto;
+}
+
+.testimonialSlider {
+  @apply grid grid-rows-2 justify-items-center items-center gap-4 p-4 rounded-xl mb-10;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tesImageContainer {
+  @apply sm:order-2;
+}
+
+.tesImage {
+  @apply rounded-2xl w-24 h-24 object-cover;
+}
+
+.tesContent {
+  @apply sm:order-1 text-center;
+}
+
+.tesMessage {
+  @apply text-lg mb-2;
+}
+
+.tesName {
+  @apply text-lg font-semibold;
+}
+
+.tesTitle {
+  @apply hidden;
+}
+
+.blogGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+  @apply rounded-xl p-4;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.blogImageWrapper {
+  @apply mb-4;
+}
+
+.blogImage {
+  @apply w-full h-48 object-cover rounded;
+}
+
+.blogContent {
+  @apply text-center;
+}
+
+.blogTitle {
+  @apply text-lg font-bold text-gray-800;
+  color : var(--vcard-heading);
+}
+
+.blogDesc {
+  @apply text-sm mt-2;
+}
+
+.qrCodeSection{
+    background-image: url('/images/template/img/vcard/vcard6-orangecircle.png'), url('/images/template/img/vcard/vcard6-halfcircle.png'), url('/images/template/img/vcard/vcard6-halfblue.png'), url('/images/template/img/vcard/vcard6-triangledown.png') ;
+    background-position: 50px 50px, 1000px 15px, 955px 65px, 480px 289px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 50px 50px, 60px 30px, 40px 20px, 30px 20px;
+    z-index: 40,40,40,40;
+}
+
+.qrGrid {
+  @apply max-w-7xl mx-auto flex gap-60 justify-center items-center rounded-3xl z-0;
+  background-color: var(--vard-primary)
+}
+
+.qrProfileSection {
+  @apply text-center;
+}
+
+.qrProfileImage {
+  @apply relative w-32 h-32 mx-auto rounded-3xl object-cover z-10 border-4 border-white;
+}
+
+.desktopButton {
+  @apply mt-4 px-4 py-2 text-white rounded hidden md:hidden hover:bg-indigo-950;
+}
+
+.qrSection {
+  @apply text-center flex flex-col py-4;
+}
+
+.qrImage {
+  @apply w-40 h-40 mx-auto object-contain p-2 z-0 rounded-xl;
+}
+
+.mobileButton {
+  @apply hidden md:w-1/2 md:ml-72 mt-4 px-4 py-2 text-white rounded hover:bg-indigo-950;
+  background-color: var(--vcard-buttons);
+}
+
+.businessSection{
+    background-image: url('/images/template/img/vcard/vcard6-orangecircle.png'), url('/images/template/img/vcard/vcard6-halfcircle.png'), url('/images/template/img/vcard/vcard6-halfblue.png'), url('/images/template/img/vcard/vcard6-leftblue.png'), url('/images/template/img/vcard/vcard6-pinkoval.png') ;
+    background-position: 50px 50px, 1000px 15px, 955px 65px, 370px 200px, 970px 600px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 50px 50px, 60px 30px, 40px 20px, 300px 500px, 150px 150px;
+}
+
+.hoursContainer {
+  @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+  @apply flex flex-row mb-4 rounded-xl py-6 justify-start pl-4 items-center space-x-2;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dayIcon{
+  @apply text-2xl object-center p-3 rounded-xl mr-1;
+  color: #FFFFFF;
+  background: var(--vcard-secondary);
+}
+
+.dayLabel {
+  @apply text-lg font-semibold;
+  color : var(--vcard-heading);
+}
+
+.timeValue {
+  @apply text-lg font-medium;
+}
+
+.contactSection{
+    background-image: url('/images/template/img/vcard/vcard6-pinkoval.png'), url('/images/template/img/vcard/vcard6-pinkoval.png');
+    background-position: 1000px 30px, 10px 300px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100px 100px, 300px 300px;
+}
+
+.contactForm {
+  @apply max-w-6xl mx-auto rounded-2xl relative z-10 space-y-4 px-4 py-6;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.formInput,
+.formTextarea {
+  @apply w-full px-4 py-2 rounded focus:outline-none focus:ring-1 focus:ring-violet-500;
+  color: var(--vard-primary);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.formButton {
+  @apply text-white px-6 py-2 rounded hover:bg-violet-500 ml-auto block;
+  background-color: var(--vard-primary);
+}
+
+.gmapModal{
+    @apply max-w-5xl mx-auto mt-20
+}
+
