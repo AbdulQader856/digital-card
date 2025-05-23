@@ -6,8 +6,10 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaTwitter, FaGlobe,
 const ProfileDetails = ({styles}) => {
   return (
     <div className={`${styles.profile_details}`}>
-      <h1 className={`${styles.profile_heading}`}>Tricky Stewart</h1>
-      <span className={`${styles.profile_subtitle}`}>A Full Stack Developer</span>
+      <h1 className={`${styles.profile_name}`}>Tricky Stewart</h1>
+      <span className={`${styles.profile_occupation}`}>CA</span>
+      <span className={`${styles.profile_jobTitle}`}>Finance Manager</span>
+      <span className={`${styles.profile_company}`}>Brand Chanakya</span>
 
       <p className={`${styles.profile_p} mt-12`}>
       Creating Content That Connects. As a YouTuber, I specialize in producing engaging videos that entertain, 

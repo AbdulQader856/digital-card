@@ -1,13 +1,15 @@
 .vcard_two{
-    --vard-primary: #fb5253; 
-    --vcard-secondary: #f4f4f4;
-    --vcard-heading: #3a4151;
-    --vcard-text: #212529;
+    --vard-primary: #deefe3; 
+    --vcard-secondary: #3d7b6e;
+    --vcard-heading: #134e5e;
+    --vcard-text: #6c757d;
+    --vcard-bg: #FFFFFF;
 
     font-family: 'Poppins', 'Helvetica', 'sans-serif';
     color: var(--vcard-text);
+    background-color: var(--vcard-bg);
 
-    @apply max-w-7xl mx-auto bg-white overflow-hidden
+    @apply max-w-7xl mx-auto overflow-hidden
 }
 
 /* FAB Container */
@@ -43,7 +45,7 @@
 /* Small Action Buttons */
 .fabAction {
   background-color: white;
-  color: var(--vard-primary);
+  color: var(--vcard-secondary);
   width: 42px;
   height: 42px;
   border-radius: 9999px;
@@ -62,7 +64,7 @@
 
 /* Main FAB */
 .fabMain {
-  background-image: url('/images/template/img/vcard/vcard2-sticky.png');
+  background-image: url('/images/template/img/vcard/vcard4-sticky.png');
   background-size: cover;
   background-repeat: no-repeat;
   width: 80px;
@@ -115,7 +117,7 @@
 }
 
 .banner{
-    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/vcard2-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/vcard4-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
 }
 
 .language_dropdown{
@@ -123,7 +125,8 @@
 }
 
 .language_btn{
-    @apply text-white bg-blue-700 px-4 py-2 text-sm rounded-md flex items-center gap-2
+    @apply text-white px-4 py-2 text-sm rounded-md flex items-center gap-2;
+    background-color: var(--vcard-secondary);
 }
 
 .language_list{
@@ -139,31 +142,31 @@
 }
 
 .profileContainer{
-    @apply relative z-20 bg-[url('/images/template/img/vcard/vcard2-profile.png')] mt-[-4rem] bg-cover bg-no-repeat bg-left w-32 h-32 rounded-full ml-8
+    @apply relative z-20 bg-[url('/images/template/img/vcard/vcard4-profile.jpg')] mt-[-6rem] bg-cover bg-no-repeat bg-left w-56 h-56 rounded-full ml-16 md:ml-8 border-4 border-white;
 }
 
 .profile_details{
-    @apply px-6 bg-[url('/images/template/img/vcard/shape1.png')] bg-contain bg-no-repeat bg-right mt-[-10rem] py-10 pt-44
+    @apply px-6 text-center md:mt-[-7rem] md:text-left md:pl-72;
 }
 
 .profile_name{
-    @apply text-3xl font-semibold;
+    @apply text-2xl font-semibold;
     color : var(--vcard-heading);
 }
 
 .profile_occupation{
-    @apply text-xl block mt-2;
-    color : #969696;
+    @apply text-lg font-semibold block mt-2;
+    color: var(--vcard-secondary)
 }
 
 .profile_jobTitle{
-    @apply text-xl block;
-    color : #969696;
+    @apply text-lg font-semibold block;
+    color: var(--vcard-secondary)
 }
 
 .profile_company{
     @apply text-sm block;
-    color : #969696;
+    color: var(--vcard-secondary)
 }
 
 .profile_p{
@@ -171,55 +174,57 @@
 }
 
 .profile_icons{
-    @apply flex justify-start items-center gap-5 mt-8 text-3xl
+    @apply grid grid-cols-5 md:flex justify-start items-center gap-3 mt-8 text-2xl md:text-3xl
 }
 
 .profile_iconimg{
-  @apply cursor-pointer w-8 h-8 
+  @apply cursor-pointer w-11 h-11 md:w-12 md:h-12 border-2 rounded-full p-2;
+  border-color: var(--vcard-secondary);
 }
 
 /* Custom colors using nth-child */
 .profile_icons > .profile_iconimg:nth-child(1) {
-  color: #4267B2; /* Website Blue */
+  color: var(--vcard-secondary); /* Website */
 }
 .profile_icons > .profile_iconimg:nth-child(2) {
-  color: #1DA1F2; /* Twitter Blue */
+  color: var(--vcard-secondary); /* Twitter */
 }
 .profile_icons > .profile_iconimg:nth-child(3) {
-  color: #4267B2; /* Facebook Blue */ 
+  color: var(--vcard-secondary); /* Facebook */ 
 }
 .profile_icons > .profile_iconimg:nth-child(4) {
-  color: #e1306c; /* Instagram Pink */ 
+  color: var(--vcard-secondary); /* Instagram */ 
 }
 .profile_icons > .profile_iconimg:nth-child(5) {
-  color: #FF0000; /* Youtube Red */ 
+  color: var(--vcard-secondary); /* Youtube */ 
 }
 .profile_icons > .profile_iconimg:nth-child(6) {
-  color: #444444; /* Tumblr Gray */ 
+  color: var(--vcard-secondary); /* Tumblr */ 
 }
 .profile_icons > .profile_iconimg:nth-child(7) {
-  color: #0077B5; /* LinkedIn Blue */ 
+  color: var(--vcard-secondary); /* LinkedIn */ 
 }
 .profile_icons > .profile_iconimg:nth-child(8) {
-  color: #25D366; /* WhatsApp Green */
+  color: var(--vcard-secondary); /* WhatsApp */
 }
 .profile_icons > .profile_iconimg:nth-child(9) {
-  color: #E60023; /* Pinterest Red */
+  color: var(--vcard-secondary); /* Pinterest */
 } 
 .profile_icons > .profile_iconimg:nth-child(10) {
-  color: #ff0050; /* Tik Tok Pink */
+  color: var(--vcard-secondary); /* Tik Tok */
 } 
 
 .eventdetails{
-    @apply px-6
+    @apply flex flex-col md:grid md:grid-cols-2 items-center py-4 px-6 mt-12 gap-4;
 }
 
 .event_list{
-    @apply flex items-center gap-3 mb-3
+    @apply flex flex-col md:flex-wrap gap-2 items-center text-center mb-4 p-2 rounded-full ml-3 mr-3 w-full;
+    background-color: var(--vard-primary);
 }
 
-.event_items{
-    @apply w-6 h-6 relative
+.event_items {
+  @apply w-10 h-10 md:w-8 md:h-8 relative;
 }
 
 .event_items::before {
@@ -233,19 +238,19 @@
 
 /* Now design-specific icons applied by nth-child */
 .event_list:nth-of-type(1) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard2-email.png');
+  background-image: url('/images/template/img/vcard/vcard4-email.png');
 }
 
 .event_list:nth-of-type(2) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard2-phone.png');
+  background-image: url('/images/template/img/vcard/vcard4-birthday.png');
 }
 
 .event_list:nth-of-type(3) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard2-birthday.png');
+  background-image: url('/images/template/img/vcard/vcard4-mobile.png');
 }
 
 .event_list:nth-of-type(4) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard2-location.png');
+  background-image: url('/images/template/img/vcard/vcard4-location.png');
 }
 
 .event_label{
@@ -254,11 +259,11 @@
 }
 
 .wrapper {
-  @apply py-6 px-4 relative md:mt-20;
+  @apply py-6 px-4 relative md:mt-12;
 }
 
 .section_heading{
-    @apply text-center text-3xl font-semibold mb-8;
+    @apply text-center text-2xl font-bold mb-8;
     color : var(--vcard-heading);
 }
 
@@ -272,7 +277,7 @@
 
 .date_input{
     @apply w-full border border-gray-300 rounded p-2 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
-    background-color: var(--vcard-secondary);
+    background-color: var(--vard-primary);
 }
 
 .time_slots{
@@ -281,12 +286,12 @@
 
 .available_slots{
     @apply w-full sm:w-5/12 border rounded p-3 text-center text-sm font-medium;
-    background-color: var(--vcard-secondary);
+    background-color: var(--vard-primary);
 }
 
 .submit_btn{
     @apply px-6 py-3 text-white text-lg rounded hover:bg-red-600 transition;
-    background-color: var(--vard-primary);
+    background-color: var(--vcard-secondary);
 }
 
 .serviceCarousel{
@@ -298,7 +303,8 @@
 }
 
 .serviceCard {
-  @apply border rounded-xl flex flex-col items-center p-4 mb-4;
+  @apply rounded-xl flex flex-col items-center p-4 mb-4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .serviceIcon {
@@ -327,7 +333,8 @@
 }
 
 .mediaCard {
-  @apply bg-white p-3 border-2 rounded-xl cursor-pointer;
+  @apply p-3 rounded-xl cursor-pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .mediaImage {
@@ -355,11 +362,12 @@
 }
 
 .productsCard {
-  @apply bg-white border-2 rounded-xl p-3;
+  @apply rounded-xl p-3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .productsImage {
-  @apply w-full h-auto rounded;
+  @apply w-full h-48 md:h-96 rounded overflow-hidden;
 }
 
 .productsDetails {
@@ -405,8 +413,8 @@
 }
 
 .tesName {
-  @apply font-semibold;
-  color: var(--vard-primary)
+  @apply text-lg font-semibold;
+  color: var(--vcard-secondary)
 }
 
 .tesTitle {
@@ -418,7 +426,8 @@
 }
 
 .blogCard {
-  @apply border-2 rounded-xl p-4;
+  @apply rounded-xl p-4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .blogImageWrapper {
@@ -443,7 +452,8 @@
 }
 
 .qrGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 items-center border-2 rounded-xl p-6;
+  @apply max-w-7xl mx-auto grid grid-cols-1 gap-6 items-center p-6;
+  background-color: var(--vard-primary)
 }
 
 .qrProfileSection {
@@ -451,25 +461,26 @@
 }
 
 .qrProfileImage {
-  @apply w-28 h-28 mx-auto rounded-full object-cover;
+  @apply relative w-24 h-24 mx-auto rounded-full object-cover mb-[-8rem] z-10 border-4 border-white;
 }
 
 .desktopButton {
-  @apply mt-4 px-4 py-2 text-white rounded hidden sm:inline-block;
-  background-color: var(--vard-primary)
+  @apply mt-4 px-4 py-2 text-white rounded hidden md:hidden;
+  background-color: var(--vcard-secondary)
 }
 
 .qrSection {
-  @apply text-center flex flex-col;
+  @apply text-center flex flex-col py-10;
 }
 
 .qrImage {
-  @apply w-40 h-40 mx-auto object-contain;
+  @apply w-72 h-72 mx-auto object-contain p-12 z-0 rounded-xl;
+  background-color: #FFFFFF
 }
 
 .mobileButton {
   @apply mt-4 px-4 py-2 text-white rounded sm:hidden block;
-  background-color: var(--vard-primary);
+  background-color: var(--vcard-secondary);
 }
 
 .hoursContainer {
@@ -482,7 +493,8 @@
 
 .dayIcon{
   @apply text-2xl object-center p-3 rounded-xl mr-1;
-  background-color: var(--vard-primary)
+  color: #FFFFFF;
+  background-color: var(--vcard-secondary)
 }
 
 .dayLabel {
@@ -501,12 +513,12 @@
 .formInput,
 .formTextarea {
   @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-red-500;
-  background-color: var(--vcard-secondary);
+  background-color: var(--vard-primary);
 }
 
 .formButton {
   @apply text-white px-6 py-2 rounded hover:bg-red-600 ml-auto block;
-  background-color: var(--vard-primary);
+  background-color: var(--vcard-secondary);
 }
 
 .gmapModal{
