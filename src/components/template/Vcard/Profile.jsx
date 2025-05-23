@@ -13,7 +13,11 @@ const ProfileInfo = ({styles}) => {
         loading="lazy"
       /> */}
 
-      <div className={styles.profileContainer}></div>
+      <img 
+        src="/images/template/img/vcard/vcard4-profile.jpg" 
+        alt="Profile Image" 
+        className={styles.profileContainer}
+      />
     </div>
   );
 };

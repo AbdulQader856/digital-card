@@ -115,7 +115,7 @@
 }
 
 .banner{
-    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/vcard2-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
 }
 
 .language_dropdown{
@@ -139,7 +139,8 @@
 }
 
 .profileContainer{
-    @apply relative z-20 bg-[url('/images/template/img/vcard/vcard2-profile.png')] mt-[-4rem] bg-cover bg-no-repeat bg-left w-32 h-32 rounded-full ml-8
+    @apply relative z-20 mt-[-4rem] w-32 h-32 border-4 rounded-full ml-8;
+    border-color: #FFFFFF;
 }
 
 .profile_details{

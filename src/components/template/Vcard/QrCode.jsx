@@ -13,7 +13,7 @@ const QrCode = ({styles}) => {
       <div className={styles.qrGrid}>
         <div className={styles.qrProfileSection}>
           <img
-            src="/images/template/img/vcard/vcard3-profile.jpg"
+            src="/images/template/img/vcard/vcard4-profile.jpg"
             alt="QR Profile"
             loading="lazy"
             className={styles.qrProfileImage}

@@ -117,7 +117,7 @@
 }
 
 .banner{
-    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/vcard4-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
 }
 
 .language_dropdown{
@@ -142,7 +142,7 @@
 }
 
 .profileContainer{
-    @apply relative z-20 bg-[url('/images/template/img/vcard/vcard4-profile.jpg')] mt-[-6rem] bg-cover bg-no-repeat bg-left w-56 h-56 rounded-full ml-16 md:ml-8 border-4 border-white;
+    @apply relative z-20 mt-[-6rem] w-56 h-56 rounded-full ml-16 md:ml-8 border-4 border-white;
 }
 
 .profile_details{
@@ -276,7 +276,7 @@
 }
 
 .date_input{
-    @apply w-full border border-gray-300 rounded p-2 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+    @apply w-full border border-gray-300 rounded p-2 text-lg focus:outline-none focus:ring-2 focus:ring-green-800;
     background-color: var(--vard-primary);
 }
 
@@ -290,7 +290,7 @@
 }
 
 .submit_btn{
-    @apply px-6 py-3 text-white text-lg rounded hover:bg-red-600 transition;
+    @apply px-6 py-3 text-white text-lg rounded hover:bg-green-800 transition;
     background-color: var(--vcard-secondary);
 }
 
@@ -466,7 +466,6 @@
 
 .desktopButton {
   @apply mt-4 px-4 py-2 text-white rounded hidden md:hidden;
-  background-color: var(--vcard-secondary)
 }
 
 .qrSection {
@@ -479,7 +478,7 @@
 }
 
 .mobileButton {
-  @apply mt-4 px-4 py-2 text-white rounded sm:hidden block;
+  @apply mt-4 px-4 py-2 text-white rounded sm:hidden hover:bg-green-800 block;
   background-color: var(--vcard-secondary);
 }
 
@@ -512,12 +511,12 @@
 
 .formInput,
 .formTextarea {
-  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-red-500;
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-800;
   background-color: var(--vard-primary);
 }
 
 .formButton {
-  @apply text-white px-6 py-2 rounded hover:bg-red-600 ml-auto block;
+  @apply text-white px-6 py-2 rounded hover:bg-green-800 ml-auto block;
   background-color: var(--vcard-secondary);
 }
 
