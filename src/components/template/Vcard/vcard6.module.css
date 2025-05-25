@@ -365,19 +365,41 @@
   @apply text-sm;
 }
 
+.gallerySection{
+    background-image: url('/images/template/img/vcard/vcard6-bigbox.png'), url('/images/template/img/vcard/vcard6-triangledown.png'), url('/images/template/img/vcard/vcard6-orangecircle.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 1080px 240px, 50px 200px, 90px 250px;
+    background-size: 150px 150px, 50px 50px, 50px 50px;
+
+}
+
+.youtubeSection{
+    background-image: url('/images/template/img/vcard/vcard6-pinkoval.png'), url('/images/template/img/vcard/vcard6-yellowcircle.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 1080px 100px, 0px 270px;
+    background-size: 150px 150px, 130px 150px;  
+}
+
+.instagramSection{
+    background-image: url('/images/template/img/vcard/vcard6-square.png'), url('/images/template/img/vcard/vcard6-testioval.png'), url('/images/template/img/vcard/vcard6-pinkoval.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 1170px 320px, 1140px 290px, 90px 120px;
+    background-size: 50px 50px, 50px 50px, 150px 150px;  
+}
+
 .mediaGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
 }
 
 .mediaCard {
-  @apply p-3 rounded-xl cursor-pointer;
+  @apply  w-80 h-80 p-3 rounded-xl cursor-pointer;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .mediaImage {
-  @apply w-full rounded;
+  @apply w-full h-full rounded;
 }
 
 .modalBackdrop {
@@ -397,7 +419,7 @@
 }
 
 .productsGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
 }
 
 .productsCard {
@@ -433,7 +455,7 @@
     background-image: url('/images/template/img/vcard/vcard6-testiright.png'), url('/images/template/img/vcard/vcard6-triangledown.png'), url('/images/template/img/vcard/vcard6-orangecircle.png');
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: top right, 50px 200px, 90px 250px;
-    background-size: 150px 150px, 50px 50px,50px 50px;
+    background-size: 150px 150px, 50px 50px, 50px 50px;
 }
 
 .testimonialWrapper {
@@ -512,7 +534,7 @@
 }
 
 .qrGrid {
-  @apply max-w-7xl mx-auto flex gap-60 justify-center items-center rounded-3xl z-0;
+  @apply max-w-7xl mx-auto pt-6 md:pt-0 md:flex gap-60 justify-center items-center rounded-3xl z-0;
   background-color: var(--vard-primary)
 }
 

@@ -11,26 +11,28 @@ const Gallery = ({styles}) => {
   ]
   
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.break}></div>
-      <h1 className={styles.section_heading}>Gallery</h1>
+    <section className={styles.gallerySection}>
+      <div className={styles.wrapper}>
+        <div className={styles.break}></div>
+        <h1 className={styles.section_heading}>Gallery</h1>
 
-      <div className={styles.mediaGrid}>
-        {gallery.map((item, index) => (
-          <div 
-            key={index}
-            className={styles.mediaCard}
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              loading="lazy"
-              className={styles.mediaImage}
-            />
-          </div>
-        ))}
+        <div className={styles.mediaGrid}>
+          {gallery.map((item, index) => (
+            <div 
+              key={index}
+              className={styles.mediaCard}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className={styles.mediaImage}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

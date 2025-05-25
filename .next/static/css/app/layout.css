@@ -1858,10 +1858,6 @@ a {
     grid-column: span 2 / span 2;
   }
 
-  .sm\:block {
-    display: block;
-  }
-
   .sm\:w-1\/2 {
     width: 50%;
   }
