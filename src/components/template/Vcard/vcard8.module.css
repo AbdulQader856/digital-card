@@ -1,0 +1,527 @@
+.vcard_two{
+  --vcard-primary: #203556;
+  --vcard-secondary: #284e75;
+  --vcard-text: #FFFFFF;
+  --vcard-bg: #00081c;
+
+  font-family: 'Poppins', 'Helvetica', 'sans-serif';
+  color: var(--vcard-text);
+
+  @apply max-w-7xl mx-auto overflow-hidden;
+  background-color: var(--vcard-bg)
+}
+
+/* FAB Container */
+.fabContainer {
+  position: fixed;
+  bottom: 20rem;
+  right: 8rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+  background-color: white;
+  color: var(--vcard-secondary);
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+  transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+  background-image: url('/images/template/img/vcard/vcard8-sticky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fabMain {
+    width: 72px;
+    height: 72px;
+  }
+
+  .fabAction {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fabContainer {
+    bottom: 18rem;
+    right: 1rem;
+  }
+
+  .fabActions {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.shareModal {
+  background: var(--vcard-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 300px;
+}
+
+.shareModalList{
+  @apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+  @apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+}
+
+.language_dropdown{
+    @apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+    @apply text-white px-4 py-2 text-sm rounded-md flex items-center gap-2;
+    background-color: var(--vcard-primary);
+}
+
+.language_list{
+    @apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30
+}
+
+.language_items{
+    @apply text-black px-3 py-2 hover:bg-gray-100 flex items-center gap-2
+}
+
+.profile{
+    @apply relative 
+}
+
+.profileContainer{
+  @apply relative z-20 mt-[-2rem] w-32 h-32 rounded-full border-4 border-white ml-10;
+} 
+
+.profile_details{
+    @apply py-3 px-6 text-left;
+}
+
+.profile_name{
+    @apply text-3xl font-semibold;
+    color : var(--vcard-heading);
+}
+
+.profile_occupation{
+    @apply text-xl block mt-2;
+}
+
+.profile_jobTitle{
+    @apply text-xl block;
+}
+
+.profile_comapny{
+    @apply text-sm block;
+}
+
+.profile_p{
+    @apply text-sm font-medium
+}
+
+.profile_icons{
+    @apply grid grid-cols-5 md:flex md:justify-between md:items-center gap-8 md:gap-4 mt-20 md:ml-8 md:mr-8 text-3xl;
+    color: #969696;
+}
+
+.profile_iconimg {
+  @apply w-8 h-8 cursor-pointer rounded-full transition-all duration-300 ease-in-out;
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary),
+    0 0 0 14px var(--vcard-primary);
+}
+
+.profile_iconimg:hover {
+  background-color: var(--vcard-secondary);
+  box-shadow:
+    0 0 0 8px var(--vcard-secondary),
+    0 0 0 14px var(--vcard-secondary),
+    0 0 20px 25px rgba(173, 216, 255, 0.55); /* shiny white glow */
+}
+
+.eventdetails{
+    @apply flex flex-col md:grid md:grid-cols-2 justify-center items-center py-4 px-6 mt-20 ml-6 mr-6 rounded-3xl;
+    background-color: var(--vcard-secondary);
+}
+
+.event_list{
+    @apply flex flex-col md:flex-wrap gap-6 items-center text-center mb-3 md:mb-0 p-4;
+}
+
+.event_items {
+  @apply w-8 h-8 relative;
+}
+
+.event_items::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 8px;
+}
+
+/* Now design-specific icons applied by nth-child */
+.event_list:nth-of-type(1) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard8-email.png');
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary);
+}
+
+.event_list:nth-of-type(2) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard8-phone.png');
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary); 
+}
+
+.event_list:nth-of-type(3) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard8-birthday.png');
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary);
+}
+
+.event_list:nth-of-type(4) .event_items::before {
+  background-image: url('/images/template/img/vcard/vcard8-location.png');
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary);
+}
+
+.event_label{
+    @apply text-base;
+    color : var(--vcard-heading);
+}
+
+.wrapper {
+  @apply py-6 px-4 relative;
+}
+
+.break {
+  @apply w-full h-[1px] mx-auto mb-8;
+  background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+.section_heading{
+    @apply text-center text-3xl font-semibold mb-8;
+    color : var(--vcard-heading);
+}
+
+.date_slot{
+    @apply flex flex-wrap flex-row items-center justify-center
+}
+
+.date_label{
+    @apply w-full sm:w-2/12 mb-2 sm:mb-0 text-lg font-bold
+}
+
+.date_input{
+    @apply w-full text-black rounded p-2 text-lg focus:outline-none;
+    background-color: var(--vcard-text); 
+}
+
+.time_slots{
+    @apply flex flex-col items-center justify-center gap-4
+}
+
+.available_slots{
+    @apply w-full sm:w-5/12 rounded p-3 text-black text-center text-sm font-medium focus:outline-none;
+    background-color:var(--vcard-text);
+    
+}
+
+.submit_btn{
+    @apply px-6 py-3 text-white text-lg rounded hover:bg-blue-500 transition;
+    background-color: var(--vcard-secondary);
+}
+
+.submit_btn:hover{
+    background-color: var(--vcard-primary);
+}
+
+.serviceCarousel{
+    @apply hidden
+}
+
+.serviceGrid{
+    @apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
+}
+
+.serviceCard {
+  @apply rounded-xl shadow-xl flex flex-col items-center p-4 mb-4;
+}
+
+.serviceIcon {
+  @apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+  @apply w-full h-full rounded-xl object-cover;
+}
+
+.serviceContent {
+  @apply text-left;
+}
+
+.serviceTitle {
+  @apply text-lg font-semibold mb-1;
+  color : var(--vcard-heading);
+}
+
+.serviceDesc {
+  @apply text-sm;
+}
+
+.mediaGrid {
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.mediaCard {
+  @apply w-80 h-80 p-3 rounded-xl shadow-sm cursor-pointer;
+  background-color: var(--vcard-primary)
+}
+
+.mediaImage {
+  @apply w-full h-full rounded;
+}
+
+.modalBackdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-6;
+}
+
+.modalContent {
+  @apply bg-white rounded-xl overflow-hidden shadow-lg max-w-xl w-full;
+}
+
+.videoWrapper {
+  @apply aspect-video;
+}
+
+.youtubeVideo {
+  @apply w-full h-full;
+}
+
+.productsGrid {
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.productsCard {
+  @apply rounded-xl shadow p-3;
+}
+
+.productsImage {
+  @apply w-56 h-48 md:h-48 rounded overflow-hidden;
+}
+
+.productsDetails {
+  @apply mt-3;
+}
+
+.productsTitle {
+    @apply text-lg font-semibold;
+    color : var(--vcard-heading);
+}
+
+.productsDesc {
+  @apply text-sm mb-2;
+}
+
+.productsPrice {
+    @apply font-medium;
+    color : var(--vcard-heading);
+}
+
+.testimonialWrapper {
+  @apply max-w-4xl mx-auto;
+}
+
+.testimonialSlider {
+  @apply flex flex-col sm:flex-row items-center gap-4 p-4 shadow rounded-xl mb-10;
+  background-color: var(--vcard-secondary);
+}
+
+.tesImageContainer {
+  @apply sm:order-2;
+}
+
+.tesImage {
+  @apply rounded-full w-24 h-24 object-cover;
+}
+
+.tesContent {
+  @apply sm:order-1 text-center sm:text-left;
+}
+
+.tesMessage {
+  @apply text-lg mb-2;
+}
+
+.tesName {
+  @apply font-semibold;
+}
+
+.tesTitle {
+  @apply text-sm;
+}
+
+.blogGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+  @apply shadow rounded-xl p-4;
+    background-color: var(--vcard-primary)
+}
+
+.blogImageWrapper {
+  @apply mb-4;
+}
+
+.blogImage {
+  @apply w-full h-48 object-cover rounded;
+}
+
+.blogContent {
+  @apply text-start;
+}
+
+.blogTitle {
+  @apply text-lg font-bold text-gray-800;
+  color : var(--vcard-heading);
+}
+
+.blogDesc {
+  @apply text-sm mt-2;
+}
+
+.qrGrid {
+  @apply max-w-2xl mx-auto grid grid-cols-1 gap-6 items-center p-6 rounded-3xl mt-20;
+  background-color: var(--vcard-text)
+}
+
+.qrProfileSection {
+  @apply text-center mt-[-4rem];
+}
+
+.qrProfileImage {
+  @apply w-28 h-28 mx-auto border-8 rounded-full object-cover;
+  border-color: white;
+}
+
+.desktopButton {
+  @apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
+  background-color: var(--vcard-primary)
+}
+
+.qrSection {
+  @apply text-center flex flex-col;
+}
+
+.qrImage {
+  @apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+  @apply mt-4 px-4 py-2 rounded shadow hidden;
+  background-color: var(--vcard-primary)
+}
+
+.hoursContainer {
+  @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+  @apply flex flex-row mb-4 rounded-xl py-6 justify-start pl-4 items-center space-x-2;
+  background-color: var(--vcard-secondary)
+}
+
+.dayIcon{
+  @apply text-2xl object-center p-3 rounded-xl mr-1;
+  background-color: var(--vcard-primary)
+}
+
+.dayLabel {
+  @apply text-lg font-semibold;
+  color : var(--vcard-heading);
+}
+
+.timeValue {
+  @apply text-lg font-medium;
+}
+
+.contactForm {
+  @apply max-w-6xl mx-auto relative z-10 space-y-4;
+}
+
+.formInput,
+.formTextarea {
+  @apply w-full px-4 py-2 rounded focus:outline-none;
+  background-color: var(--vcard-text);
+}
+
+.formButton {
+  @apply px-6 py-2 rounded ml-auto block;
+  background-color: var(--vcard-secondary);
+}
+
+.formButton:hover {
+  background-color: var(--vcard-primary);
+}
+
+.gmapModal{
+    @apply max-w-5xl mx-auto mt-20
+}
+
