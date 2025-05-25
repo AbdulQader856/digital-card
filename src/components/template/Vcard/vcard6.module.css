@@ -80,8 +80,8 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .fabMain {
-    width: 72px;
-    height: 72px;
+    width: 48px;
+    height: 48px;
   }
 
   .fabAction {
@@ -102,7 +102,7 @@
 
 .shareModal {
   background: white;
-  color: var(--vcard-text);
+  color: black;
   padding: 2rem;
   border-radius: 1rem;
   min-width: 300px;
@@ -535,7 +535,7 @@
 
 .qrGrid {
   @apply max-w-7xl mx-auto pt-6 md:pt-0 md:flex gap-60 justify-center items-center rounded-3xl z-0;
-  background-color: var(--vard-primary)
+  background-color: var(--vard-primary);
 }
 
 .qrProfileSection {
