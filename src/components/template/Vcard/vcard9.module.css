@@ -1,8 +1,9 @@
 .vcard_two{
-  --vcard-primary: #203556;
-  --vcard-secondary: #284e75;
-  --vcard-text: #FFFFFF;
-  --vcard-bg: #00081c;
+  --vcard-primary: linear-gradient(90deg, #b24592, #f15f79);
+  --vcard-secondary: linear-gradient(90deg, #f15f79, #b24592);
+  --vcard-heading: #000000;
+  --vcard-text: #6C757D;
+  --vcard-bg: #FFFFFF;
 
   font-family: 'Poppins', 'Helvetica', 'sans-serif';
   color: var(--vcard-text);
@@ -43,8 +44,8 @@
 
 /* Small Action Buttons */
 .fabAction {
-  background-color: white;
-  color: var(--vcard-secondary);
+  background: var(--vcard-primary);
+  color: white;
   width: 42px;
   height: 42px;
   border-radius: 9999px;
@@ -63,7 +64,7 @@
 
 /* Main FAB */
 .fabMain {
-  background-image: url('/images/template/img/vcard/vcard8-sticky.png');
+  background-image: url('/images/template/img/vcard/vcard9-sticky.png');
   background-size: cover;
   background-repeat: no-repeat;
   width: 80px;
@@ -100,7 +101,7 @@
 }
 
 .shareModal {
-  background: var(--vcard-secondary);
+  background: white;
   padding: 2rem;
   border-radius: 1rem;
   min-width: 300px;
@@ -124,7 +125,11 @@
 
 .language_btn{
     @apply text-white px-4 py-2 text-sm rounded-md flex items-center gap-2;
-    background-color: var(--vcard-primary);
+    background: var(--vcard-primary);
+}
+
+.language_btn:hover{
+    background: var(--vcard-secondary);
 }
 
 .language_list{
@@ -140,11 +145,11 @@
 }
 
 .profileContainer{
-  @apply relative z-20 mt-[-2rem] w-32 h-32 rounded-full border-4 border-white ml-32 md:ml-10;
+  @apply relative z-20 mt-[-6rem] w-48 h-48 rounded-full border-4 border-white mx-auto;
 } 
 
 .profile_details{
-    @apply py-3 px-6 text-center md:text-left;
+    @apply py-3 px-6 text-center;
 }
 
 .profile_name{
@@ -154,14 +159,17 @@
 
 .profile_occupation{
     @apply text-xl block mt-2;
+    color : var(--vcard-heading);
 }
 
 .profile_jobTitle{
     @apply text-xl block;
+    color : var(--vcard-heading);
 }
 
 .profile_comapny{
     @apply text-sm block;
+    color : var(--vcard-heading);
 }
 
 .profile_p{
@@ -169,33 +177,27 @@
 }
 
 .profile_icons{
-    @apply grid grid-cols-5 md:flex md:justify-between md:items-center gap-8 md:gap-4 mt-20 md:ml-8 md:mr-8 text-3xl;
-    color: #969696;
+    @apply grid grid-cols-5 md:flex md:justify-between md:items-center gap-8 md:gap-4 mt-20 md:ml-8 mr-8 text-3xl;
+    color: white;
 }
 
 .profile_iconimg {
-  @apply w-8 h-8 cursor-pointer rounded-full transition-all duration-300 ease-in-out;
-  background-color: var(--vcard-primary);
-  box-shadow:
-    0 0 0 8px var(--vcard-primary),
-    0 0 0 14px var(--vcard-primary);
+  @apply w-12 h-12 md:w-16 md:h-16 cursor-pointer rounded-full transition-all duration-300 ease-in-out p-2 md:p-4;
+  background: var(--vcard-primary);
 }
 
 .profile_iconimg:hover {
-  background-color: var(--vcard-secondary);
-  box-shadow:
-    0 0 0 8px var(--vcard-secondary),
-    0 0 0 14px var(--vcard-secondary),
-    0 0 20px 25px rgba(173, 216, 255, 0.55); /* shiny white glow */
+  background: var(--vcard-secondary);
 }
 
 .eventdetails{
-    @apply flex flex-col md:grid md:grid-cols-2 justify-center items-center py-4 px-6 mt-20 ml-6 mr-6 rounded-3xl;
-    background-color: var(--vcard-secondary);
+    @apply flex flex-col md:grid md:grid-cols-2 md:justify-center md:items-center py-4 px-6 gap-6 mt-14 ml-6 mr-6;
 }
 
 .event_list{
-    @apply flex flex-col md:flex-wrap gap-6 items-center text-center mb-3 md:mb-0 p-4;
+    @apply flex md:flex-row gap-6 items-center text-center mb-3 md:mb-3 p-4 rounded-xl;
+    box-shadow:
+        0 0 10px 1px rgb(0, 0, 0, 0.2);
 }
 
 .event_items {
@@ -214,31 +216,19 @@
 
 /* Now design-specific icons applied by nth-child */
 .event_list:nth-of-type(1) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard8-email.png');
-  background-color: var(--vcard-primary);
-  box-shadow:
-    0 0 0 8px var(--vcard-primary);
+  background-image: url('/images/template/img/vcard/vcard9-email.png');
 }
 
 .event_list:nth-of-type(2) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard8-phone.png');
-  background-color: var(--vcard-primary);
-  box-shadow:
-    0 0 0 8px var(--vcard-primary); 
+  background-image: url('/images/template/img/vcard/vcard9-birthday.png');
 }
 
 .event_list:nth-of-type(3) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard8-birthday.png');
-  background-color: var(--vcard-primary);
-  box-shadow:
-    0 0 0 8px var(--vcard-primary);
+  background-image: url('/images/template/img/vcard/vcard9-phone.png');
 }
 
 .event_list:nth-of-type(4) .event_items::before {
-  background-image: url('/images/template/img/vcard/vcard8-location.png');
-  background-color: var(--vcard-primary);
-  box-shadow:
-    0 0 0 8px var(--vcard-primary);
+  background-image: url('/images/template/img/vcard/vcard9-location.png');
 }
 
 .event_label{
@@ -251,45 +241,42 @@
 }
 
 .break {
-  @apply w-full h-[1px] mx-auto mb-8;
-  background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+  @apply w-full mx-auto mb-8;
 }
 
 .section_heading{
-    @apply text-center text-3xl font-semibold mb-8;
-    color : var(--vcard-heading);
+    @apply text-left text-3xl font-semibold mb-8 p-3 w-64 rounded-br-full ml-[-20px];
+    color : white;
+    background: var(--vcard-primary);
 }
 
 .date_slot{
-    @apply flex flex-wrap flex-row items-center justify-center
+    @apply flex flex-wrap flex-row items-center justify-center;
 }
 
 .date_label{
-    @apply w-full sm:w-2/12 mb-2 sm:mb-0 text-lg font-bold
+    @apply w-full sm:w-2/12 mb-2 sm:mb-0 text-lg font-bold;
 }
 
 .date_input{
-    @apply w-full text-black rounded p-2 text-lg focus:outline-none;
-    background-color: var(--vcard-text); 
+    @apply w-full text-black rounded p-2 text-lg border-2 focus:outline-none;
 }
 
 .time_slots{
-    @apply flex flex-col items-center justify-center gap-4
+    @apply flex flex-col items-center justify-center gap-4;
 }
 
 .available_slots{
-    @apply w-full sm:w-5/12 rounded p-3 text-black text-center text-sm font-medium focus:outline-none;
-    background-color:var(--vcard-text);
-    
+    @apply w-full sm:w-5/12 rounded p-3 text-black text-center text-sm font-medium border-2 focus:outline-none;    
 }
 
 .submit_btn{
     @apply px-6 py-3 text-white text-lg rounded hover:bg-blue-500 transition;
-    background-color: var(--vcard-secondary);
+    background: var(--vcard-primary);
 }
 
 .submit_btn:hover{
-    background-color: var(--vcard-primary);
+    background: var(--vcard-secondary);
 }
 
 .serviceCarousel{
@@ -301,7 +288,7 @@
 }
 
 .serviceCard {
-  @apply rounded-xl shadow-xl flex flex-col items-center p-4 mb-4;
+  @apply flex flex-col items-center p-4 mb-4;
 }
 
 .serviceIcon {
@@ -330,8 +317,9 @@
 }
 
 .mediaCard {
-  @apply w-80 h-80 p-3 rounded-xl shadow-sm cursor-pointer;
-  background-color: var(--vcard-primary)
+  @apply w-80 h-80 p-3 rounded-xl cursor-pointer;
+    box-shadow:
+        0 0 10px 1px rgb(0, 0, 0, 0.2);
 }
 
 .mediaImage {
@@ -359,7 +347,9 @@
 }
 
 .productsCard {
-  @apply rounded-xl shadow p-3;
+    @apply rounded-xl p-3;
+    box-shadow:
+        0 0 10px 1px rgb(0, 0, 0, 0.2);
 }
 
 .productsImage {
@@ -389,8 +379,8 @@
 }
 
 .testimonialSlider {
-  @apply flex flex-col sm:flex-row items-center gap-4 p-4 shadow rounded-xl mb-10;
-  background-color: var(--vcard-secondary);
+    @apply flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl mb-10;
+    background: var(--vcard-primary);
 }
 
 .tesImageContainer {
@@ -407,14 +397,17 @@
 
 .tesMessage {
   @apply text-lg mb-2;
+  color: var(--vcard-heading);
 }
 
 .tesName {
   @apply font-semibold;
+    color: var(--vcard-heading);
 }
 
 .tesTitle {
   @apply text-sm;
+    color: var(--vcard-heading);
 }
 
 .blogGrid {
@@ -422,8 +415,7 @@
 }
 
 .blogCard {
-  @apply shadow rounded-xl p-4;
-    background-color: var(--vcard-primary)
+  @apply p-4;
 }
 
 .blogImageWrapper {
@@ -431,7 +423,7 @@
 }
 
 .blogImage {
-  @apply w-full h-48 object-cover rounded;
+  @apply w-full h-48 object-cover rounded-xl;
 }
 
 .blogContent {
@@ -448,26 +440,23 @@
 }
 
 .qrGrid {
-  @apply max-w-2xl mx-auto grid grid-cols-1 gap-6 items-center p-6 rounded-3xl mt-20;
-  background-color: var(--vcard-text)
+  @apply max-w-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 p-6 mt-10;
 }
 
 .qrProfileSection {
-  @apply text-center mt-[-4rem];
+  @apply text-center border-4 rounded-full p-2;
 }
 
 .qrProfileImage {
-  @apply w-28 h-28 mx-auto border-8 rounded-full object-cover;
-  border-color: white;
+  @apply w-28 h-28 mx-auto rounded-full object-cover;
 }
 
 .desktopButton {
   @apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
-  background-color: var(--vcard-primary)
 }
 
 .qrSection {
-  @apply text-center flex flex-col;
+  @apply text-center flex flex-col border-4 rounded-2xl p-4;
 }
 
 .qrImage {
@@ -476,7 +465,6 @@
 
 .mobileButton {
   @apply mt-4 px-4 py-2 rounded shadow hidden;
-  background-color: var(--vcard-primary)
 }
 
 .hoursContainer {
@@ -485,12 +473,13 @@
 
 .timeRow {
   @apply flex flex-row mb-4 rounded-xl py-6 justify-start pl-4 items-center space-x-2;
-  background-color: var(--vcard-secondary)
+  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.2)
 }
 
 .dayIcon{
   @apply text-2xl object-center p-3 rounded-xl mr-1;
-  background-color: var(--vcard-primary)
+  background: var(--vcard-primary);
+  color: white
 }
 
 .dayLabel {
@@ -508,17 +497,17 @@
 
 .formInput,
 .formTextarea {
-  @apply w-full px-4 py-2 rounded focus:outline-none;
-  background-color: var(--vcard-text);
+  @apply w-full px-4 py-2 rounded-xl border-4 focus:outline-none;
 }
 
 .formButton {
   @apply px-6 py-2 rounded ml-auto block;
-  background-color: var(--vcard-secondary);
+  background: var(--vcard-primary);
+  color: white;
 }
 
 .formButton:hover {
-  background-color: var(--vcard-primary);
+  background: var(--vcard-secondary);
 }
 
 .gmapModal{
