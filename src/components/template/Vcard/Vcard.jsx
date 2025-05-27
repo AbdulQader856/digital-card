@@ -12,11 +12,13 @@ import Blog from './Blog';
 import QrCode from './QrCode';
 import BusinessHours from './BusinessHours';
 import Contact from './Contact';
-import styles from './vcard9.module.css';
+import styles from './vcard2.module.css';
 import Youtube from './Youtube';
 import Instagram from './Instagram';
 import { FaFacebook, FaQrcode, FaShare, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
+import Popup from './Popup';
+import SocialIcons from './SocialIcons';
 
 const Vcard = () => {
 const [showActions, setShowActions] = useState(false);
@@ -69,6 +71,7 @@ const [showShareModal, setShowShareModal] = useState(false);
       <Banner styles={styles}/>
       <Profile styles={styles} />
       <ProfileDetails styles={styles} />
+      <SocialIcons styles={styles} />
       <EventDetails styles={styles} />
       <Appointment styles={styles} />
       <Services styles={styles} />
@@ -81,6 +84,7 @@ const [showShareModal, setShowShareModal] = useState(false);
       <QrCode styles={styles} />
       <BusinessHours styles={styles} />
       <Contact styles={styles} />
+      <Popup styles={styles} />
     </div>
   );
 };

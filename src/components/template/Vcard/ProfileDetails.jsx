@@ -18,19 +18,6 @@ const ProfileDetails = ({styles}) => {
         with my audience and builds a strong online community. Open to collaborations and brand integrations—let's create 
         something amazing together!
         </p>
-
-        <div className={`${styles.profile_icons}`}>
-          <a href='#' className={styles.profile_iconimg}><FaGlobe/></a>
-          <a href='#' className={styles.profile_iconimg}><FaTwitter/></a>
-          <a href='#' className={styles.profile_iconimg}><FaFacebookF /></a>
-          <a href='#' className={styles.profile_iconimg}><FaInstagram /></a>
-          <a href='#' className={styles.profile_iconimg}><FaYoutube /></a>
-          <a href='#' className={styles.profile_iconimg}><FaTumblr /></a>
-          <a href='#' className={styles.profile_iconimg}><FaLinkedinIn /></a>
-          <a href='#' className={styles.profile_iconimg}><FaWhatsapp /></a>
-          <a href='#' className={styles.profile_iconimg}><FaPinterest /></a>
-          <a href='#' className={styles.profile_iconimg}><FaTiktok /></a>
-        </div>
       </div>
     </section>
   );
