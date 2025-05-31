@@ -185,7 +185,7 @@
 }
 
 .profile_icons{
-    @apply grid grid-cols-5 md:flex justify-between items-center mt-16 text-2xl md:text-2xl pt-4 pl-4 rounded-2xl;
+    @apply grid grid-cols-5 md:flex md:flex-wrap justify-between items-center mt-16 text-2xl md:text-2xl pt-4 pl-4 pr-4 rounded-2xl;
 }
 
 .profile_iconimg{

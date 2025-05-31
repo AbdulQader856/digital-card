@@ -1,3 +1,5 @@
 {
-  "/vcard-template/page": "app/vcard-template/page.js"
+  "/page": "app/page.js",
+  "/vcard-template/page": "app/vcard-template/page.js",
+  "/checkout/page": "app/checkout/page.js"
 }

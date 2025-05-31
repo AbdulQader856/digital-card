@@ -4,7 +4,7 @@ import { FaXmark } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export default function Popup() {
+export default function Popup({ styles }) {
     const PopupData = {
         
             title : "Go Digital, Buy Now!",
@@ -19,28 +19,28 @@ export default function Popup() {
   if (!visible) return null;
 
   return (
-    <div className="mt-0 bottom-0 max-w-xl fixed z-50">
-      <div className="flex items-center justify-center bg-gray-100 p-6 relative">
+    <div className={styles.popupSection}>
+      <div className={styles.popupWrapper}>
         <button
           type="button"
-          className="absolute top-4 right-4 text-gray-700 hover:text-red-500 transition"
+          className={styles.popupClose}
           onClick={() => setVisible(false)}
         >
           <FaXmark className="w-5 h-5" />
         </button>
 
-        <div className="text-center max-w-2xl">
-          <h1 className="text-2xl font-bold mb-4 support_heading">
+        <div className={styles.popupContent}>
+          <h1 className={styles.popupTitle}>
           {PopupData.title}
           </h1>
-          <p className="mb-4 support_text text-gray-800">
+          <p className={styles.popupMsg}>
           {PopupData.desc}
           </p>
           <div>
             <Link
               href={PopupData.url||''}
               target="_blank"
-              className="act-now inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
+              className={styles.popupBtn}
             >
               {PopupData.button}
             </Link>

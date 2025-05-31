@@ -16,6 +16,7 @@ export const TestimonialCarouselVcard2 = ({testimonials, styles}) => {
         spaceBetween={30}
         slidesPerView={1}
         loop={true}
+        className={styles.testimonialSwiper}
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>

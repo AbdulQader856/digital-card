@@ -7,7 +7,7 @@
     font-family: 'Poppins', 'Helvetica', 'sans-serif';
     color: var(--vcard-text);
 
-    @apply max-w-7xl mx-auto bg-white overflow-hidden
+    @apply max-w-7xl mx-auto bg-white 
 }
 
 /* FAB Container */
@@ -115,36 +115,50 @@
 }
 
 .banner{
-    @apply relative overflow-hidden z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full h-64 bg-center
+    @apply relative z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full  bg-center;
+    min-height: 140px;
 }
 
 .language_dropdown{
-    @apply absolute top-0 right-0 m-4 z-20;
+    @apply absolute top-8 right-2;
 }
 
 .language_btn{
-    @apply text-white bg-blue-700 px-4 py-2 text-sm rounded-md flex items-center gap-2
+    @apply text-white bg-blue-700 px-2 py-2 text-sm rounded-md flex items-center gap-2;
 }
 
 .language_list{
-    @apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30
+    @apply absolute top-full mt-2 right-0 w-32 bg-white shadow-lg rounded-md border divide-y;
 }
 
 .language_items{
-    @apply px-3 py-2 hover:bg-gray-100 flex items-center gap-2
+    @apply px-3 py-2 hover:bg-gray-100 flex items-center gap-2;
+}
+
+.profileSection{
+  @apply bg-[url('/images/template/img/vcard/shape1.png')] bg-contain bg-no-repeat bg-right;
+  background-size: 70px 170px;
+  background-position: right; 
+}
+
+@media (max-width: 768px) {
+  .profileSection{
+      background-size: 70px 170px;
+      background-position: right; 
+  }
 }
 
 .profile{
-    @apply relative
+    @apply relative pb-10;
 }
 
 .profileContainer{
-    @apply relative z-20 mt-[-4rem] w-32 h-32 border-4 rounded-full ml-8;
+    @apply relative mt-[-4rem] w-32 h-32 border-4 rounded-full ml-6;
     border-color: #FFFFFF;
 }
 
 .profile_details{
-    @apply px-6 bg-[url('/images/template/img/vcard/shape1.png')] bg-contain bg-no-repeat bg-right mt-[-10rem] py-10 pt-44
+    @apply px-6;
 }
 
 .profile_name{
@@ -168,11 +182,11 @@
 }
 
 .profile_p{
-    @apply text-sm font-medium text-balance
+    @apply text-sm font-medium text-balance;
 }
 
 .profile_icons{
-    @apply flex justify-start items-center gap-5 mt-8 text-3xl
+    @apply px-6 flex flex-wrap justify-start items-center gap-5 mt-8 text-3xl
 }
 
 .profile_iconimg{
@@ -212,7 +226,7 @@
 } 
 
 .eventdetails{
-    @apply px-6
+    @apply px-6 mt-10;
 }
 
 .event_list{
@@ -255,7 +269,7 @@
 }
 
 .wrapper {
-  @apply py-6 px-4 relative md:mt-20;
+  @apply py-6 px-4 relative @md:mt-20;
 }
 
 .section_heading{
@@ -268,7 +282,7 @@
 }
 
 .date_label{
-    @apply w-full sm:w-2/12 mb-2 sm:mb-0 text-lg font-bold
+    @apply w-full @sm:w-2/12 mb-2 @sm:mb-0 text-lg font-bold
 }
 
 .date_input{
@@ -281,7 +295,7 @@
 }
 
 .available_slots{
-    @apply w-full sm:w-5/12 border rounded p-3 text-center text-sm font-medium;
+    @apply w-full @sm:w-5/12 border rounded p-3 text-center text-sm font-medium;
     background-color: var(--vcard-secondary);
 }
 
@@ -291,11 +305,11 @@
 }
 
 .serviceCarousel{
-    @apply px-6 md:p-0 lg:hidden
+    @apply px-6 @md:p-0 @lg:hidden
 }
 
 .serviceGrid{
-    @apply hidden sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
+    @apply hidden @sm:grid grid-cols-2 @md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
 }
 
 .serviceCard {
@@ -324,7 +338,7 @@
 }
 
 .mediaGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+  @apply max-w-5xl mx-auto grid grid-cols-1  px-2;
 }
 
 .mediaCard {
@@ -386,11 +400,11 @@
 }
 
 .testimonialSlider {
-  @apply flex flex-col sm:flex-row items-center gap-4 p-4 border-2 rounded-xl mb-10;
+  @apply flex flex-col @sm:flex-row items-center gap-4 p-4 border-2 rounded-xl mb-10;
 }
 
 .tesImageContainer {
-  @apply sm:order-2;
+  @apply @sm:order-2;
 }
 
 .tesImage {
@@ -398,7 +412,7 @@
 }
 
 .tesContent {
-  @apply sm:order-1 text-center sm:text-left;
+  @apply @sm:order-1 text-center @sm:text-left;
 }
 
 .tesMessage {
@@ -415,7 +429,7 @@
 }
 
 .blogGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+  @apply max-w-5xl mx-auto grid grid-cols-1 @sm:grid-cols-2 gap-6;
 }
 
 .blogCard {
@@ -444,7 +458,7 @@
 }
 
 .qrGrid {
-  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 items-center border-2 rounded-xl p-6;
+  @apply max-w-5xl mx-auto grid grid-cols-1 @sm:grid-cols-2 gap-6 items-center border-2 rounded-xl p-6;
 }
 
 .qrProfileSection {
@@ -456,7 +470,7 @@
 }
 
 .desktopButton {
-  @apply mt-4 px-4 py-2 text-white rounded hidden sm:inline-block;
+  @apply mt-4 px-4 py-2 text-white rounded hidden @sm:inline-block;
   background-color: var(--vard-primary)
 }
 
@@ -469,16 +483,16 @@
 }
 
 .mobileButton {
-  @apply mt-4 px-4 py-2 text-white rounded sm:hidden block;
+  @apply mt-4 px-4 py-2 text-white rounded @sm:hidden block;
   background-color: var(--vard-primary);
 }
 
 .hoursContainer {
-  @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+  @apply max-w-6xl mx-auto @sm:col-span-7 col-span-12;
 }
 
 .timeRow {
-  @apply flex flex-row border-2 mb-4 rounded-xl py-6 justify-start pl-4 items-center space-x-2;
+  @apply flex flex-row border-2 mb-4 rounded-xl py-6 justify-start px-2 items-center space-x-2;
 }
 
 .dayIcon{
@@ -487,12 +501,12 @@
 }
 
 .dayLabel {
-  @apply text-lg font-semibold;
+  @apply  text-sm font-semibold capitalize;
   color : var(--vcard-heading);
 }
 
 .timeValue {
-  @apply text-lg font-medium;
+  @apply text-sm font-medium;
 }
 
 .contactForm {

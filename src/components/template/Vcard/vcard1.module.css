@@ -1,0 +1,707 @@
+.vcard_two{
+    --vcard-primary: #313bac; 
+    --vcard-secondary: #edf2f8;
+    --vcard-heading: #010101;
+    --vcard-text: #6c757d;
+    --vcard-bg: #FFFFFF;
+
+    font-family: 'Poppins', 'Helvetica', 'sans-serif';
+    color: var(--vcard-text);
+
+    @apply max-w-7xl mx-auto;
+    background-color: var(--vcard-bg);
+}
+
+/* FAB Container */
+.fabContainer {
+  position: fixed;
+  bottom: 20rem;
+  right: 8rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+  background-color: var(--vcard-secondary);
+  color: var(--vcard-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+  transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+  background-image: url('/images/template/img/vcard/vcard1-sticky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fabMain {
+    width: 72px;
+    height: 72px;
+  }
+
+  .fabAction {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fabContainer {
+    bottom: 18rem;
+    right: 1rem;
+  }
+
+  .fabActions {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.shareModal {
+  background: white;
+  color: var(--vcard-text);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 300px;
+}
+
+.shareModalList{
+  @apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+  @apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+    @apply relative z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full  bg-center;
+    min-height: 140px;
+}
+
+.language_dropdown{
+    @apply absolute top-8 right-2;
+}
+
+.language_btn{
+    @apply text-white px-2 py-2 text-sm rounded-md flex items-center gap-2;
+    background-color: var(--vcard-primary)
+}
+
+.language_btn:hover{
+    @apply text-white px-2 py-2 text-sm rounded-md flex items-center gap-2;
+    font-weight: bold;
+    color: var(--vcard-primary);
+    background-color: var(--vcard-secondary);
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.language_list{
+    @apply absolute top-full mt-2 right-0 w-32 bg-white shadow-lg rounded-md border divide-y;
+}
+
+.language_items{
+    @apply px-3 py-2 hover:bg-gray-100 flex items-center gap-2;
+}
+
+.profile{
+    @apply relative pb-10;
+}
+
+.profileContainer{
+    @apply relative mt-[-4rem] w-32 h-32 border-4 rounded-full mx-auto;
+    border-color: #FFFFFF;
+}
+
+.profile_details{
+    @apply px-6 text-center;
+}
+
+.profile_name{
+    @apply text-3xl font-semibold;
+    color : var(--vcard-heading);
+}
+
+.profile_occupation{
+    @apply text-xl block mt-2;
+    color : #969696;
+}
+
+.profile_jobTitle{
+    @apply text-xl block;
+    color : #969696;
+}
+
+.profile_company{
+    @apply text-sm block;
+    color : #969696;
+}
+
+.profile_p{
+    @apply text-sm font-medium text-balance;
+}
+
+.profile_icons{
+    @apply px-6 flex flex-wrap justify-center items-center gap-7 mt-8 text-3xl mx-auto;
+}
+
+.profile_iconimg{
+  @apply cursor-pointer w-8 h-8 ;
+}
+
+/* Custom colors using nth-child */
+.profile_icons > .profile_iconimg:nth-child(1) {
+  color: #4267B2; /* Website Blue */
+}
+.profile_icons > .profile_iconimg:nth-child(2) {
+  color: #1DA1F2; /* Twitter Blue */
+}
+.profile_icons > .profile_iconimg:nth-child(3) {
+  color: #4267B2; /* Facebook Blue */ 
+}
+.profile_icons > .profile_iconimg:nth-child(4) {
+  color: #e1306c; /* Instagram Pink */ 
+}
+.profile_icons > .profile_iconimg:nth-child(5) {
+  color: #FF0000; /* Youtube Red */ 
+}
+.profile_icons > .profile_iconimg:nth-child(6) {
+  color: #444444; /* Tumblr Gray */ 
+}
+.profile_icons > .profile_iconimg:nth-child(7) {
+  color: #0077B5; /* LinkedIn Blue */ 
+}
+.profile_icons > .profile_iconimg:nth-child(8) {
+  color: #25D366; /* WhatsApp Green */
+}
+.profile_icons > .profile_iconimg:nth-child(9) {
+  color: #E60023; /* Pinterest Red */
+} 
+.profile_icons > .profile_iconimg:nth-child(10) {
+  color: #ff0050; /* Tik Tok Pink */
+} 
+
+.eventdetails{
+    @apply flex flex-col md:grid md:grid-cols-2 justify-center items-center py-4 px-6 mt-20 ml-6 mr-6 rounded-3xl;
+}
+
+.event_list{
+    @apply flex flex-col md:flex-wrap gap-6 items-center text-center mb-3 md:mb-0 p-4;
+}
+
+.event_items{
+  @apply relative;
+}
+
+.eventIcons{
+  @apply w-10 h-10;
+  color: var(--vcard-primary);
+}
+
+.event_label{
+    @apply text-base;
+    color : var(--vcard-heading);
+}
+
+.appointmentSection{
+  @apply py-10
+}
+
+.wrapper {
+  @apply py-6 px-4 relative md:mt-20;
+}
+
+.section_heading{
+    @apply text-center text-3xl font-semibold mb-8;
+    color: var(--vcard-primary);
+}
+
+.appointment{
+    @apply max-w-2xl mx-auto px-4 space-y-6;
+}
+
+.date_label{
+    @apply block text-sm font-medium mb-1;
+}
+
+.date_input{
+    @apply w-full p-2 border rounded;
+    background-color: var(--vcard-secondary);
+}
+
+.available_msg{
+  @apply text-sm text-gray-600;
+}
+
+.notavailable_msg{
+  @apply text-gray-500;
+}
+
+.available_slots{
+  @apply grid grid-cols-2 sm:grid-cols-2 gap-3
+}
+
+.slot {
+  padding: 0.5rem; /* p-2 */
+  border: 1px solid #d1d5db; /* default Tailwind border */
+  border-radius: 0.25rem; /* rounded */
+  font-size: 0.875rem; /* text-sm */
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.activeSlot {
+  background-color: var(--vcard-primary); /* bg-blue-600 */
+  color: #ffffff; /* text-white */
+}
+
+.inactiveSlot {
+  background-color: #ffffff; /* bg-white */
+  color: #000000;
+}
+
+.inactiveSlot:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+.aptmodalOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.aptmodalContainer {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 28rem;
+  position: relative;
+  margin: 0 auto;
+}
+
+.aptmodalHeading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.aptform {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aptlabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.aptinput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.aptdetails {
+  font-size: 0.875rem;
+  color: var(--vcard-heading);
+}
+
+.aptactions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.aptsaveButton {
+  @apply hover:bg-red-600;
+  padding: 0.5rem 1rem;
+  background-color: var(--vcard-primary);
+  color: white;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.aptdiscardButton {
+  padding: 0.5rem 1rem;
+  background-color: #d1d5db;
+  color: var(--vcard-text);
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.aptdiscardButton:hover {
+  background-color: var(--vcard-text);
+  color: #d1d5db;
+}
+
+.serviceCarousel{
+    @apply px-6 md:p-0 lg:hidden
+}
+
+.serviceGrid{
+    @apply hidden sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
+}
+
+.serviceCard {
+  @apply border rounded-xl flex flex-col items-center p-4 mb-4;
+  background-color: var(--vcard-bg);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.serviceIcon {
+  @apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+  @apply w-full h-full object-cover;
+}
+
+.serviceContent {
+  @apply text-center;
+}
+
+.serviceTitle {
+  @apply text-lg font-semibold mb-1;
+  color : var(--vcard-heading);
+}
+
+.serviceDesc {
+  @apply text-sm;
+}
+
+.mediaGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-1  px-2;
+}
+
+.mediaCard {
+  @apply bg-white p-3 border-2 rounded-xl cursor-pointer;
+  background-color: var(--vcard-bg);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.mediaImage {
+  @apply w-full rounded;
+}
+
+.youtubeSection{
+  @apply py-10 px-2
+}
+
+.youtubeSwiperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtubeSwiperWrapper :global(.swiper) {
+  width: 100%;
+}
+
+.youtubeSwiperWrapper :global(.swiper-pagination) {
+  margin-top: 0.75rem; /* space below video */
+  position: static;    /* prevents overlapping */
+}
+
+.youtubeSwiper :global(.swiper-button-prev),
+.youtubeSwiper :global(.swiper-button-next) {
+  color: var(--vcard-primary);
+}
+
+.youtubeSwiper :global(.swiper-pagination-bullet-active) {
+  background: var(--vcard-primary);
+}
+
+.youtubeCard{
+  @apply w-full aspect-video rounded-xl;
+}
+
+.productsGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-2 gap-4;
+}
+
+.productsCard {
+  @apply border-2 rounded-xl p-3;
+  background-color: var(--vcard-bg);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.productsImage {
+  @apply w-full h-96 rounded overflow-hidden;
+}
+
+.productsDetails {
+  @apply mt-3;
+}
+
+.productsTitle {
+    @apply text-lg font-semibold;
+    color : var(--vcard-heading);
+}
+
+.productsDesc {
+  @apply text-sm mb-2;
+}
+
+.productsPrice {
+    @apply font-medium;
+    color : var(--vcard-heading);
+}
+
+.testimonialWrapper {
+  @apply max-w-4xl mx-auto;
+}
+
+.testimonialSlider {
+  @apply flex flex-col sm:flex-row items-center gap-4 p-4 border-2 rounded-xl mb-10;
+}
+
+.testimonialSwiper :global(.swiper-pagination-bullet-active) {
+  background: var(--vcard-primary);
+}
+
+.tesImageContainer {
+  @apply sm:order-2;
+}
+
+.tesImage {
+  @apply rounded-full w-24 h-24 object-cover;
+}
+
+.tesContent {
+  @apply sm:order-1 text-center sm:text-left;
+}
+
+.tesMessage {
+  @apply text-lg mb-2;
+}
+
+.tesName {
+  @apply font-semibold;
+  color: var(--vcard-primary);
+}
+
+.tesTitle {
+  @apply text-sm;
+}
+
+.blogGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+  @apply border-2 rounded-xl p-4;
+  background-color: var(--vcard-bg);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.blogImageWrapper {
+  @apply mb-4;
+}
+
+.blogImage {
+  @apply w-full h-48 object-cover rounded;
+}
+
+.blogContent {
+  @apply text-center;
+}
+
+.blogTitle {
+  @apply text-lg font-bold text-gray-800;
+  color : var(--vcard-heading);
+}
+
+.blogDesc {
+  @apply text-sm mt-2;
+}
+
+.qrCodeSection{
+  background-image: url('/images/template/img/vcard/vcard1-bg.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: center;
+  background-size: cover;
+}
+
+.qrGrid {
+  @apply max-w-sm mx-auto flex flex-col gap-6 items-center border-2 rounded-xl p-6 mt-20;
+  background-color: var(--vcard-bg);
+}
+
+.qrProfileSection {
+  @apply text-center mt-[-5rem];
+}
+
+.qrProfileImage {
+  @apply w-28 h-28 mx-auto rounded-full object-cover border-4;
+  border-color: var(--vcard-bg);
+}
+
+.desktopButton {
+  @apply mt-4 px-4 py-2 text-white font-semibold rounded hidden sm:hidden;
+}
+
+.qrSection {
+  @apply text-center flex flex-col;
+}
+
+.qrImage {
+  @apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+  @apply mt-4 px-4 py-2 text-white rounded sm:hidden hidden;
+}
+
+.hoursContainer {
+  @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+  @apply flex flex-row border-2 mb-4 rounded-xl py-6 justify-start px-2 items-center space-x-2;
+  background-color: var(--vcard-secondary)
+}
+
+.dayIcon{
+  @apply text-2xl object-center p-3 rounded-xl mr-1;
+  color: var(--vcard-bg);
+  background-color: var(--vcard-primary)
+}
+
+.dayLabel {
+  @apply  text-sm font-semibold capitalize;
+  color : var(--vcard-heading);
+}
+
+.timeValue {
+  @apply text-sm font-medium;
+}
+
+.contactSection{
+  background-image: url('/images/template/img/vcard/vcard1-bg.png');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: center;
+  background-size: cover;
+}
+
+.contactForm {
+  @apply max-w-6xl mx-auto relative z-10 space-y-4;
+}
+
+.formInput,
+.formTextarea {
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-red-500;
+  background-color: transparent;
+}
+
+.formButton {
+  @apply text-white px-6 py-2 rounded ml-auto block;
+  background-color: var(--vcard-primary);
+}
+
+.formButton:hover {
+  font-weight: bold;
+  color: var(--vcard-primary);
+  background-color: var(--vcard-secondary);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.gmapModal{
+    @apply relative max-w-5xl mx-auto mt-20 z-10;
+}
+
+.popupSection{
+  @apply mt-0 bottom-0 max-w-xl fixed z-50;
+}
+
+.popupWrapper{
+  @apply flex items-center justify-center p-6 relative;
+  background-color: var(--vcard-secondary);
+}
+
+.popupClose{
+  @apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
+}
+
+.popupContent{
+  @apply text-center max-w-2xl;
+}
+
+.popupTitle{
+  @apply text-2xl font-bold mb-4;
+  color: var(--vcard-heading);
+}
+
+.popupMsg{
+  @apply mb-4;
+}
+
+.popupBtn{
+  @apply inline-block font-semibold py-2 px-4 rounded transition;
+  color: var(--vcard-bg);
+  background-color: var(--vcard-primary);
+}
+
+.popupBtn:hover{
+  @apply font-semibold;
+  color: var(--vcard-primary);
+  background-color: var(--vcard-secondary);
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0, 0.2);
+}
+

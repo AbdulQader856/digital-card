@@ -1,0 +1,657 @@
+.vcard_two{
+--vcard-primary: #80b480;
+--vcard-secondary: #030712;
+--vcard-heading: #FFFFFF;
+--vcard-text: #abb1bd;
+--vcard-bg: #191d23;
+
+font-family: 'Poppins', 'Helvetica', 'sans-serif';
+color: var(--vcard-text);
+
+@apply max-w-7xl mx-auto;
+background-color: var(--vcard-bg)
+}
+
+/* FAB Container */
+.fabContainer {
+position: fixed;
+bottom: 20rem;
+right: 8rem;
+z-index: 50;
+display: flex;
+flex-direction: column;
+align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+display: flex;
+flex-direction: column;
+align-items: center;
+opacity: 0;
+transform: translateY(20px);
+pointer-events: none;
+transition: all 0.3s ease;
+gap: 0.75rem;
+margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+opacity: 1;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+background: var(--vcard-primary);
+color: white;
+width: 42px;
+height: 42px;
+border-radius: 9999px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+border: none;
+transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+background-image: url('/images/template/img/vcard/vcard12-sticky.png');
+background-size: cover;
+background-repeat: no-repeat;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+.fabMain {
+    width: 52px;
+    height: 52px;
+}
+
+.fabAction {
+    width: 36px;
+    height: 36px;
+}
+
+.fabContainer {
+    bottom: 18rem;
+    right: 0.5rem;
+}
+
+.fabActions {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+}
+
+.shareModal {
+background: white;
+padding: 2rem;
+border-radius: 1rem;
+min-width: 300px;
+}
+
+.shareModalList{
+@apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+@apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+    @apply relative z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover bg-center;
+    min-height: 220px;
+}
+
+.bannerImage{
+@apply rounded-b-3xl;
+}
+
+.language_dropdown{
+    @apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+    @apply px-4 py-2 text-sm font-bold rounded-md flex items-center gap-2;
+    background: var(--vcard-primary);
+    color: var(--vcard-heading);
+}
+
+.language_list{
+    @apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30
+}
+
+.language_items{
+    @apply text-black px-3 py-2 hover:bg-gray-100 flex items-center gap-2
+}
+
+.profile{
+    @apply relative 
+}
+
+.profileContainer{
+@apply relative z-20 mt-[-10rem] w-36 h-36 rounded-xl border-4 border-white ml-10;
+}
+
+
+.profile_details{
+    @apply relative py-3 px-6 text-start mt-[-150px] ml-48 z-20;
+}
+
+.profile_name{
+    @apply text-3xl font-semibold;
+    color : var(--vcard-heading);
+}
+
+.profile_occupation{
+    @apply text-xl block mt-2;
+}
+
+.profile_jobTitle{
+    @apply text-xl block;
+}
+
+.profile_company{
+    @apply text-sm block border-b-4 w-60 border-green-400 pb-2;
+}
+
+.profile_p{
+    @apply text-sm font-medium
+}
+
+.profile_icons{
+    @apply grid grid-cols-5 md:flex md:justify-between md:items-center gap-8 md:gap-4 mt-5 md:ml-8 ml-3 mr-8 text-2xl md:text-3xl;
+    color: white;
+}
+
+.profile_iconimg {
+@apply w-12 h-12 cursor-pointer rounded-full transition-all duration-300 ease-in-out p-2;
+}
+
+.eventdetails{
+    @apply flex flex-col md:grid md:grid-cols-2 md:justify-center md:items-center pb-4 px-6 gap-4 ml-6 mr-6;
+}
+
+.event_list{
+    @apply flex md:flex-row gap-4 items-center text-center mb-3 md:mb-3 p-4 rounded-xl;
+    background-color: var(--vcard-primary);
+    
+}
+
+.event_items {
+@apply relative;
+background-color: var(--vcard-primary);
+
+}
+
+.eventIcons{
+@apply w-8 h-8;
+}
+
+.event_label{
+    @apply text-base;
+    color : var(--vcard-heading);
+}
+
+.wrapper {
+@apply py-6 px-4 relative;
+}
+
+.break{
+    @apply md:mb-20
+}
+
+.section_heading{
+    @apply text-center text-3xl mb-4 md:mb-8 p-3 w-full rounded-br-full mx-auto ;
+    color: var(--vcard-heading)
+}
+
+.appointment{
+@apply max-w-2xl mx-auto px-4 space-y-6;
+}
+
+.date_label{
+@apply block text-sm font-medium mb-1;
+}
+
+.date_input{
+@apply w-full p-2 rounded-xl focus:outline-none;
+background-color: var(--vcard-primary);
+}
+
+.available_msg{
+@apply text-sm text-gray-600;
+}
+
+.notavailable_msg{
+@apply text-gray-500;
+}
+
+.available_slots{
+@apply grid grid-cols-2 sm:grid-cols-2 gap-3
+}
+
+.slot {
+padding: 0.5rem; /* p-2 */
+border-radius: 0.25rem; /* rounded */
+font-size: 0.875rem; /* text-sm */
+text-align: center;
+transition: background-color 0.2s, color 0.2s;
+}
+
+.activeSlot {
+background-color: var(--vcard-text); /* bg-blue-600 */
+color: #ffffff; /* text-white */
+}
+
+.inactiveSlot {
+background-color: var(--vcard-primary); /* bg-white */
+color: White;
+}
+
+.inactiveSlot:hover {
+background-color: var(--vcard-text); /* hover:bg-gray-100 */
+}
+
+.aptmodalOverlay {
+position: absolute;
+inset: 0;
+z-index: 50;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+
+.aptmodalContainer {
+background-color: white;
+border-radius: 0.5rem;
+padding: 0.5rem;
+width: 100%;
+max-width: 28rem;
+position: relative;
+margin: 0 auto;
+}
+
+.aptmodalHeading {
+font-size: 1.125rem;
+font-weight: 700;
+margin-bottom: 1rem;
+color: black;
+}
+
+.aptform {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.aptlabel {
+display: block;
+font-size: 0.75rem;
+font-weight: 500;
+margin-bottom: 0.25rem;
+color: black;
+}
+
+.aptinput {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #d1d5db;
+border-radius: 0.25rem;
+color: black;
+}
+
+.aptdetails {
+font-size: 0.875rem;
+color: var(--vcard-heading);
+color: black;
+}
+
+.aptactions {
+display: flex;
+justify-content: flex-end;
+gap: 0.75rem;
+}
+
+.aptsaveButton {
+padding: 0.5rem 1rem;
+color: var(--vcard-heading);
+background: var(--vcard-primary);
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptsaveButton:hover {
+background: var(--vcard-heading);
+color: var(--vcard-primary);
+}
+
+.aptdiscardButton {
+padding: 0.5rem 1rem;
+background-color: #d1d5db;
+color: black;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptdiscardButton:hover {
+background-color: black;
+color: #d1d5db;
+}
+
+.serviceCarousel{
+    @apply hidden
+}
+
+.serviceGrid{
+    @apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
+}
+
+.serviceCard {
+@apply flex flex-col items-center p-4 mb-4;
+background-color: var(--vcard-secondary)
+}
+
+.serviceIcon {
+@apply w-full h-auto flex items-start justify-start mb-3 overflow-hidden;
+}
+
+.iconImg {
+@apply w-40 h-28 object-cover;
+}
+
+.serviceContent {
+@apply text-left;
+}
+
+.serviceTitle {
+@apply text-lg font-semibold mb-1;
+color : white;
+}
+
+.serviceDesc {
+@apply text-sm;
+}
+
+.mediaGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.mediaCard {
+@apply w-80 h-80 p-3 cursor-pointer;
+background-color: var(--vcard-secondary)
+}
+
+.mediaImage {
+@apply w-full h-full;
+}
+
+.youtubeSection{
+@apply py-10 px-2
+}
+
+.youtubeSwiperWrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.youtubeSwiperWrapper :global(.swiper) {
+width: 100%;
+}
+
+.youtubeSwiperWrapper :global(.swiper-pagination) {
+margin-top: 0.75rem; /* space below video */
+position: static;    /* prevents overlapping */
+}
+
+.youtubeSwiper :global(.swiper-button-prev),
+.youtubeSwiper :global(.swiper-button-next) {
+color: var(--vcard-primary);
+}
+
+.youtubeSwiper :global(.swiper-pagination-bullet-active) {
+background: var(--vcard-primary);
+}
+
+.youtubeCard{
+@apply w-full aspect-video;
+}
+
+.productsGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.productsCard {
+    @apply p-1;
+    background-color: var(--vcard-secondary)
+}
+
+.productsImage {
+@apply w-full aspect-square object-cover;
+}
+
+.productsDetails {
+@apply mt-3;
+}
+
+.productsTitle {
+    @apply text-lg font-semibold;
+    color : whitesmoke;
+}
+
+.productsDesc {
+@apply text-sm mb-2;
+}
+
+.productsPrice {
+    @apply font-medium;
+    color : whitesmoke;
+}
+
+.testimonialWrapper {
+@apply max-w-4xl mx-auto;
+}
+
+.testimonialSlider {
+    @apply flex flex-col sm:flex-row items-center gap-4 p-4 mb-10;
+    background: var(--vcard-secondary);
+}
+
+.testimonialSwiper :global(.swiper-pagination-bullet-active){
+    background: var(--vcard-primary);
+}
+
+.tesImageContainer {
+@apply sm:order-2;
+}
+
+.tesImage {
+@apply rounded-full w-24 h-24 object-cover;
+}
+
+.tesContent {
+@apply sm:order-1 text-center sm:text-left;
+}
+
+.tesMessage {
+@apply text-lg mb-2;
+}
+
+.tesName {
+@apply font-semibold;
+color: white;
+}
+
+.tesTitle {
+@apply text-sm;
+}
+
+.blogGrid {
+@apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+@apply p-4 ;
+background-color: var(--vcard-secondary)
+}
+
+.blogImageWrapper {
+@apply mb-4;
+}
+
+.blogImage {
+@apply w-full h-full object-cover;
+}
+
+.blogContent {
+@apply text-center;
+}
+
+.blogTitle {
+@apply text-lg font-bold text-gray-800;
+color : var(--vcard-heading);
+}
+
+.blogDesc {
+@apply text-sm mt-2;
+}
+
+.qrGrid {
+@apply max-w-44 mx-auto mt-14;
+background-color: white;
+box-shadow: 
+    35px 0 0 0 var(--vcard-secondary),
+    0 35px 0 0 var(--vcard-secondary),
+    0 0 35px 0 var(--vcard-secondary),
+    0 0 0 35px var(--vcard-secondary);
+}
+
+.qrProfileSection {
+@apply hidden;
+}
+
+.qrProfileImage {
+@apply hidden;
+}
+
+.desktopButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
+}
+
+.qrSection {
+@apply p-2;
+}
+
+.qrImage {
+@apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden;
+}
+
+.hoursContainer {
+@apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+@apply flex flex-row mb-4 py-6 justify-start px-2 items-center space-x-2;
+background-color: var(--vcard-secondary)
+}
+
+.dayIcon{
+@apply text-2xl object-center p-3 ml-3 mr-1;
+background:white;
+color: var(--vcard-primary)
+}
+
+.dayLabel {
+@apply text-sm font-semibold capitalize;
+color : var(--vcard-primary);
+}
+
+.timeValue {
+@apply text-sm font-medium;
+color: white;
+}
+
+.contactForm {
+@apply max-w-6xl mx-auto relative z-10 space-y-4;
+}
+
+.formInput,
+.formTextarea {
+    @apply w-full px-4 py-2 border focus:outline-none;
+    background-color: var(--vcard-bg);
+}
+
+.formButton {
+@apply px-6 py-2 rounded ml-auto font-bold block;
+background: var(--vcard-primary);
+color: var(--vcard-heading);
+}
+
+.formButton:hover {
+background: var(--vcard-heading);
+color: var(--vcard-primary);
+}
+
+.gmapModal{
+    @apply max-w-5xl mx-auto mt-20
+}
+
+.popupSection{
+@apply mt-0 bottom-0 md:max-w-xl w-full absolute md:fixed z-50;
+}
+
+.popupWrapper{
+@apply flex items-center justify-center p-6 relative shadow-md;
+background-color: #d1d6dc;
+}
+
+.popupClose{
+@apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
+}
+
+.popupContent{
+@apply text-center max-w-2xl;
+}
+
+.popupTitle{
+@apply text-2xl font-bold mb-4;
+color: black;
+}
+
+.popupMsg{
+@apply mb-4;
+color: black;
+}
+
+.popupBtn{
+@apply inline-block py-2 px-4 rounded transition-transform duration-300 hover:-translate-y-2;
+background: var(--vcard-primary);
+color: var(--vcard-heading);
+}
