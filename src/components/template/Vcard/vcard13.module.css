@@ -1,0 +1,658 @@
+.vcard_two{
+  --vcard-primary: #1c344f;
+  --vcard-secondary: #f6f6f7;
+  --vcard-text: #1c344f;
+  --vcard-secondary-text: #FFFFFF;
+  --vcard-bg: #FFFFFF;
+
+  font-family: 'Poppins', 'Helvetica', 'sans-serif';
+  color: var(--vcard-text);
+
+  @apply max-w-7xl mx-auto;
+  background-color: var(--vcard-bg);
+}
+
+/* FAB Container */
+.fabContainer {
+  position: fixed;
+  bottom: 20rem;
+  right: 8rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+  background-color: white;
+  color: var(--vcard-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+  transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+  background-image: url('/images/template/img/vcard/vcard13-sticky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .fabMain {
+    width: 56px;
+    height: 56px;
+  }
+
+  .fabAction {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fabContainer {
+    bottom: 18rem;
+    right: 1rem;
+  }
+
+  .fabActions {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.shareModal {
+  background: var(--vcard-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 300px;
+}
+
+.shareModalList{
+  @apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+  @apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+    @apply relative z-0 bg-[url('/images/template/img/vcard/default-banner.jpg')] bg-no-repeat bg-cover w-full bg-center;
+    min-height: 140px;
+}
+
+.language_dropdown{
+    @apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+    @apply text-white px-4 py-2 text-sm rounded-md flex items-center gap-2;
+    background-color: var(--vcard-primary);
+}
+
+.language_list{
+    @apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30
+}
+
+.language_items{
+    @apply text-black px-3 py-2 hover:bg-gray-100 flex items-center gap-2
+}
+
+.profile{
+    @apply relative 
+}
+
+.profileContainer{
+  @apply relative z-20 mt-[-5rem] w-44 h-44 rounded-full border-8 border-[--vcard-primary] mx-auto md:mx-0 md:ml-[900px];
+} 
+
+.profile_details{
+    @apply py-3 px-6 text-center md:text-left md:mt-[-5rem];
+}
+
+.profile_name{
+    @apply text-3xl font-semibold;
+    color : var(--vcard-heading);
+}
+
+.profile_occupation{
+    @apply text-xl block mt-2;
+    color: black;
+}
+
+.profile_jobTitle{
+    @apply text-xl block;
+    color: black;
+}
+
+.profile_company{
+    @apply text-lg block;
+    color: black;
+}
+
+.profile_p{
+    @apply text-sm font-medium
+}
+
+.profile_icons{
+    @apply grid grid-cols-5 md:flex md:flex-wrap md:justify-center md:items-center gap-8 md:gap-20 my-10 mx-8 text-3xl;
+    color: var(--vcard-primary);
+}
+
+.profile_iconimg {
+  @apply w-4 h-4 cursor-pointer rounded-full transition-all duration-300 ease-in-out;
+}
+
+.profile_iconimg:hover {
+  background-color: var(--vcard-secondary);
+  box-shadow:
+    0 0 0 8px var(--vcard-secondary),
+    0 0 0 14px var(--vcard-secondary),
+    0 0 20px 25px rgba(173, 216, 255, 0.55); /* shiny white glow */
+}
+
+.eventDetailsSection{
+  background-color: var(--vcard-primary);
+}
+
+.eventdetails{
+    @apply flex flex-col md:grid md:grid-cols-2 justify-start items-center px-6 ml-6 mr-6 rounded-3xl;
+}
+
+.event_list{
+    @apply flex md:flex-wrap gap-6 items-center text-center mb-3 md:mb-0 p-4;
+}
+
+.event_items {
+  @apply relative;
+}
+
+.eventIcons{
+  @apply w-8 h-8;
+  background-color: var(--vcard-primary);
+  box-shadow:
+    0 0 0 8px var(--vcard-primary);
+}
+
+.event_label{
+    @apply text-base;
+    color : var(--vcard-heading);
+}
+
+.appointmentSection{
+  @apply py-10
+}
+
+.wrapper {
+  @apply py-6 px-4 relative;
+}
+
+.break {
+  @apply w-full h-[1px] mx-auto mb-8;
+  background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+.section_heading{
+    @apply text-center text-3xl font-semibold mb-8;
+}
+
+.appointment{
+  @apply max-w-2xl mx-auto px-4 space-y-6;
+}
+
+.date_label{
+  @apply block text-sm font-medium mb-1;
+}
+
+.date_input{
+  @apply w-full p-2 border rounded focus:outline-none;
+  background-color: var(--vcard-secondary);
+}
+
+.available_msg{
+@apply text-sm text-gray-600;
+}
+
+.notavailable_msg{
+@apply text-gray-500;
+}
+
+.available_slots{
+@apply grid grid-cols-2 sm:grid-cols-2 gap-3
+}
+
+.slot {
+padding: 0.5rem; /* p-2 */
+border: 1px solid #d1d5db; /* default Tailwind border */
+border-radius: 0.25rem; /* rounded */
+font-size: 0.875rem; /* text-sm */
+text-align: center;
+transition: background-color 0.2s, color 0.2s;
+}
+
+.activeSlot {
+background-color: var(--vcard-primary); /* bg-blue-600 */
+color: #ffffff; /* text-white */
+}
+
+.inactiveSlot {
+background-color: #ffffff; /* bg-white */
+color: #000000;
+}
+
+.inactiveSlot:hover {
+background-color: var(--vcard-secondary); /* hover:bg-gray-100 */
+}
+
+.aptmodalOverlay {
+position: absolute;
+inset: 0;
+z-index: 50;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+
+.aptmodalContainer {
+background-color: white;
+border-radius: 0.5rem;
+padding: 0.5rem;
+width: 100%;
+max-width: 28rem;
+position: relative;
+margin: 0 auto;
+}
+
+.aptmodalHeading {
+font-size: 1.125rem;
+font-weight: 700;
+margin-bottom: 1rem;
+color: black;
+}
+
+.aptform {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.aptlabel {
+display: block;
+font-size: 0.75rem;
+font-weight: 500;
+margin-bottom: 0.25rem;
+color: black;
+}
+
+.aptinput {
+@apply focus:outline-none;
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #d1d5db;
+border-radius: 0.25rem;
+color: black;
+}
+
+.aptdetails {
+font-size: 0.875rem;
+color: var(--vcard-heading);
+color: black;
+}
+
+.aptactions {
+display: flex;
+justify-content: flex-end;
+gap: 0.75rem;
+}
+
+.aptsaveButton {
+padding: 0.5rem 1rem;
+background-color: var(--vcard-secondary);
+color: white;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptsaveButton:hover {
+  background-color: var(--vcard-primary);
+  }
+
+.aptdiscardButton {
+padding: 0.5rem 1rem;
+background-color: #d1d5db;
+color: black;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptdiscardButton:hover {
+background-color: black;
+color: #d1d5db;
+}
+
+.serviceCarousel{
+    @apply hidden
+}
+
+.serviceGrid{
+    @apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-4 relative z-10
+}
+
+.serviceCard {
+  @apply rounded-xl flex flex-col items-center p-4 mb-4;
+  background-color: var(--vcard-primary);
+}
+
+.serviceIcon {
+  @apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+  @apply w-full h-full rounded-xl object-cover;
+}
+
+.serviceContent {
+  @apply text-left;
+}
+
+.serviceTitle {
+  @apply text-lg font-semibold mb-1;
+  color : var(--vcard-secondary-text);
+}
+
+.serviceDesc {
+  @apply text-sm;
+  color : var(--vcard-secondary-text);
+}
+
+.mediaGrid {
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.mediaCard {
+  @apply w-80 h-80 p-3 rounded-xl shadow-sm cursor-pointer;
+  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.5);
+}
+
+.mediaImage {
+  @apply w-full h-full rounded;
+}
+
+.youtubeSection{
+  @apply py-10 px-2
+}
+
+.youtubeSwiperWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtubeSwiperWrapper :global(.swiper) {
+  width: 100%;
+}
+
+.youtubeSwiperWrapper :global(.swiper-pagination) {
+  margin-top: 0.75rem;
+  position: static;
+}
+
+.youtubeCard{
+  @apply w-full aspect-video rounded-xl;
+}
+
+.productsGrid {
+  @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.productsCard {
+  @apply rounded-xl shadow p-3;
+  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.5);
+}
+
+.productsImage {
+  @apply w-full rounded aspect-square object-cover;
+}
+
+.productsDetails {
+  @apply mt-3;
+}
+
+.productsTitle {
+    @apply text-lg font-semibold;
+    color : var(--vcard-heading);
+}
+
+.productsDesc {
+  @apply text-sm mb-2;
+}
+
+.productsPrice {
+    @apply font-medium;
+    color : var(--vcard-heading);
+}
+
+.testimonialWrapper {
+  @apply max-w-4xl mx-auto;
+}
+
+.testimonialSlider {
+  @apply flex flex-col sm:flex-row items-center gap-4 p-4 shadow rounded-xl mb-10;
+  background-color: var(--vcard-primary);
+}
+
+.tesImageContainer {
+  @apply sm:order-2;
+}
+
+.tesImage {
+  @apply rounded-full w-24 h-24 object-cover;
+}
+
+.tesContent {
+  @apply sm:order-1 text-center sm:text-left;
+}
+
+.tesMessage {
+  @apply text-lg mb-2 indent-6;
+  color: var(--vcard-secondary-text);
+  background-image: url('/images/template/img/vcard/vcard13-quote-left.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: top left;
+}
+
+.tesName {
+  @apply font-semibold;
+  color: var(--vcard-secondary-text);
+}
+
+.tesTitle {
+  @apply text-sm;
+  color: var(--vcard-secondary-text);
+}
+
+.blogGrid {
+  @apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+  @apply shadow rounded-xl p-4;
+  background-color: var(--vcard-primary)
+}
+
+.blogImageWrapper {
+  @apply mb-4;
+}
+
+.blogImage {
+  @apply w-full h-48 object-cover rounded;
+}
+
+.blogContent {
+  @apply text-start;
+}
+
+.blogTitle {
+  @apply text-lg font-bold text-gray-800;
+  color : var(--vcard-secondary-text);
+}
+
+.blogDesc {
+  @apply text-sm mt-2;
+  color : var(--vcard-secondary-text);
+}
+
+.qrGrid {
+  @apply max-w-sm mx-auto p-6 rounded-3xl mt-20;
+  background-color: var(--vcard-secondary)
+}
+
+.qrProfileSection {
+  @apply text-center mt-[-4rem] pb-6;
+}
+
+.qrProfileImage {
+  @apply w-28 h-28 mx-auto border-8 rounded-full object-cover;
+  border-color: var(--vcard-primary);
+}
+
+.desktopButton {
+  @apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
+}
+
+.qrSection {
+  @apply text-center flex flex-col;
+}
+
+.qrImage {
+  @apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+  @apply mt-4 px-4 py-2 rounded shadow hidden;
+}
+
+.hoursContainer {
+  @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+  @apply flex flex-row mb-4 rounded-xl py-6 justify-start px-2 items-center space-x-2;
+  background-color: var(--vcard-primary)
+}
+
+.dayIcon{
+  @apply text-2xl object-center p-3 rounded-xl mr-1;
+  background-color: var(--vcard-secondary);
+}
+
+.dayLabel {
+  @apply text-sm font-semibold capitalize;
+  color : var(--vcard-secondary-text);
+}
+
+.timeValue {
+  @apply text-sm font-medium;
+  color : var(--vcard-secondary-text);
+}
+
+.contactSection{
+  background-color: var(--vcard-secondary);
+}
+
+.contactForm {
+  @apply max-w-6xl mx-auto relative z-10 space-y-4;
+}
+
+.formInput,
+.formTextarea {
+  @apply w-full px-4 py-2 rounded focus:outline-none border;
+  background-color: transparent;
+  border-color: var(--vcard-primary);
+}
+
+.formButton {
+  @apply px-6 py-2 rounded ml-auto block transition-transform duration-300 hover:-translate-y-2;
+  background-color: var(--vcard-primary);
+  color: var(--vcard-secondary-text);
+}
+
+.gmapModal{
+    @apply max-w-5xl mx-auto mt-20
+}
+
+.popupSection{
+@apply mt-0 bottom-0 md:max-w-xl w-full absolute md:fixed z-50;
+}
+
+.popupWrapper{
+@apply flex items-center justify-center p-6 relative;
+background-color: var(--vcard-secondary);
+}
+
+.popupClose{
+@apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
+}
+
+.popupContent{
+@apply text-center max-w-2xl;
+}
+
+.popupTitle{
+@apply text-2xl font-bold mb-4;
+}
+
+.popupMsg{
+@apply mb-4;
+}
+
+.popupBtn{
+@apply inline-block font-semibold py-2 px-4 rounded transition-transform duration-300 hover:-translate-y-2;
+background-color: var(--vcard-primary);
+color : var(--vcard-secondary-text);
+}
