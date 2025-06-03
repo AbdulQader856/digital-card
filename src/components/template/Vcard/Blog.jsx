@@ -16,7 +16,7 @@ const Blog = ({styles}) => {
     }
   ]
   return (
-    <section>
+    <section className={styles.blogSection}>
       <div className={`${styles.wrapper}`}>
         <div className={styles.break}></div>
 

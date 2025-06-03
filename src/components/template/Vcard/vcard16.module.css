@@ -1,0 +1,743 @@
+.vcard_two{
+--vcard-primary: #1f1f1f;
+--vcard-secondary: #f3f3f3;
+--vcard-heading: #1f1f1f;
+--vcard-text-p: #1f1f1f;
+--vcard-text-s: #ffffff;
+
+font-family: 'Poppins', 'Helvetica', 'sans-serif';
+color: var(--vcard-text);
+
+@apply max-w-7xl mx-auto;
+background-color: #ffffff;
+}
+
+/* FAB Container */
+.fabContainer {
+position: fixed;
+bottom: 20rem;
+right: 14rem;
+z-index: 50;
+display: flex;
+flex-direction: column;
+align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+display: flex;
+flex-direction: column;
+align-items: center;
+opacity: 0;
+transform: translateY(20px);
+pointer-events: none;
+transition: all 0.3s ease;
+gap: 0.75rem;
+margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+opacity: 1;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+background: var(--vcard-secondary);
+color: var(--vcard-primary);
+width: 42px;
+height: 42px;
+border-radius: 9999px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+border: none;
+transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+background-image: url('/images/template/img/vcard/vcard15-sticky.png');
+background-size: cover;
+background-repeat: no-repeat;
+width: 64px;
+height: 64px;
+border-radius: 50%;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+.fabMain {
+width: 56px;
+height: 56px;
+}
+
+.fabAction {
+width: 36px;
+height: 36px;
+}
+
+.fabContainer {
+bottom: 18rem;
+right: 1rem;
+}
+
+.fabActions {
+gap: 0.5rem;
+margin-bottom: 0.5rem;
+}
+}
+
+.shareModal {
+background: var(--vcard-secondary);
+padding: 2rem;
+border-radius: 1rem;
+min-width: 300px;
+}
+
+.shareModalList{
+@apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+@apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+@apply relative w-full bg-center;
+  min-height: 180px;
+background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D'0%200%204000%20275'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20fill%3D'%23043636'%20d%3D'M4000%2C125.3V275H0V109.9C1907.2%2C500.4%2C2670.5-323.1%2C4000%2C125.3z'%20/%3E%3C/svg%3E"), url('/images/template/img/vcard/default-banner.jpg');
+background-repeat: no-repeat, no-repeat;
+background-size: 100% 100%, cover;
+background-position: 0px 50px , center;
+z-index: 0;
+}
+
+.language_dropdown{
+@apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+@apply text-white px-4 py-2 text-sm rounded-md flex items-center gap-2;
+background: var(--vcard-secondary);
+}
+
+.language_btn:hover{
+background: var(--vcard-secondary-reverse);
+}
+
+.language_list{
+@apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30;
+}
+
+.language_items{
+@apply text-black px-3 py-2 hover:bg-gray-100 flex items-center gap-2;
+}
+
+.profile{
+@apply relative ;
+}
+
+.profileContainer{
+@apply relative z-20 mt-[-6rem] w-36 h-36 rounded-full mx-auto md:mx-0 md:ml-[50px];
+}
+
+.profileDetailsSection{
+@apply pb-6 border-b-2 mt-[-4rem];
+background-color: var(--vcard-primary);
+}
+
+.profile_details{
+@apply py-3 px-6 text-center md:text-left md:ml-4;
+}
+
+.profile_name{
+@apply text-4xl font-semibold md:ml-[11rem];
+-webkit-text-fill-color: transparent;
+background: linear-gradient(#d68328, #ffc994, #d68328);
+-webkit-background-clip: text; 
+}
+
+.profile_occupation{
+@apply text-xl block mt-2 md:ml-[11rem];
+}
+
+.profile_jobTitle{
+@apply text-xl block md:ml-[11rem];
+}
+
+.profile_company{
+@apply text-lg block md:ml-[11rem];
+}
+
+.profile_p{
+@apply text-sm font-medium
+}
+
+.profile_icons{
+@apply grid grid-cols-5 md:flex md:flex-wrap md:justify-center md:items-center gap-8 md:gap-14 my-10 mx-6 text-4xl;
+color: #d68328;
+}
+
+.profile_iconimg {
+@apply w-14 h-14 p-2 cursor-pointer rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-4;
+background-color: var(--vcard-primary);
+}
+
+.eventDetailsSection{
+@apply pt-10 px-6;
+background-color: var(--vcard-primary);
+}
+
+.eventdetails{
+@apply flex flex-col md:grid md:grid-cols-2 items-center pb-4 px-6 gap-4;
+}
+
+.event_list{
+@apply flex flex-row md:flex-wrap gap-2 items-center text-center mb-4 p-2 rounded-2xl w-full;
+}
+
+.event_items {
+@apply p-4 relative rounded-2xl;
+background: #234748;
+box-shadow: 0 10px 10px 1px black;
+}
+
+.eventIcons{
+@apply w-8 h-8;
+color: #d68328;
+}
+
+.event_label{
+@apply text-xl;
+color: white;
+}
+
+.appointmentSection{
+@apply py-10
+}
+
+.wrapper {
+@apply py-6 px-4 relative;
+}
+
+.section_heading{
+@apply text-center text-3xl font-semibold mb-8;
+color: var(--vcard-heading);
+}
+
+.appointment{
+@apply max-w-2xl mx-auto px-4 space-y-6;
+}
+
+.date_label{
+@apply block text-sm font-medium mb-1;
+}
+
+.date_input{
+@apply w-full p-2 border rounded focus:outline-none;
+background-color: var(--vcard-secondary);
+}
+
+.available_msg{
+@apply text-sm text-gray-600;
+}
+
+.notavailable_msg{
+@apply text-gray-500;
+}
+
+.available_slots{
+@apply grid grid-cols-2 sm:grid-cols-2 gap-3
+}
+
+.slot {
+padding: 0.5rem; /* p-2 */
+border: 1px solid var(--vcard-primary); /* default Tailwind border */
+border-radius: 0.25rem; /* rounded */
+font-size: 0.875rem; /* text-sm */
+text-align: center;
+transition: background-color 0.2s, color 0.2s;
+}
+
+.activeSlot {
+background-color: var(--vcard-primary); /* bg-blue-600 */
+color: #ffffff; /* text-white */
+}
+
+.inactiveSlot {
+background-color: #ffffff; /* bg-white */
+color: #000000;
+}
+
+.inactiveSlot:hover {
+background-color: var(--vcard-secondary); /* hover:bg-gray-100 */
+}
+
+.aptmodalOverlay {
+position: absolute;
+inset: 0;
+z-index: 50;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+
+.aptmodalContainer {
+background-color: white;
+border-radius: 0.5rem;
+padding: 0.5rem;
+width: 100%;
+max-width: 28rem;
+position: relative;
+margin: 0 auto;
+}
+
+.aptmodalHeading {
+font-size: 1.125rem;
+font-weight: 700;
+margin-bottom: 1rem;
+color: black;
+}
+
+.aptform {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.aptlabel {
+display: block;
+font-size: 0.75rem;
+font-weight: 500;
+margin-bottom: 0.25rem;
+color: black;
+}
+
+.aptinput {
+@apply focus:outline-none;
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #d1d5db;
+border-radius: 0.25rem;
+color: black;
+}
+
+.aptdetails {
+font-size: 0.875rem;
+color: var(--vcard-heading);
+color: black;
+}
+
+.aptactions {
+display: flex;
+justify-content: flex-end;
+gap: 0.75rem;
+}
+
+.aptsaveButton {
+@apply transition-transform duration-300 hover:-translate-y-2;
+padding: 0.5rem 1rem;
+background-color: var(--vcard-primary);
+color: white;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptdiscardButton {
+@apply transition-transform duration-300 hover:-translate-y-2;
+padding: 0.5rem 1rem;
+background-color: #d1d5db;
+color: black;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptdiscardButton:hover {
+background-color: black;
+color: #d1d5db;
+}
+
+.serviceSection{
+background-color: #f1f1f1;
+}
+
+.serviceCarousel{
+@apply hidden
+}
+
+.serviceGrid{
+@apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-10 relative z-10
+}
+
+.serviceCard {
+@apply relative rounded-xl flex flex-col items-center p-4 mb-4 border-2;
+background-color: white;
+}
+
+.serviceCard::before {
+content: '';
+position: absolute;
+top: -8px;
+left: -8px;
+right: 6px;
+bottom: 6px;
+border: 2px solid #d68328;
+border-radius: 0.75rem;
+z-index: 10;
+}
+
+.serviceIcon {
+@apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+@apply w-full h-full rounded-xl object-cover;
+}
+
+.serviceContent {
+@apply text-left;
+}
+
+.serviceTitle {
+@apply text-lg font-semibold mb-1;
+color: var(--vcard-heading);
+}
+
+.serviceDesc {
+@apply text-sm;
+}
+
+.gallerySection{
+background-color: #f1f1f1;
+}
+
+.youtubeSection{
+background-color: #f1f1f1;
+}
+
+.instagramSection{
+background-color: #f1f1f1;
+}
+
+.mediaGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.mediaCard {
+@apply w-80 h-80 p-3 rounded-xl shadow-sm cursor-pointer;
+background-color: white;
+box-shadow: 0 3px 20px 1px black;
+}
+
+.mediaImage {
+@apply w-full h-full rounded;
+}
+
+.youtubeSection{
+@apply py-10 px-2
+}
+
+.youtubeSwiperWrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.youtubeSwiperWrapper :global(.swiper) {
+width: 100%;
+}
+
+.youtubeSwiperWrapper :global(.swiper-pagination) {
+margin-top: 0.75rem;
+position: static;
+}
+
+.youtubeSwiper :global(.swiper-button-prev),
+.youtubeSwiper :global(.swiper-button-next) {
+color: var(--vcard-primary);
+}
+
+.youtubeSwiper :global(.swiper-pagination-bullet-active) {
+background: var(--vcard-primary);
+}
+
+.youtubeCard{
+@apply w-full aspect-video rounded-xl;
+}
+
+.productSection{
+background-color: #f1f1f1;
+}
+
+.productsGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.productsCard {
+@apply rounded-xl shadow p-3;
+background-color: white;
+box-shadow: 0 3px 20px 1px black;
+}
+
+.productsImage {
+@apply w-full h-80 rounded aspect-square object-cover overflow-hidden;
+}
+
+.productsDetails {
+@apply p-4;
+}
+
+.productsTitle {
+@apply text-lg font-semibold;
+color : var(--vcard-heading);
+}
+
+.productsDesc {
+@apply text-sm mb-2;
+}
+
+.productsPrice {
+@apply font-medium;
+color : var(--vcard-heading);
+}
+
+.testimonialSection{
+background-image: url('/images/template/img/vcard/vcard15-testimonial-bg.png');
+}
+
+.testimonialSection .section_heading{
+color: white;
+}
+
+.testimonialWrapper {
+@apply max-w-7xl mx-auto;
+}
+
+.testimonialSlider {
+@apply flex flex-row items-center gap-4 p-4 rounded-xl mb-10;
+}
+
+.testimonialSwiper :global(.swiper-pagination-bullet-active){
+background-color: #d68328;
+}
+
+.tesImageContainer {
+@apply sm:order-1;
+}
+
+.tesImage {
+@apply rounded-l-full rounded-b-full w-36 h-36 object-cover;
+}
+
+.tesContent {
+@apply sm:order-2 text-center sm:text-left;
+}
+
+.tesMessage {
+@apply text-lg mb-2;
+color: white;
+}
+
+.tesName {
+@apply font-semibold;
+-webkit-text-fill-color: transparent;
+background: var(--vcard-secondary);
+-webkit-background-clip: text;
+}
+
+.tesTitle {
+@apply text-sm hidden;
+}
+
+.blogGrid {
+@apply max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+@apply relative shadow rounded-xl p-4;
+background-color: white;
+box-shadow: 0 0 10px 1px gray;
+}
+
+.blogCard::before {
+content: '';
+position: absolute;
+top: -8px;
+left: -8px;
+right: 6px;
+bottom: 6px;
+border: 2px solid #d68328;
+border-radius: 0.75rem;
+z-index: 10;
+}
+
+.blogImageWrapper {
+@apply mb-4;
+}
+
+.blogImage {
+@apply w-full h-48 object-cover rounded;
+}
+
+.blogContent {
+@apply text-start;
+}
+
+.blogTitle {
+@apply text-lg font-bold;
+color: var(--vcard-heading);
+}
+
+.blogDesc {
+@apply text-sm mt-2;
+}
+
+.qrCodeSection{
+background-image:url('/images/template/img/vcard/vcard15-qr-code-bg.png'); 
+}
+
+.qrCodeSection .section_heading{
+color: white;
+}
+
+.qrGrid {
+@apply max-w-7xl mx-auto p-2 mt-4;
+background-color: var(--vcard-secondary)
+}
+
+.qrProfileSection {
+@apply text-center pb-6;
+}
+
+.qrProfileImage {
+@apply w-28 h-28 mx-auto rounded-full object-cover; 
+}
+
+.desktopButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
+}
+
+.qrSection {
+@apply max-w-sm mx-auto pb-10 pt-20 text-center flex flex-col mt-[-5rem] rounded-3xl;
+background-color: white
+}
+
+.qrImage {
+@apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden;
+}
+
+.businessSection{
+background-image: url('/images/template/img/vcard/vcard15-bussiness-hour-bg.png');
+background-size: 100% auto;
+background-position: center;
+}
+
+.hoursContainer {
+@apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+@apply flex flex-row mb-4 rounded-xl py-6 justify-start px-2 items-center space-x-2 border;
+border-color: #d68328;
+background: transparent;
+}
+
+.dayIcon{
+@apply text-2xl object-center p-3 rounded-xl mr-1;
+color: white;
+background: var(--vcard-primary);
+}
+
+.dayLabel {
+@apply text-sm font-semibold capitalize;
+color: var(--vcard-heading)
+}
+
+.timeValue {
+@apply text-sm font-medium;
+}
+
+.contactForm {
+@apply max-w-6xl mx-auto relative z-10 space-y-4;
+}
+
+.formInput,
+.formTextarea {
+@apply w-full px-4 py-2 rounded focus:outline-none border;
+background-color: transparent;
+border-color: var(--vcard-primary);
+color: var(--vcard-primary);
+}
+
+.formButton {
+@apply px-6 py-2 rounded ml-auto block transition;
+background: var(--vcard-secondary);
+color: white;
+}
+
+.formButton:hover {
+background: var(--vcard-secondary-reverse);
+}
+
+.gmapModal{
+@apply max-w-5xl mx-auto mt-20
+}
+
+.popupSection{
+@apply mt-0 bottom-0 md:max-w-xl w-full absolute md:fixed z-50;
+}
+
+.popupWrapper{
+@apply flex items-center justify-center p-6 relative;
+background-color: #f1f1f1;
+box-shadow: 0 0 10px 1px black;
+}
+
+.popupClose{
+@apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
+}
+
+.popupContent{
+@apply text-center max-w-2xl;
+color: black;
+}
+
+.popupTitle{
+@apply text-2xl font-bold mb-4;
+}
+
+.popupMsg{
+@apply mb-4;
+}
+
+.popupBtn{
+@apply inline-block font-semibold py-2 px-4 rounded transition;
+background: var(--vcard-secondary);
+color : white;
+}
+
+.popupBtn:hover{
+background: var(--vcard-secondary-reverse);
+}
