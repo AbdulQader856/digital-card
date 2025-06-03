@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaTwitter, FaGlobe,
 
 const SocialIcons = ({styles}) => {
     return (
-        <section>
+        <section className={styles.socialSection}>
             <div className={`${styles.profile_icons}`}>
                 <a href='#' className={styles.profile_iconimg}><FaGlobe/></a>
                 <a href='#' className={styles.profile_iconimg}><FaTwitter/></a>
