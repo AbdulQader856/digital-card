@@ -1,0 +1,751 @@
+.vcard_two{
+--vcard-primary: #49adfe;
+--vcard-secondary: #FFFFFF;
+--vcard-heading: #212529;
+--vcard-text: #66737d;
+
+font-family: 'Poppins', 'Helvetica', 'sans-serif';
+color: var(--vcard-text);
+
+@apply max-w-7xl mx-auto;
+background-color: #ffffff;
+}
+
+/* FAB Container */
+.fabContainer {
+position: fixed;
+bottom: 20rem;
+right: 8rem;
+z-index: 50;
+display: flex;
+flex-direction: column;
+align-items: flex-center;
+}
+
+/* FAB Actions (hidden by default) */
+.fabActions {
+display: flex;
+flex-direction: column;
+align-items: center;
+opacity: 0;
+transform: translateY(20px);
+pointer-events: none;
+transition: all 0.3s ease;
+gap: 0.75rem;
+margin-bottom: 0.75rem;
+}
+
+.fabActions.show {
+opacity: 1;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+/* Small Action Buttons */
+.fabAction {
+background: var(--vcard-secondary);
+color: var(--vcard-primary);
+width: 42px;
+height: 42px;
+border-radius: 9999px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+cursor: pointer;
+border: none;
+transition: transform 0.2s ease;
+}
+
+.fabAction:hover {
+transform: scale(1.1);
+}
+
+/* Main FAB */
+.fabMain {
+background-image: url('/images/template/img/vcard/vcard18-sticky.png');
+background-size: cover;
+background-repeat: no-repeat;
+width: 64px;
+height: 64px;
+border-radius: 50%;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+.fabMain {
+width: 56px;
+height: 56px;
+}
+
+.fabAction {
+width: 36px;
+height: 36px;
+}
+
+.fabContainer {
+bottom: 18rem;
+right: 1rem;
+}
+
+.fabActions {
+gap: 0.5rem;
+margin-bottom: 0.5rem;
+}
+}
+
+.shareModal {
+background: var(--vcard-secondary);
+padding: 2rem;
+border-radius: 1rem;
+min-width: 300px;
+}
+
+.shareModalList{
+@apply flex flex-col gap-4;
+}
+
+.shareModalItem{
+@apply flex flex-row gap-4 items-center;
+}
+
+.banner{
+@apply relative w-full bg-center;
+min-height: 140px;
+background-image: url('/images/template/img/vcard/default-banner.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+
+.language_dropdown{
+@apply absolute top-0 right-0 m-4 z-20;
+}
+
+.language_btn{
+@apply px-4 py-2 text-sm rounded-md flex items-center gap-2;
+background: var(--vcard-primary);
+color: var(--vcard-secondary);
+}
+
+.language_btn:hover{
+@apply border;
+background: var(--vcard-secondary);
+color: var(--vcard-primary);
+border-color: var(--vcard-primary);
+}
+
+.language_list{
+@apply absolute top-full mt-2 right-0 w-40 bg-white shadow-lg rounded-md border divide-y z-30;
+}
+
+.language_items{
+@apply text-black px-3 py-2 hover:bg-gray-100 flex items-center gap-2;
+}
+
+.profile{
+@apply relative;
+}
+
+.profileContainer{
+@apply relative z-20 w-44 h-44 rounded-full mx-auto border-4 mt-[-6rem] md:mt-0;
+border-color: var(--vcard-primary);
+}
+
+.profileDetailsSection{
+@apply pb-6;
+background-image: url('/images/template/img/vcard/vcard18-curve-shape.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: 100% 100%;
+}
+
+.profile_details{
+@apply py-3 px-6 text-center md:text-left md:ml-4 md:mt-[-11rem];
+}
+
+.profile_name{
+@apply relative text-4xl font-semibold;
+color: var(--vcard-heading);
+}
+
+.profile_occupation{
+@apply relative text-xl block mt-2 ;
+}
+.profile_jobTitle{
+@apply relative text-xl block;
+}
+
+.profile_company{
+@apply relative text-lg ;
+}
+
+.profile_p{
+@apply text-sm font-medium;
+color: var(--vcard-heading)
+}
+
+.socialSection{
+@apply py-10;
+}
+
+.profile_icons{
+@apply grid grid-cols-5 md:flex md:flex-wrap md:justify-center md:items-center gap-4 md:gap-12 mx-6 text-4xl;
+color: var(--vcard-primary);
+}
+
+.profile_iconimg {
+@apply w-14 h-14 p-2 cursor-pointer rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-4;
+background-color: var(--vcard-secondary);
+box-shadow: 0 0 5px 1px gray;;
+}
+
+.eventDetailsSection{
+@apply pt-10 px-6;
+}
+
+.eventdetails{
+@apply flex flex-col md:grid md:grid-cols-2 items-center pb-4 px-6 gap-1;
+}
+
+.event_list{
+@apply flex flex-row md:flex-wrap gap-2 items-center text-center mb-4 p-1 w-full;
+}
+
+.event_items {
+@apply p-2 relative;
+}
+
+.eventIcons{
+@apply w-12 h-12 p-1 border-2 rounded-lg;
+color: var(--vcard-primary);
+border-color: var(--vcard-primary);
+}
+
+.event_label{
+@apply text-xl font-bold;
+color: var(--vcard-text-p);
+}
+
+.appointmentSection{
+@apply py-10;
+background-image: url('/images/template/img/vcard/vcard18-appointment-bg.png'), url('/images/template/img/vcard/vcard18-appointment-bg.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top right, left;
+}
+
+.wrapper {
+@apply py-6 px-4 relative;
+}
+
+.section_heading{
+@apply text-center text-3xl font-semibold mb-8;
+color: var(--vcard-heading);
+}
+
+.appointment{
+@apply max-w-2xl mx-auto px-4 space-y-6;
+}
+
+.date_label{
+@apply block text-sm font-medium mb-1;
+}
+
+.date_input{
+@apply w-full p-2 border rounded focus:outline-none;
+background-color: var(--vcard-secondary);
+}
+
+.available_msg{
+@apply text-sm text-gray-600;
+}
+
+.notavailable_msg{
+@apply text-gray-500;
+}
+
+.available_slots{
+@apply grid grid-cols-2 sm:grid-cols-2 gap-3
+}
+
+.slot {
+padding: 0.5rem; /* p-2 */
+border: 1px solid var(--vcard-primary); /* default Tailwind border */
+border-radius: 0.25rem; /* rounded */
+font-size: 0.875rem; /* text-sm */
+text-align: center;
+transition: background-color 0.2s, color 0.2s;
+}
+
+.activeSlot {
+background-color: var(--vcard-secondary); /* bg-blue-600 */
+color: var(--vcard-primary); /* text-white */
+}
+
+.inactiveSlot {
+background-color: #ffffff; /* bg-white */
+color: #000000;
+}
+
+.inactiveSlot:hover {
+background-color: var(--vcard-secondary); /* hover:bg-gray-100 */
+}
+
+.aptmodalOverlay {
+position: absolute;
+inset: 0;
+z-index: 50;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+
+.aptmodalContainer {
+background-color: white;
+border-radius: 0.5rem;
+padding: 0.5rem;
+width: 100%;
+max-width: 28rem;
+position: relative;
+margin: 0 auto;
+}
+
+.aptmodalHeading {
+font-size: 1.125rem;
+font-weight: 700;
+margin-bottom: 1rem;
+color: black;
+}
+
+.aptform {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.aptlabel {
+display: block;
+font-size: 0.75rem;
+font-weight: 500;
+margin-bottom: 0.25rem;
+color: black;
+}
+
+.aptinput {
+@apply focus:outline-none;
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #d1d5db;
+border-radius: 0.25rem;
+color: black;
+}
+
+.aptdetails {
+font-size: 0.875rem;
+color: var(--vcard-heading);
+color: black;
+}
+
+.aptactions {
+display: flex;
+justify-content: flex-end;
+gap: 0.75rem;
+}
+
+.aptsaveButton {
+@apply transition-transform duration-300 hover:-translate-y-2;
+padding: 0.5rem 1rem;
+background-color: var(--vcard-primary);
+color: var(--vcard-secondary);
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptsaveButton:hover {
+background-color: var(--vcard-primary);
+color: var(--vcard-secondary);
+box-shadow: 0 0 5px 1px gray;
+}
+
+.aptdiscardButton {
+@apply transition-transform duration-300 hover:-translate-y-2;
+padding: 0.5rem 1rem;
+background-color: #d1d5db;
+color: black;
+border-radius: 0.25rem;
+border: none;
+cursor: pointer;
+}
+
+.aptdiscardButton:hover {
+background-color: black;
+color: #d1d5db;
+}
+
+.serviceSection{
+background-image: url('/images/template/img/vcard/vcard18-bag.png');
+background-repeat: no-repeat;
+background-position: top;
+}
+
+.serviceCarousel{
+@apply hidden
+}
+
+.serviceGrid{
+@apply sm:grid grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4 gap-10 relative z-10
+}
+
+.serviceCard {
+@apply relative rounded-xl flex flex-col items-center p-4 mb-4;
+}
+
+.serviceIcon {
+@apply w-full h-56 flex items-center justify-center mb-3 overflow-hidden;
+}
+
+.iconImg {
+@apply w-full h-full rounded-xl object-cover;
+}
+
+.serviceContent {
+@apply text-left;
+}
+
+.serviceTitle {
+@apply text-lg font-semibold mb-1;
+color: var(--vcard-heading);
+}
+
+.serviceDesc {
+@apply text-sm;
+}
+
+.gallerySection{
+background-image: url('/images/template/img/vcard/vcard18-bag.png'), url('/images/template/img/vcard/vcard18-time.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top left, right;
+}
+
+.instagramSection{
+background-image: url('/images/template/img/vcard/vcard18-dollar.png'), url('/images/template/img/vcard/vcard18-bag.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top left, right;
+}
+
+.mediaGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.mediaCard {
+@apply w-80 h-80 rounded-xl shadow-sm cursor-pointer border-2;
+border-color: var(--vcard-secondary)
+}
+
+.mediaImage {
+@apply w-full h-full rounded-xl;
+}
+
+.youtubeSection{
+@apply py-10 px-2
+}
+
+.youtubeSwiperWrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.youtubeSwiperWrapper :global(.swiper) {
+width: 100%;
+}
+
+.youtubeSwiperWrapper :global(.swiper-pagination) {
+margin-top: 0.75rem;
+position: static;
+}
+
+.youtubeSwiper :global(.swiper-button-prev),
+.youtubeSwiper :global(.swiper-button-next) {
+color: var(--vcard-primary);
+}
+
+.youtubeSwiper :global(.swiper-pagination-bullet-active) {
+background: var(--vcard-primary);
+}
+
+.youtubeCard{
+@apply w-full aspect-video rounded-xl;
+}
+
+.productSection{
+background-image: url('/images/template/img/vcard/vcard18-amount.png');
+background-repeat: no-repeat;
+background-position: top right;
+background-size: 40px 40px
+}
+
+.productsGrid {
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+}
+
+.productsCard {
+@apply rounded-xl shadow p-3;
+background-color: white;
+box-shadow: 0 0 5px 1px gray;
+}
+
+.productsImage {
+@apply w-full h-80 rounded aspect-square object-cover overflow-hidden;
+}
+
+.productsDetails {
+@apply p-4;
+}
+
+.productsTitle {
+@apply text-lg font-semibold;
+color : var(--vcard-heading);
+}
+
+.productsDesc {
+@apply text-sm mb-2;
+}
+
+.productsPrice {
+@apply font-medium;
+color : var(--vcard-heading);
+}
+
+.testimonialSection{
+background-image: url('/images/template/img/vcard/vcard18-earth.png');
+background-repeat: no-repeat;
+background-position: right;
+}
+
+.testimonialWrapper {
+@apply max-w-sm mx-auto p-3 rounded-3xl;
+background: linear-gradient(0deg, #ffffff 15%, #49adfe);
+}
+
+.testimonialSlider {
+@apply flex flex-col items-center gap-4 p-4 rounded-xl mb-10;
+background-color: white;
+}
+
+.testimonialSwiper :global(.swiper-pagination-bullet-active){
+background-color: var(--vcard-primary);
+}
+
+.tesImageContainer {
+@apply sm:order-1 p-2 border-4 rounded-full;
+border-color: var(--vcard-primary)
+}
+
+.tesImage {
+@apply rounded-full w-36 h-36 object-cover;
+}
+
+.tesContent {
+@apply sm:order-2 text-center sm:text-left;
+}
+
+.tesMessage {
+@apply text-lg mb-2 indent-10;
+background-image: url('/images/template/img/vcard/vcard18-quote-left-img.png'), url('/images/template/img/vcard/vcard18-quote-right-img.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top left, bottom right;
+}
+
+.tesName {
+@apply font-semibold text-xl;
+color: var(--vcard-heading)
+}
+
+.tesTitle {
+@apply text-sm hidden;
+}
+
+.blogSection{
+background-image: url('/images/template/img/vcard/vcard18-amount.png');
+background-repeat: no-repeat;
+background-position: top left;
+}
+
+.blogGrid {
+@apply max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.blogCard {
+@apply relative rounded-xl flex flex-row gap-4 items-center;
+}
+
+.blogImageWrapper {
+@apply mb-4;
+}
+
+.blogImage {
+@apply w-full h-48 object-cover rounded-xl;
+}
+
+.blogContent {
+@apply text-start border p-2 rounded-xl;
+border-color: var(--vcard-primary);
+}
+
+.blogTitle {
+@apply text-lg font-bold;
+color: var(--vcard-heading);
+}
+
+.blogDesc {
+@apply text-sm mt-2;
+}
+
+.qrCodeSection{
+background-image: url('/images/template/img/vcard/vcard18-amount.png'), url('/images/template/img/vcard/vcard18-dollar.png'), url('/images/template/img/vcard/vcard18-earth.png');
+background-repeat: no-repeat, no-repeat, no-repeat;
+background-position: bottom left, right, top;
+}
+
+.qrGrid {
+@apply max-w-7xl mx-auto p-2 mt-4;
+}
+
+.qrProfileSection {
+@apply text-center pb-6;
+}
+
+.qrProfileImage {
+@apply w-28 h-28 mx-auto rounded-full object-cover border-4;
+border-color: var(--vcard-primary); 
+}
+
+.desktopButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden sm:hidden;
+}
+
+.qrSection {
+@apply max-w-sm mx-auto pb-10 pt-20 text-center flex flex-col mt-[-5rem] rounded-3xl border-2;
+border-color: var(--vcard-primary)
+}
+
+.qrImage {
+@apply w-40 h-40 mx-auto object-contain;
+}
+
+.mobileButton {
+@apply mt-4 px-4 py-2 rounded shadow hidden;
+}
+
+.businessSection{
+background-image: url('/images/template/img/vcard/vcard18-time.png'), url('/images/template/img/vcard/vcard18-time.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top right, bottom left;
+background-size: 100px 100px, auto auto;
+}
+
+.hoursContainer {
+@apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
+}
+
+.timeRow {
+@apply flex flex-row mb-4 rounded-xl py-3 justify-start px-2 items-center space-x-2 border-2;
+border-color: var(--vcard-primary);
+background: transparent;
+}
+
+.dayIcon{
+@apply text-2xl object-center p-3 rounded-xl mr-1;
+color: var(--vcard-secondary);
+background: var(--vcard-primary);
+}
+
+.dayLabel {
+@apply text-sm font-semibold capitalize;
+color: var(--vcard-heading)
+}
+
+.timeValue {
+@apply text-sm font-medium;
+}
+
+.contactForm {
+@apply max-w-6xl mx-auto relative z-10 space-y-4;
+background-image: url('/images/template/img/vcard/vcard18-bg-img.png');
+background-repeat: no-repeat;
+background-position: left;
+background-size: 100% 100%;
+}
+
+.formInput,
+.formTextarea {
+@apply w-full px-4 py-2 rounded focus:outline-none border;
+color: var(--vcard-primary);
+background-color: transparent;
+}
+
+.formButton {
+@apply px-6 py-2 rounded ml-auto block transition;
+background: var(--vcard-primary);
+color: var(--vcard-secondary);
+}
+
+.formButton:hover {
+@apply border;
+background: var(--vcard-secondary);
+color: var(--vcard-primary);
+border-color: var(--vcard-primary);
+}
+
+.gmapModal{
+@apply max-w-5xl mx-auto mt-20
+}
+
+.popupSection{
+@apply mt-0 bottom-0 md:max-w-xl w-full absolute md:fixed z-50;
+}
+
+.popupWrapper{
+@apply flex items-center justify-center p-6 relative;
+background-color: #f1f1f1;
+box-shadow: 0 0 10px 1px black;
+}
+
+.popupClose{
+@apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
+}
+
+.popupContent{
+@apply text-center max-w-2xl;
+color: black;
+}
+
+.popupTitle{
+@apply text-2xl font-bold mb-4;
+}
+
+.popupMsg{
+@apply mb-4;
+}
+
+.popupBtn{
+@apply inline-block font-semibold py-2 px-4 rounded transition;
+background: var(--vcard-primary);
+color : var(--vcard-secondary);
+}
+
+.popupBtn:hover{
+background: var(--vcard-secondary);
+color : var(--vcard-primary);
+box-shadow: 0 0 5px 1px gray;
+}
