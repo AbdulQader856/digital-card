@@ -17,6 +17,7 @@ const Banner = ({styles}) => {
   const [open, setOpen] = useState(false);
 
   return (
+    <section className={styles.bannerSection}>
     <div className={`${styles.banner}`}>
       {/* Background Image */}
       {/* <img
@@ -58,6 +59,7 @@ const Banner = ({styles}) => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

@@ -1,14 +1,14 @@
 .vcard_two{
---vcard-primary: #b8ff69;
---vcard-secondary: #224754;
---vcard-heading: #FFFFFF;
---vcard-text: #9facb0;
+--vcard-primary: #f96921;
+--vcard-secondary: #ffefe7;
+--vcard-heading: #000000;
+--vcard-text: #8b807b;
 
 font-family: 'Poppins', 'Helvetica', 'sans-serif';
 color: var(--vcard-text);
 
 @apply max-w-7xl mx-auto;
-background-color: #0f2f3a;
+background-color: #fff;
 }
 
 /* FAB Container */
@@ -43,7 +43,7 @@ pointer-events: auto;
 
 /* Small Action Buttons */
 .fabAction {
-background: var(--vcard-secondary);
+background: #ffffff;
 color: var(--vcard-primary);
 width: 42px;
 height: 42px;
@@ -134,7 +134,7 @@ background-position: center;
 .language_btn{
 @apply px-4 py-2 text-sm rounded-md flex items-center gap-2;
 background: var(--vcard-primary);
-color: #000000;
+color: #ffffff;
 }
 
 .language_list{
@@ -150,8 +150,9 @@ color: #000000;
 }
 
 .profileContainer{
-@apply relative z-20 w-40 h-40 rounded-full mx-auto border-4 mt-[-5rem];
-border-color: var(--vcard-primary);
+@apply relative z-20 w-40 h-40 rounded-3xl mx-auto border-4 mt-[-5rem] md:mx-0 md:ml-[4rem];
+border-color: white;
+box-shadow: 0 0 5px black;
 }
 
 .profileDetailsSection{
@@ -159,26 +160,26 @@ border-color: var(--vcard-primary);
 }
 
 .profile_details{
-@apply py-3 px-6 text-center;
+@apply py-3 px-6 text-center md:text-left mt-[-8.3rem];
 }
 
 .profile_name{
-@apply relative text-2xl font-bold;
-color: var(--vcard-primary);
+@apply relative text-3xl font-bold md:ml-[14rem];
+color: white;
 }
 
 .profile_occupation{
-@apply relative text-lg block mt-2;
+@apply relative text-lg block mt-2 md:ml-[14rem];
 color: var(--vcard-heading);
 }
 
 .profile_jobTitle{
-@apply relative text-lg block;
+@apply relative text-lg block md:ml-[14rem];
 color: var(--vcard-heading);
 }
 
 .profile_company{
-@apply relative text-sm;
+@apply relative text-sm md:ml-[14rem];
 color: var(--vcard-heading);
 }
 
@@ -192,13 +193,12 @@ color: var(--vcard-heading);
 }
 
 .profile_icons{
-@apply grid grid-cols-5 md:flex md:flex-wrap justify-center items-center gap-4 md:gap-10 mx-6 text-2xl;
-color: var(--vcard-heading);
+@apply grid grid-cols-5 md:flex md:flex-wrap gap-4 md:gap-6 mx-6 text-3xl;
+color: var(--vcard-primary);
 }
 
 .profile_iconimg {
-@apply w-10 h-10 p-2 cursor-pointer rounded-full transition-transform duration-300 ease-in-out hover:-translate-y-4;
-background-color: var(--vcard-secondary);
+@apply w-10 h-10 cursor-pointer rounded-full transition-transform duration-300 ease-in-out hover:-translate-y-4;
 }
 
 .eventDetailsSection{
@@ -210,7 +210,9 @@ background-color: var(--vcard-secondary);
 }
 
 .event_list{
-@apply flex flex-row md:flex-wrap gap-2 items-center text-center mb-4 p-1 w-full rounded-xl;
+@apply flex flex-col md:flex-wrap items-center text-center mb-8 p-1 w-full rounded-xl;
+background-color: #ffffff;
+box-shadow: 0 2px 30px #00000026;
 }
 
 .event_items {
@@ -218,14 +220,14 @@ background-color: var(--vcard-secondary);
 }
 
 .eventIcons{
-@apply w-12 h-12 p-2 rounded-lg;
-background-color: var(--vcard-secondary);
-color: var(--vcard-heading);
+@apply w-14 h-14 p-2 rounded-full mt-[-2.5rem];
+color: #ffffff;
+background-color: var(--vcard-primary)
 }
 
 .event_label{
 @apply text-xl font-bold;
-color: var(--vcard-heading);
+color: var(--vcard-primary);
 }
 
 .appointmentSection{
@@ -238,7 +240,7 @@ color: var(--vcard-heading);
 
 .section_heading{
 @apply text-center text-3xl font-semibold mb-8;
-color: var(--vcard-primary);
+color: var(--vcard-heading);
 }
 
 .appointment{
@@ -367,7 +369,7 @@ cursor: pointer;
 
 .aptsaveButton:hover {
 @apply border;
-background-color: var(--vcard-secondary);
+background-color: white;
 color: var(--vcard-primary);
 border-color: var(--vcard-primary);
 }
@@ -387,6 +389,13 @@ background-color: black;
 color: #d1d5db;
 }
 
+.serviceSection{
+@apply md:bg-contain;
+background-image: url('/images/template/img/vcard/vcard23-services-bg-img.png');
+background-repeat: no-repeat;
+background-position: top;
+}
+
 .serviceCarousel{
 @apply hidden
 }
@@ -396,13 +405,26 @@ color: #d1d5db;
 }
 
 .serviceCard {
-@apply relative rounded-xl flex flex-col items-center p-4 mb-4;
+@apply relative w-60 rounded-full flex flex-col items-center p-4 mx-auto mb-4 md:mt-0 mt-14;
 background-color: var(--vcard-secondary);
+aspect-ratio: 1/2;
+}
+
+.serviceCard::after {
+padding: 10px;
+content: "";
+position: absolute;
+top: -1rem;
+left: 1rem;
+width: 100%;
+height: 106%;
+border: 3px dashed var(--vcard-primary);
+z-index: -1;
+border-radius: 9999px;
 }
 
 .serviceIcon {
-@apply w-36 h-36 aspect-square flex items-center justify-center mb-5 overflow-hidden rounded-full border-2;
-border-color: var(--vcard-primary);
+@apply w-40 h-40 aspect-square flex items-center justify-center mb-5 overflow-hidden rounded-full;
 }
 
 .iconImg {
@@ -410,7 +432,7 @@ border-color: var(--vcard-primary);
 }
 
 .serviceContent {
-@apply text-left;
+@apply text-center;
 }
 
 .serviceTitle {
@@ -422,6 +444,12 @@ color: var(--vcard-heading);
 @apply text-sm;
 }
 
+.gallerySection{
+@apply md:bg-right-top bg-top md:bg-auto bg-contain;
+background-image: url('/images/template/img/vcard/vcard23-gallery-bg.png');
+background-repeat: no-repeat;
+}
+
 .mediaGrid {
 @apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
 }
@@ -431,7 +459,7 @@ color: var(--vcard-heading);
 }
 
 .mediaImage {
-@apply w-full h-full;
+@apply w-full h-full rounded-2xl;
 }
 
 .youtubeSection{
@@ -473,13 +501,15 @@ border-radius: 10px
 }
 
 .productsCard {
-@apply rounded-xl p-2;
+@apply rounded-xl border mb-4;
+border-color: var(--vcard-primary);
 background-color: var(--vcard-secondary);
+box-shadow: 0 5px 0 0 var(--vcard-primary);
 }
 
 .productsImage {
-@apply w-80 rounded-xl object-center overflow-hidden;
-aspect-ratio: 2/1;
+@apply w-80 rounded-t-xl object-center overflow-hidden;
+aspect-ratio: 2/1
 }
 
 .productsDetails {
@@ -487,17 +517,24 @@ aspect-ratio: 2/1;
 }
 
 .productsTitle {
-@apply text-lg font-semibold pl-2;
+@apply text-lg font-semibold pl-2 text-left;
 color : var(--vcard-heading);
 }
 
 .productsDesc {
-@apply text-sm mb-2 pl-2;
+@apply text-sm mb-2 pl-2 text-left;
 }
 
 .productsPrice {
 @apply font-bold text-2xl;
 color : var(--vcard-primary);
+}
+
+.testimonialSection{
+@apply md:bg-auto bg-[length:40%_auto];
+background-image: url('/images/template/img/vcard/vcard23-testimonial-bg.png');
+background-repeat: no-repeat;
+background-position: top left;
 }
 
 .testimonialWrapper {
@@ -507,7 +544,6 @@ color : var(--vcard-primary);
 .testimonialSlider {
 @apply max-w-sm mx-auto flex flex-col items-center gap-4 p-4 mb-10 rounded-xl border-t-4 border-b-4;
 border-color: var(--vcard-primary);
-background-color: var(--vcard-secondary);
 }
 
 .testimonialSwiper :global(.swiper-pagination-bullet-active){
@@ -518,7 +554,7 @@ border-radius: 10px;
 
 .tesImageContainer {
 @apply sm:order-1 border-4 rounded-full;
-border-color: var(--vcard-primary)
+border-color: var(--vcard-primary);
 }
 
 .tesImage {
@@ -527,9 +563,6 @@ border-color: var(--vcard-primary)
 
 .tesContent {
 @apply sm:order-2 text-center rounded-xl;
-background-image: url('/images/template/img/vcard/vcard22-quote-img.png');
-background-repeat: no-repeat;
-background-position: bottom right;
 }
 
 .tesMessage {
@@ -545,26 +578,32 @@ color: var(--vcard-primary)
 @apply text-sm;
 }
 
+.blogSection{
+@apply md:bg-contain bg-auto;
+background-image: url('/images/template/img/vcard/vcard23-blog-bg.png');
+background-repeat: no-repeat;
+background-position: top;
+}
+
 .blogGrid {
-@apply max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10;
+@apply max-w-xl mx-auto grid grid-cols-1 gap-10;
 }
 
 .blogCard {
-@apply relative rounded-xl items-center;
-background-color: var(--vcard-secondary)
+@apply relative flex flex-row items-center;
 }
 
 .blogImageWrapper {
-@apply mb-0;
+@apply order-2 mb-0;
 }
 
 .blogImage {
-@apply w-full object-cover rounded-t-xl;
-aspect-ratio: 2/1
+@apply w-80 aspect-square object-cover border-2 rounded-2xl;
+border-color: var(--vcard-primary)
 }
 
 .blogContent {
-@apply text-start p-2 rounded-b-xl;
+@apply order-1 text-start p-2;
 }
 
 .blogTitle {
@@ -574,22 +613,29 @@ color: var(--vcard-heading);
 
 .blogDesc {
 @apply text-sm mt-2 text-center;
+color: var(--vcard-heading);
 }
 
 .qrCodeSection{
-@apply py-6;
+@apply py-6 md:bg-auto bg-[length:auto_40%];
+background-image: url('/images/template/img/vcard/vcard23-qr-code-bg.png');
+background-repeat: no-repeat;
+background-position: top right;
 }
 
 .qrGrid {
-@apply max-w-7xl flex flex-row justify-center items-center mt-4 md:gap-32 gap-10;
+@apply max-w-sm mx-auto flex flex-col justify-center items-center mt-20 pb-16 gap-6;
+background-color: #ffffff;
+box-shadow: 0 0 30px 0 #00000026;
 }
 
 .qrProfileSection {
-@apply rounded-xl;
+
 }
 
 .qrProfileImage {
-@apply md:w-40 w-28 md:h-40 h-28 object-contain rounded-xl;
+@apply w-28 h-28 object-contain rounded-full mt-[-3.5rem] border-4;
+border-color: var(--vcard-primary)
 }
 
 .desktopButton {
@@ -598,7 +644,6 @@ color: var(--vcard-heading);
 
 .qrSection {
 @apply text-center rounded-xl;
-background-color: #FFFFFF;
 }
 
 .qrImage {
@@ -609,19 +654,21 @@ background-color: #FFFFFF;
 @apply hidden;
 }
 
-
 .hoursContainer {
 @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
 }
 
 .timeRow {
-@apply flex flex-row mb-4 rounded-xl py-3 justify-start px-2 items-center space-x-2;
-background-color: var(--vcard-secondary);
+@apply flex flex-row mb-4 rounded-xl py-3 justify-start px-2 items-center space-x-2 border-2;
+border-color: var(--vcard-primary);
+background: transparent;
 }
 
 .dayIcon{
 @apply text-2xl object-center p-3 rounded-xl mr-1;
 color: var(--vcard-primary);
+background: var(--vcard-secondary);
+box-shadow: 0 0 5px 0 gray;
 }
 
 .dayLabel {
@@ -641,7 +688,7 @@ color: var(--vcard-heading)
 .formTextarea {
 @apply w-full px-4 py-2 rounded focus:outline-none;
 color: var(--vcard-primary);
-background-color: var(--vcard-secondary);
+background-color: #f6f6f6;
 }
 
 .formButton {
@@ -653,7 +700,7 @@ color: var(--vcard-secondary);
 
 .formButton:hover {
 @apply border;
-background: var(--vcard-secondary);
+background: white;
 color: var(--vcard-primary);
 border-color: var(--vcard-primary);
 }
@@ -673,12 +720,12 @@ box-shadow: 0 0 10px 1px black;
 }
 
 .popupClose{
-@apply absolute top-4 right-4 text-white hover:text-red-500 transition;
+@apply absolute top-4 right-4 text-gray-700 hover:text-red-500 transition;
 }
 
 .popupContent{
 @apply text-center max-w-2xl;
-color: white;
+color: black;
 }
 
 .popupTitle{
@@ -698,7 +745,7 @@ border-color: var(--vcard-primary);
 
 .popupBtn:hover{
 @apply border;
-background: var(--vcard-secondary);
+background: white;
 color : var(--vcard-primary);
 border-color: var(--vcard-primary);
 }
