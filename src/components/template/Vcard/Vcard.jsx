@@ -12,7 +12,7 @@ import Blog from './Blog';
 import QrCode from './QrCode';
 import BusinessHours from './BusinessHours';
 import Contact from './Contact';
-import styles from './vcard24.module.css';
+import styles from './vcard25.module.css';
 import Youtube from './Youtube';
 import Instagram from './Instagram';
 import { FaFacebook, FaQrcode, FaShare, FaTwitter, FaWhatsapp } from 'react-icons/fa';

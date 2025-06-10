@@ -1,14 +1,15 @@
 .vcard_two{
---vcard-primary: gold;
---vcard-secondary: #1f1f21;
---vcard-heading: #FFFFFF;
---vcard-text: #9a9a9a;
+--vcard-primary: #ffa31a;
+--vcard-secondary-1: #FFFFFF;
+--vcard-secondary-2: #f8f9f8;
+--vcard-heading: #25302e;
+--vcard-text: #667270;
 
 font-family: 'Poppins', 'Helvetica', 'sans-serif';
 color: var(--vcard-text);
 
 @apply max-w-7xl mx-auto;
-background-color: #000000;
+background-color: #FFFFFF;
 }
 
 /* FAB Container */
@@ -53,7 +54,7 @@ align-items: center;
 justify-content: center;
 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 cursor: pointer;
-border: 1px solid black;
+border: 1px solid var(--vcard-primary);
 transition: transform 0.2s ease;
 }
 
@@ -135,7 +136,7 @@ background-position: center;
 .language_btn{
 @apply px-4 py-2 text-sm rounded-md flex items-center gap-2;
 background: var(--vcard-primary);
-color: #000000;
+color: #ffffff;
 }
 
 .language_list{
@@ -147,45 +148,48 @@ color: #000000;
 }
 
 .profile{
-@apply relative;
+@apply relative mr-1;
+background-image: url('/images/template/img/vcard/vcard25-profile-bg-img.png');
+background-repeat: no-repeat;
+background-position: right;
 }
 
 .profileContainer{
-@apply relative z-20 w-48 h-48 rounded-full mx-auto border-4 mt-[-6rem];
-border-color: #ffffff;
-box-shadow: 0 0 30px 5px black
+@apply relative z-20 w-36 h-36 rounded-full mx-auto border-4 md:mx-0 md:ml-[2rem] mt-[-3.5rem];
+border-color: var(--vcard-primary);
 }
 
 .profileDetailsSection{
 @apply pb-6;
-background-image: url('/images/template/img/vcard/vcard24-percentage.png'), url('/images/template/img/vcard/vcard24-cart.png');
-background-repeat: no-repeat, no-repeat;
-background-position: top right, left;
 }
 
 .profile_details{
-@apply py-3 px-6 text-center;
+@apply py-3 px-6 text-center md:text-left;
 }
 
 .profile_name{
 @apply relative text-2xl font-bold;
-color: var(--vcard-primary);
+color: var(--vcard-heading);
 }
 
 .profile_occupation{
 @apply relative text-lg block mt-2;
+color: var(--vcard-primary);
 }
 
 .profile_jobTitle{
 @apply relative text-lg block;
+color: var(--vcard-primary);
 }
 
 .profile_company{
 @apply relative text-sm;
+color: var(--vcard-primary);
 }
 
 .profile_p{
 @apply text-sm font-medium;
+color: var(--vcard-heading);
 }
 
 .socialSection{
@@ -193,20 +197,18 @@ color: var(--vcard-primary);
 }
 
 .profile_icons{
-@apply grid grid-cols-5 md:flex md:flex-wrap justify-center gap-4 md:gap-6 mx-6 text-2xl;
-color: var(--vcard-primary);
+@apply grid grid-cols-5 md:flex md:flex-wrap justify-center items-center gap-4 md:gap-10 mx-6 text-2xl;
+color: var(--vcard-secondary-1);
 }
 
 .profile_iconimg {
 @apply w-10 h-10 p-2 cursor-pointer rounded-full transition-transform duration-300 ease-in-out hover:-translate-y-4;
-background-color: var(--vcard-secondary);
+background-color: var(--vcard-primary);
 }
 
 .eventDetailsSection{
 @apply pt-10 px-6;
-background-image: url('/images/template/img/vcard/vcard24-open-box.png');
-background-repeat: no-repeat;
-background-position: top right;
+background-color: var(--vcard-secondary-2);
 }
 
 .eventdetails{
@@ -214,8 +216,7 @@ background-position: top right;
 }
 
 .event_list{
-@apply flex flex-row md:flex-wrap gap-2 items-center text-center mb-4 p-1 w-full rounded-xl;
-
+@apply flex flex-row md:flex-col gap-2 items-center text-center mb-4 p-1 w-full rounded-xl;
 }
 
 .event_items {
@@ -224,13 +225,13 @@ background-position: top right;
 
 .eventIcons{
 @apply w-12 h-12 p-2 rounded-lg border-2;
-border-color: var(--vcard-primary);
-background-color: var(--vcard-secondary);
 color: var(--vcard-primary);
+background-color: var(--vcard-secondary-1);
+border-color: var(--vcard-primary)
 }
 
 .event_label{
-@apply text-lg font-bold;
+@apply text-xl font-bold;
 color: var(--vcard-heading);
 }
 
@@ -243,7 +244,8 @@ color: var(--vcard-heading);
 }
 
 .section_heading{
-@apply text-center text-3xl font-semibold mb-8;
+@apply text-center text-3xl font-semibold mb-8 max-w-sm mx-auto border-2 py-2 rounded-tl-3xl rounded-br-3xl;
+border-color: var(--vcard-primary);
 color: var(--vcard-heading);
 }
 
@@ -363,19 +365,19 @@ gap: 0.75rem;
 
 .aptsaveButton {
 @apply transition-transform duration-300 hover:-translate-y-2;
-background-color: var(--vcard-secondary);
-color: var(--vcard-primary);
-border-color: var(--vcard-primary);
 padding: 0.5rem 1rem;
+background-color: var(--vcard-primary);
+color: var(--vcard-secondary);
 border-radius: 0.25rem;
+border: 1px solid var(--vcard-primary);
 cursor: pointer;
 }
 
 .aptsaveButton:hover {
 @apply border;
-background-color: var(--vcard-primary);
-color: var(--vcard-secondary);
-border: 1px solid var(--vcard-primary);
+background-color: var(--vcard-secondary);
+color: var(--vcard-primary);
+border-color: var(--vcard-primary);
 }
 
 .aptdiscardButton {
@@ -393,30 +395,37 @@ background-color: black;
 color: #d1d5db;
 }
 
+.serviceSection{
+background-image: url('/images/template/img/vcard/vcard25-services-bg.png');
+background-repeat: no-repeat;
+background-position: top left;
+}
+
 .serviceCarousel{
 @apply hidden
 }
 
 .serviceGrid{
-@apply grid-cols-1 max-w-5xl mx-auto px-4 relative z-10;
+@apply sm:grid grid-cols-2 md:grid-cols-3 max-w-7xl px-14 md:px-44 ml-[-1rem] mr-[-1rem] mx-auto gap-10 relative z-10 mt-[43px];
+background-color: var(--vcard-secondary-2);
 }
 
 .serviceCard {
-@apply relative rounded-xl flex md:flex-row flex-col items-center gap-4 mb-10;
-background-color: var(--vcard-secondary);
+@apply relative rounded-xl flex flex-col items-center p-4 my-6;
+background-color: var(--vcard-secondary-1);
 }
 
 .serviceIcon {
-@apply md:max-w-32 aspect-square flex items-center justify-center overflow-hidden md:rounded-l-xl rounded-t-xl border-2;
+@apply w-28 h-28 aspect-square flex items-center justify-center mb-5 overflow-hidden rounded-full border-2;
 border-color: var(--vcard-primary);
 }
 
 .iconImg {
-@apply w-full h-full object-cover;
+@apply w-full h-full rounded-xl object-cover;
 }
 
 .serviceContent {
-@apply md:text-left text-base p-4;
+@apply text-left;
 }
 
 .serviceTitle {
@@ -429,9 +438,9 @@ color: var(--vcard-heading);
 }
 
 .gallerySection{
-background-image: url('/images/template/img/vcard/vcard24-box.png');
+@apply bg-top md:bg-left; 
+background-image: url('/images/template/img/vcard/vcard25-gallery-bg.png');
 background-repeat: no-repeat;
-background-position: top left;
 }
 
 .mediaGrid {
@@ -443,7 +452,7 @@ background-position: top left;
 }
 
 .mediaImage {
-@apply w-full h-full;
+@apply w-full h-full rounded-tl-3xl rounded-br-3xl;
 }
 
 .youtubeSection{
@@ -481,27 +490,28 @@ border-radius: 10px
 }
 
 .productSection{
-background-image: url('/images/template/img/vcard/vcard24-cards.png'), url('/images/template/img/vcard/vcard24-shoes.png') ;
-background-repeat: no-repeat, no-repeat;
-background-position: top left, bottom right;
+@apply py-10;
+background-image: url('/images/template/img/vcard/vcard25-product-bg.png');
+background-repeat: no-repeat;
+background-position: top right;
 }
 
 .productsGrid {
-@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-4;
+@apply max-w-5xl mx-auto flex flex-wrap justify-center gap-20;
 }
 
 .productsCard {
 @apply rounded-xl;
-background-color: var(--vcard-secondary);
-box-shadow: 0 5px 0 0 var(--vcard-primary);
 }
 
 .productsImage {
-@apply h-44 rounded-xl aspect-square object-cover overflow-hidden;
+@apply h-44 aspect-square object-cover overflow-hidden mx-auto opacity-90;
 }
 
 .productsDetails {
-@apply py-3 text-center;
+@apply py-3 text-center w-52 mt-[-1rem] pt-8;
+background-color: var(--vcard-secondary-1);
+box-shadow: 0 0 10px 1px #00000026
 }
 
 .productsTitle {
@@ -518,16 +528,20 @@ color : var(--vcard-heading);
 color : var(--vcard-primary);
 }
 
+.testimonialSection{
+@apply py-6;
+background-image: url('/images/template/img/vcard/vcard25-testimonial-vector.png');
+background-repeat: no-repeat;
+background-position: top right;
+}
+
 .testimonialWrapper {
 @apply max-w-7xl mx-auto;
+background-color: var(--vcard-secondary-2)
 }
 
 .testimonialSlider {
-@apply max-w-5xl mx-auto flex md:flex-row flex-col items-center gap-4 md:pl-16 md:p-10 p-4 mb-10 md:rounded-tl-full md:rounded-br-full rounded-t-2xl rounded-b-2xl border-t-2 border-b-2;
-border-color: var(--vcard-primary);
-background-image: url('/images/template/img/vcard/vcard24-quote-img-left.png'), url('/images/template/img/vcard/vcard24-quote-img-right.png');
-background-repeat: no-repeat, no-repeat;
-background-position: bottom left, top right;
+@apply max-w-sm mx-auto flex flex-col items-center gap-4 p-4 mb-10 rounded-xl;
 }
 
 .testimonialSwiper :global(.swiper-pagination-bullet-active){
@@ -542,15 +556,18 @@ border-color: var(--vcard-primary)
 }
 
 .tesImage {
-@apply rounded-full max-w-24 h-24 object-cover;
+@apply rounded-full w-24 h-24 object-cover;
 }
 
 .tesContent {
-@apply sm:order-2 text-center rounded-xl;
+@apply sm:order-2 text-left;
+background-image: url('/images/template/img/vcard/vcard25-quote-img.png');
+background-repeat: no-repeat;
+background-position: top left;
 }
 
 .tesMessage {
-@apply text-lg mb-2;
+@apply text-lg mb-2 indent-11;
 }
 
 .tesName {
@@ -563,11 +580,9 @@ color: var(--vcard-primary)
 }
 
 .blogSection{
-background-color: var(--vcard-secondary);
-background-image: url('/images/template/img/vcard/vcard24-blog-slider-bg.png');
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+background-image: url('/images/template/img/vcard/vcard25-blog-bg-vector1.png'), url('/images/template/img/vcard/vcard25-blog-bg-vector2.png');
+background-repeat: no-repeat, no-repeat;
+background-position: top left, top right;
 }
 
 .blogGrid {
@@ -588,14 +603,17 @@ border-color: var(--vcard-primary)
 }
 
 .blogContent {
-@apply text-start border p-2 rounded-b-xl;
+@apply text-start border p-3 rounded-b-xl;
+color: var(--vcard-secondary-1);
 border-color: var(--vcard-primary);
-background-color: var(--vcard-secondary)
+background-color: var(--vcard-primary);
+background-image: url('/images/template/img/vcard/vcard25-blog-vector.png');
+background-repeat: no-repeat;
+background-position: top left;
 }
 
 .blogTitle {
 @apply text-lg font-bold text-center;
-color: var(--vcard-heading);
 }
 
 .blogDesc {
@@ -603,21 +621,22 @@ color: var(--vcard-heading);
 }
 
 .qrCodeSection{
-@apply py-6;
-background-image: url('/images/template/img/vcard/vcard24-percentage.png'), url('/images/template/img/vcard/vcard24-bag.png');
-background-repeat: no-repeat, no-repeat;
-background-position: bottom right, top left;
+@apply py-6 md:bg-[840px_20px] bg-[270px_18px];
+background-image: url('/images/template/img/vcard/vcard25-qr-code-bg.png');
+background-repeat: no-repeat;
 }
 
 .qrGrid {
-@apply max-w-sm mx-auto flex flex-col justify-center items-center mt-20 pb-16 gap-6;
-background-color: var(--vcard-secondary);
-box-shadow: 0 0 30px 0 #00000026;
+@apply max-w-xl mx-auto flex flex-col justify-center items-center mt-20 pb-16 gap-6;
+background-color: transparent;
+box-shadow: 
+0 0 5px 0 #00000026,
+0 20px 30px 0 #00000026;
 }
 
 .qrProfileImage {
 @apply w-28 h-28 object-contain rounded-full mt-[-3.5rem] border-4;
-border-color: var(--vcard-heading);
+border-color: var(--vcard-primary);
 }
 
 .desktopButton {
@@ -637,19 +656,14 @@ background-color: #FFFFFF;
 @apply hidden;
 }
 
-.businessSection{
-background-image: url('/images/template/img/vcard/vcard24-home.png');
-background-repeat: no-repeat;
-background-position: top left;
-}
-
 .hoursContainer {
 @apply max-w-6xl mx-auto sm:col-span-7 col-span-12;
 }
 
 .timeRow {
-@apply flex flex-row mb-4 rounded-xl py-3 justify-start px-2 items-center space-x-2;
-background: var(--vcard-secondary);
+@apply flex flex-row mb-4 rounded-xl py-3 justify-start px-2 items-center space-x-2 border-2;
+border-color: var(--vcard-primary);
+background: var(--vcard-secondary-2);
 }
 
 .dayIcon{
@@ -667,9 +681,19 @@ color: var(--vcard-heading)
 }
 
 .contactSection{
-background-image: url('/images/template/img/vcard/vcard24-cart2.png');
+background-image: url('/images/template/img/vcard/vcard25-contact-vector.png'), url('/images/template/img/vcard/vcard25-contact-vector.png'), url('/images/template/img/vcard/vcard25-contact-bg.png');
+background-repeat: no-repeat, no-repeat;
+background-position: 1225px 110px, 35px 340px, top;
+background-size: auto auto, auto auto, 100% 75%;
+}
+
+@media (max-width: 767px) {
+.contactSection {
+background-image: url('/images/template/img/vcard/vcard25-contact-bg.png');
 background-repeat: no-repeat;
-background-position: top right;
+background-position: top;
+background-size: contain;
+}
 }
 
 .contactForm {
@@ -678,23 +702,24 @@ background-position: top right;
 
 .formInput,
 .formTextarea {
-@apply w-full px-4 py-2 rounded focus:outline-none;
+@apply w-full px-4 py-2 rounded focus:outline-none border;
+border-color: var(--vcard-primary);
 color: var(--vcard-primary);
-background-color: var(--vcard-secondary);
+background-color: transparent
 }
 
 .formButton {
 @apply px-6 text-xl py-2 rounded ml-auto block transition border;
-background: var(--vcard-secondary);
-color: var(--vcard-primary);
 border-color: var(--vcard-primary);
+background: var(--vcard-primary);
+color: var(--vcard-secondary-1);
 }
 
 .formButton:hover {
 @apply border;
+background: var(--vcard-secondary-1);
+color: var(--vcard-primary);
 border-color: var(--vcard-primary);
-background: var(--vcard-primary);
-color: var(--vcard-secondary);
 }
 
 .gmapModal{
@@ -707,7 +732,7 @@ color: var(--vcard-secondary);
 
 .popupWrapper{
 @apply flex items-center justify-center p-6 relative;
-background-color: var(--vcard-heading);
+background-color: var(--vcard-secondary-2);
 box-shadow: 0 0 10px 1px black;
 }
 
@@ -730,14 +755,14 @@ color: black;
 
 .popupBtn{
 @apply inline-block font-semibold py-2 px-4 rounded transition border;
-background: var(--vcard-secondary);
-color : var(--vcard-primary);
+background: var(--vcard-primary);
+color : var(--vcard-secondary-1);
 border-color: var(--vcard-primary);
 }
 
 .popupBtn:hover{
 @apply border;
-background: var(--vcard-primary);
-color : var(--vcard-secondary);
+background: var(--vcard-secondary-1);
+color : var(--vcard-primary);
 border-color: var(--vcard-primary);
 }
