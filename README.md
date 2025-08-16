@@ -31,33 +31,9 @@ This project is currently under active development and is being built using cutt
 
 ---
 
-## 🚧 Development Status
-
-- [x] Home page layout with hero and feature sections
-- [x] Demo card carousel with preview templates
-- [x] Full user registration & authentication system
-- [ ] Backend API integration (MongoDB planned)
-- [ ] User dashboard for managing cards
-- [ ] SEO optimization and deployment pipeline
-
----
-
-## 📦 Installation (for local development)
-
-```bash
-git clone https://github.com/yourusername/digibcard.git
-cd digibcard
-npm install
-npm run dev
-```
-
-Visit `http://localhost:3000` to explore the app locally.
-
----
-
 ## 🧑‍💻 About This Project
 
-This project is being developed as part of my **internship assignment** at **Brand Chanakya**. It serves as a real-world, production-level project to demonstrate and expand my capabilities as a full-stack developer. The repository is currently private and all rights are reserved.
+This project was developed as part of my **internship assignment** at **Brand Chanakya**. It serves as a real-world, production-level project to demonstrate and expand my capabilities as a full-stack developer. The repository is currently private and all rights are reserved.
 
 ---
 
